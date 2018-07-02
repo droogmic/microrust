@@ -1,0 +1,11 @@
+# Rust ignores
+/target/
+Cargo.lock
+**/*.rs.bk
+
+# mdBook ignores
+*.org
+.#*
+.gdb_history
+/template
+book/
