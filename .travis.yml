@@ -6,6 +6,10 @@ addons:
     packages:
       - gcc-arm-none-eabi
 
+env:
+  global:
+    - secure: "fEbZypJurXOT1keDL8QtVb8d8IkNDdQI3iKh3OUQjruhdNWbma2T1MCB7J8OiMW9kw92R33NbY4gszm5BgjEFvdQBKKmSroanQ71tMYFLcIHKVbkJoGtYUKcQZVyvsl8q+1etX3+2CC1J/PWTAxQpXr6OA7jiwjuwqRm9IMKPIjrI3G0vXIygfFdEjfDhiGkVpf0xDMnjtlKVc2O/KZ6AD9E6pkpOO9qXHxsIL8OPlI+Y+GtQMG8tH+OzwwZzdZ3aH5dyCjoZRncPXWRyF/X2smi/XZthl9X2Un8XlINznEdqjrzco8UeNc922QQZFVllY01Thku5RMirr4wFfBayiQmBmJJOGDLaWgfpsbht8bW6kpNOcmOqob/uyeWyykxjj01nZ+OM60mLj8FjGA2iFa3Yb5u+CZej6PokvS5WhqVOv52VSBxB2cq/MR8lA8noK/NtKA+6s8GzfnWUNB2ktkXA24+xJmFhjLrqlZ/INtEwWnuJDHaGOvyQbdW3/LR8GUNCuEmuD06PVnOqaFIRYu7rxtucI4Z9IBPh/xCNwRukrBiPZ84JL4dko5LLWbS1gOgkhb3yusrOhkBdLXg1U7o4LO+e4MqRUmy47pJ/tsg+fsL0g3pqBNG2Nj8Xi4LT3J2PQa+x7Vgovtcgoqy1OvCl05UByOQ5mX413vKuuw="
+
 install:
   - bash ci/install.sh
 
