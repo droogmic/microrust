@@ -16,4 +16,4 @@ Caskroom/tap` first and try again.
 
 That's all! Go to the [next section].
 
-[next section]: 03-setup/VERIFY.html
+[next section]: setup/VERIFY.html

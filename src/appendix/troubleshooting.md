@@ -24,11 +24,9 @@ in procedure 'ocd_bouncer'
 - Linux: You may not have enough permission to open the device. Try again with
   `sudo`. If that works, you can use [these instructions] to make OpenOCD work
   without root privilege.
-- Windows: You are probably missing the ST-LINK USB driver. Installation
-  instructions [here].
+- Windows: You are probably missing the USB drivers.
 
-[these instructions]: 03-setup/linux.html#udev%20rules
-[here]: 03-setup/windows.html#ST-LINK%20USB%20driver
+[these instructions]: setup/LINUX.html#udev%20rules
 
 ### can't connect to OpenOCD - "Polling again in X00ms"
 
