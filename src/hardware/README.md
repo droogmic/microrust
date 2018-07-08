@@ -46,13 +46,21 @@ What does this board contain? For full details see the [microbit hardware page][
 
 - A second microcontroller: NXP/Freescale KL26Z. This microcontroller handles the USB interface,
   communication between your computer and the main microcontroller, 
-  and changing the USB's input voltage from 5V to 3.3V.
+  and converting the USB's input voltage from 5V to 3.3V.
 
 ## Micro-USB Cable
 
-This can be any generic cable, and is used to connect the microbit to your computer.
+This comes with your microbit but can be any generic cable,
+and is used to connect the microbit to your computer.
 
 ## External battery pack
 
 The external battery pack that comes with the microbit will not be used explicitly as part of this guide, 
 but feel free to use it to test your software without being tethered to a computer.
+
+## Plugging it in
+
+You can use the micro-USB cable to power the micro:bit, and to transfer data.
+When you power up a new micro:bit you will see the display light up as the factory-installed program is executed.
+Otherwise, the last program will automatically be executed.
+The black reset button next to the USB input will restart the program being run.

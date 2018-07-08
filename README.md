@@ -1,4 +1,6 @@
-# MicroRust
+# MicroRust 
+
+[![Build Status](https://travis-ci.org/droogmic/microrust.svg?branch=master)](https://travis-ci.org/droogmic/microrust)
 
 > Learn embedded software in Rust on the micro:bit
 

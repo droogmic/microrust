@@ -7,7 +7,7 @@
 - [Meet your hardware](hardware/README.md)
 
 - [Development environment setup](setup/README.md)
-- [Linux](setup/LINUX.md)
+  - [Linux](setup/LINUX.md)
   - [Windows](setup/WINDOWS.md)
   - [macOS](setup/MACOS.md)
   - [Verify the installation](setup/VERIFY.md)
@@ -16,15 +16,24 @@
   - [Building](getting-started/01.00.PROJECT.md)
   - [Flashing](getting-started/02.00.FLASH.md)
   - [LED](getting-started/03.00.LED.md)
-  - [Debugging](getting-started/04.00.DEBUGGING.md)
+  - [Debugging](getting-started/04.00.DEBUG.md)
 
 - [WIP - Hello world](hello-world/00.00.README.md)
   - [Semi-hosting](hello-world/01.00.SEMIHOSTING.md)
   - [UART](hello-world/02.00.UART.md)
 
-- [WIP - Choose your own adventure](choice/00.00.README.md)
+- [Choose your own adventure](choice/00.00.README.md)
 
-- [WIP - LED display](display/00.00.README.md)
+- [LED display](display/00.00.README.md)
+  - [Theory](display/01.00.THEORY.md)
+  - [Problem](display/02.00.PROBLEM.md)
+    - [Layout](display/02.01.LAYOUT.md)
+    - [Delays](display/02.02.DELAY.md)
+    - [Multiplexing](display/02.03.MULT.md)
+  - [WIP - Solution](display/03.00.SOLUTION.md)
+    - [Layout](display/03.01.LAYOUT.md)
+    - [Multiplexing](display/03.02.MULT.md)
+    - [Full](display/03.03.FULL.md)
 
 - [WIP - Sensors and I²C](sensors/00.00.README.md)
 

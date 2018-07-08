@@ -1,5 +1,7 @@
 # macOS
 
+> UNTESTED: please submit an issue if you can confirm this works.
+
 All the tools can be install using [Homebrew]:
 
 [Homebrew]: http://brew.sh/
@@ -14,4 +16,4 @@ Caskroom/tap` first and try again.
 
 That's all! Go to the [next section].
 
-[next section]: 03-setup/verify.html
+[next section]: 03-setup/VERIFY.html

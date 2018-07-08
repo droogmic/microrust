@@ -1,5 +1,7 @@
 # Windows
 
+> UNTESTED: please submit an issue if you can confirm this works.
+
 ## `arm-none-eabi-*`
 
 ARM provides `.exe` installers for Windows. Grab one from [here][gcc], and follow the instructions.
@@ -38,13 +40,6 @@ Download the latest `putty.exe` from [this site] and place it somewhere in your 
 
 [this site]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
-## ST-LINK USB driver
-
-You'll also need to install [this USB driver] or OpenOCD won't work. Follow the installer
-instructions and make sure you install the right (32-bit or 64-bit) version of the driver.
-
-[this USB driver]: http://www.st.com/en/embedded-software/stsw-link009.html
-
 That's all! Go to the [next section].
 
-[next section]: 03-setup/verify.html
+[next section]: 03-setup/VERIFY.html

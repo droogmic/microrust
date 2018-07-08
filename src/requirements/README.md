@@ -40,11 +40,12 @@ With other development boards, this text would lose most if not all its beginner
 and "easy to follow"-ness, IMO.
 
 There are other similar guides for different hardware. For a full list see [this list][books].
-[books]: https://github.com/rust-embedded/awesome-embedded-rust/#books-blogs-and-training-materials
+
 The following are worth a special mention:
+
 - [Discovery](https://japaric.github.io/discovery/) by @japaric: The genesis guide which this is based on. Uses the STM32F3DISCOVERY.
 
-
+[books]: https://github.com/rust-embedded/awesome-embedded-rust/#books-blogs-and-training-materials
 
 If you have a different cortex-m development board and you don't consider yourself a total beginner, you are
 better off starting with the [cortex-m-quickstart] project template.

@@ -49,59 +49,20 @@ Then, use your editor of choice to append to your `PATH` in the appropriate shel
 PATH=$PATH:$HOME/local/gcc-arm-none-eabi-7-2017-q4-major/bin
 ```
 
-## Optional packages
-
-- Ubuntu / Debian
-
-``` console
-$ sudo apt-get install \
-  bluez \
-  rfkill
-```
-
-- Fedora
-
-``` console
-$ sudo dnf install \
-  bluez \
-  rfkill
-```
-
-- Arch Linux
-
-``` console
-$ sudo pacman -S \
-  bluez \
-  bluez-utils \
-  rfkill
-```
-
 ## udev rules
 
 These rules let you use USB devices like the F3 and the Serial module without root privilege, i.e.
 `sudo`.
 
-Create these two files in `/etc/udev/rules.d` with the contents shown below.
-
-``` console
-$ cat /etc/udev/rules.d/99-ftdi.rules
-```
-
-``` text
-# FT232 - USB <-> Serial Converter
-ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", GROUP="uucp"
-```
+Create this file in `/etc/udev/rules.d` with the contents shown below.
 
 ``` console
 $ cat /etc/udev/rules.d/99-openocd.rules
 ```
 
 ``` text
-# STM32F3DISCOVERY rev A/B - ST-LINK/V2
-ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", GROUP="uucp"
-
-# STM32F3DISCOVERY rev C+ - ST-LINK/V2-1
-ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", GROUP="uucp"
+# microbit - CMSIS-DAP
+ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", GROUP="uucp"
 ```
 
 Then reload the udev rules with:
@@ -120,7 +81,7 @@ $ groups $(id -nu)
 $ #  ^^^^
 ```
 
-(`$(id -nu)` returns your user name. In my case it's `japaric`.)
+(`$(id -nu)` returns your user name.)
 
 If `uucp` appears in the output. You are all set! Go to the [next section]. Otherwise, keep reading:
 
