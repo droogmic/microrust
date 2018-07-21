@@ -12,6 +12,10 @@ use core::fmt::Write;
 use rt::ExceptionFrame;
 use sh::hio;
 
+use microbit::hal::prelude::*;
+use microbit::hal::serial;
+use microbit::hal::serial::BAUD115200;
+
 exception!(HardFault, hard_fault);
 
 fn hard_fault(ef: &ExceptionFrame) -> ! {
@@ -35,7 +39,7 @@ fn main() -> ! {
         let tx = gpio.pin24.into_push_pull_output().downgrade();
         let rx = gpio.pin25.into_floating_input().downgrade();
         let (mut tx, _) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
-        let _ = write!(tx, "\n\rserial test\n\r");
+        let _ = write!(tx, "serial test\n\r");
     }
 
     panic!("test-panic");
