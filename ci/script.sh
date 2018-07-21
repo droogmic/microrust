@@ -18,16 +18,20 @@ main() {
     done
 
     # second (slow) pass: check that examples link
-    for chapter in $(echo src/*); do
-        if [ ! -f $chapter/Cargo.toml ]; then
-            continue
-        fi
+    # for chapter in $(echo src/*); do
+    #     if [ ! -f $chapter/Cargo.toml ]; then
+    #         continue
+    #     fi
 
-        pushd $chapter
-        cargo build
-        cargo build --release
-        popd
-    done
+    #     pushd $chapter
+    #     cargo build
+    #     cargo build --release
+    #     popd
+    # done
+
+    # second (slow) pass: check that workspace builds
+    cargo build
+    cargo build --release
 }
 
 if [ $TRAVIS_BRANCH != master ]; then
