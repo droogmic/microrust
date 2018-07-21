@@ -1,0 +1,6 @@
+[book]
+authors = ["Michael Droogleever"]
+multilingual = false
+title = "MicroRust"
+[output.html]
+theme = "src/theme"
