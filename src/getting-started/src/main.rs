@@ -1,29 +1,30 @@
-#![deny(unsafe_code)]
 #![no_std]
+#![no_main]
 
-extern crate aux5;
+extern crate panic_abort;
+extern crate cortex_m_rt as rt;
 
-use aux5::prelude::*;
-use aux5::{Delay, Leds};
+#[macro_use(entry, exception)]
+extern crate microbit;
 
-fn main() {
-    let (mut delay, mut leds): (Delay, Leds) = aux5::init();
+use rt::ExceptionFrame;
 
-    let period = 50_u16;
-    let mut step: usize = 0;
-    loop {
-        match step % 2 {
-            0 => leds[step/2].on(),
-            1 => {
-                let wrap_step = ((step + 16 - 3) / 2) % 8;
-                leds[wrap_step].off();
-            },
-            _ => unreachable!(),
-        }
-        delay.delay_ms(period);
-        match step {
-            15 => step = 0,
-            _ => step += 1,
-        }
-    }
+exception!(HardFault, hard_fault);
+
+fn hard_fault(ef: &ExceptionFrame) -> ! {
+    panic!("{:#?}", ef);
+}
+
+exception!(*, default_handler);
+
+fn default_handler(irqn: i16) {
+    panic!("Unhandled exception (IRQn = {})", irqn);
+}
+
+entry!(main);
+fn main() -> ! {
+    let _y;
+    let x = 42;
+    _y = x;
+    loop {}
 }

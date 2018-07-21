@@ -13,14 +13,17 @@
   - [Verify the installation](setup/VERIFY.md)
 
 - [Getting started](getting-started/00.00.README.md)
-  - [Building](getting-started/01.00.PROJECT.md)
+  - [Building](getting-started/01.00.BUILD.md)
   - [Flashing](getting-started/02.00.FLASH.md)
-  - [LED](getting-started/03.00.LED.md)
-  - [Debugging](getting-started/04.00.DEBUG.md)
+  - [Debugging](getting-started/03.00.DEBUG.md)
 
-- [WIP - Hello world](hello-world/00.00.README.md)
-  - [Semi-hosting](hello-world/01.00.SEMIHOSTING.md)
-  - [UART](hello-world/02.00.UART.md)
+- [Hello world](hello-world/00.00.README.md)
+  - [Semihosting](hello-world/01.00.SEMIHOSTING.md)
+  - [Serial communication](hello-world/02.00.UART.md)
+    - [*nix](hello-world/02.01.NIX.md)
+    - [Windows](hello-world/02.02.WINDOWS.md)
+  - [LED](hello-world/03.00.LED.md)
+    - [Solution](hello-world/03.01.SOLUTION.md)
 
 - [Choose your own adventure](choice/00.00.README.md)
 
@@ -45,6 +48,8 @@
   - [Clocks and timers](hal/02.00.DELAY.md)
 
 [Explore](appendix/explore.md)
+
+[GDB cheatsheet](appendix/gdb.md)
 
 [General troubleshooting](appendix/troubleshooting.md)
 

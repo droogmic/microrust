@@ -166,3 +166,17 @@ $ rustup update nightly
 
 $ rustup target add thumbv7em-none-eabihf
 ```
+
+## Build problems
+
+### `error: language item required, but not found: \`eh_personality\``
+
+#### Cause
+
+The `eh_personality` language item is used to implement stack unwinding in case a panic occurs.
+
+#### Fix
+
+You need to use the correct target
+by using `--target thumbv6m-none-eabi`
+or modifying `.cargo/config`

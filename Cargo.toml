@@ -1,6 +1,7 @@
 [workspace]
 members = [
   "src/getting-started",
+  "src/hello-world",
 ]
 
 [profile.dev]
