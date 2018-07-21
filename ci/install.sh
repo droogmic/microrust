@@ -5,7 +5,7 @@ main() {
         sh -s -- \
            --force \
            --git rust-lang-nursery/mdBook \
-           --tag v0.1.5 \
+           --tag v0.1.8 \
            --target x86_64-unknown-linux-musl
 
     rustup target add thumbv6m-none-eabi
