@@ -16,6 +16,7 @@
   - [Building](getting-started/01.00.BUILD.md)
   - [Flashing](getting-started/02.00.FLASH.md)
   - [Debugging](getting-started/03.00.DEBUG.md)
+  - [Solution](getting-started/04.00.SOLUTION.md)
 
 - [Hello world](hello-world/00.00.README.md)
   - [Semihosting](hello-world/01.00.SEMIHOSTING.md)
@@ -33,7 +34,7 @@
     - [Layout](display/02.01.LAYOUT.md)
     - [Delays](display/02.02.DELAY.md)
     - [Multiplexing](display/02.03.MULT.md)
-  - [WIP - Solution](display/03.00.SOLUTION.md)
+  - [Solution](display/03.00.SOLUTION.md)
     - [Layout](display/03.01.LAYOUT.md)
     - [Multiplexing](display/03.02.MULT.md)
     - [Full](display/03.03.FULL.md)
@@ -43,9 +44,9 @@
 - [WIP - Real time](rtfm/00.00.README.md)
 
 - [WIP - HAL](hal/00.00.README.md)
-  - [Registers](hal/01.00.REGISTERS.md)
+  <!-- - [Registers](hal/01.00.REGISTERS.md)
   - [Peripherals](hal/01.00.PERIPHERALS.md)
-  - [Clocks and timers](hal/02.00.DELAY.md)
+  - [Clocks and timers](hal/02.00.DELAY.md) -->
 
 [Explore](appendix/explore.md)
 

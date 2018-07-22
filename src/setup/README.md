@@ -39,21 +39,21 @@ Install rustup by following the instructions at [https://rustup.rs](https://rust
 
 Then, install or switch to the nightly channel.
 
-``` console
+``` shell
 $ rustup default nightly
 ```
 
 **NOTE** Make sure you have a nightly newer than `nightly-2018-06-22`.
 `rustc -V` should return a date newer than the one shown below:
 
-``` console
+``` shell
 $ rustc -V
 rustc 1.28.0-nightly (056f589fb 2018-06-22)
 ```
 
 ### `itmdump`
 
-``` console
+``` shell
 $ cargo install itm
 ```
 

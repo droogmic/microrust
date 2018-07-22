@@ -6,7 +6,7 @@ Here are the installation commands for a few Linux distributions.
 
 - Ubuntu 16.04 or newer / Debian Jessie or newer
 
-``` console
+``` shell
 $ sudo apt-get install \
   gcc-arm-none-eabi \
   gdb-arm-none-eabi \
@@ -16,7 +16,7 @@ $ sudo apt-get install \
 
 - Fedora 23 or newer
 
-``` console
+``` shell
 $ sudo dnf install \
   arm-none-eabi-gcc-cs \
   arm-none-eabi-gdb \
@@ -26,7 +26,7 @@ $ sudo dnf install \
 
 - Arch Linux
 
-``` console
+``` shell
 $ sudo pacman -S \
   arm-none-eabi-gcc \
   arm-none-eabi-gdb \
@@ -38,7 +38,7 @@ $ sudo pacman -S \
 
 For distros that don't have packages for [ARM's pre-built toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads), download the "Linux 64-bit" file and put its `bin` directory on your path. Here's one way to do it:
 
-``` console
+``` shell
 $ mkdir -p ~/local && cd ~/local
 $ tar xjf /path/to/downloaded/file/gcc-arm-none-eabi-7-2017-q4-major-linux.tar.bz2.tbz
 ```
@@ -56,7 +56,7 @@ These rules let you use USB devices like the F3 and the Serial module without ro
 
 Create this file in `/etc/udev/rules.d` with the contents shown below.
 
-``` console
+``` shell
 $ cat /etc/udev/rules.d/99-openocd.rules
 ```
 
@@ -67,7 +67,7 @@ ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", GROUP="uucp"
 
 Then reload the udev rules with:
 
-``` console
+``` shell
 $ sudo udevadm control --reload-rules
 ```
 
@@ -75,7 +75,7 @@ If you had any board plugged to your laptop, unplug them and then plug them in a
 
 Finally, check if you are in the `uucp` group.
 
-``` console
+``` shell
 $ groups $(id -nu)
 (..) uucp (..)
 $ #  ^^^^
@@ -89,13 +89,13 @@ If `uucp` appears in the output. You are all set! Go to the [next section]. Othe
 
 - Add yourself to the `uucp` group.
 
-``` console
+``` shell
 $ sudo usermod -a -G uucp $(id -u -n)
 ```
 
 - Check again the output of `groups`. `uucp` should be there this time!
 
-``` console
+``` shell
 $ groups $(id -nu)
 (..) uucp (..)
 $ #  ^^^^
@@ -108,7 +108,7 @@ programs you have open right now.
 
 The other option is to use the command below:
 
-``` console
+``` shell
 $ su - $(id -nu)
 ```
 

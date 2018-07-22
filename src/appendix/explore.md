@@ -123,7 +123,7 @@ So where to next? There are several options:
 - You could check out the examples in the [`microbit`] board support crate repository. All those examples work for
   the micro:bit board you have.
 
-[`f3`]: https://docs.rs/f3
+[`microbit`]: https://github.com/therealprof/microbit
 
 - You could try out [this motion sensors demo][madgwick]. Details about the implementation and
   source code are available in [this blog post][wd-1-2].

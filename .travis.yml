@@ -19,7 +19,9 @@ script:
 after_success:
   - bash ci/after-success.sh
 
-cache: cargo
+cache:
+  - cargo
+  - pip
 
 before_cache:
   # Travis can't cache files that are not readable by "others"

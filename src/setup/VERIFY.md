@@ -11,7 +11,7 @@ Connect the micro:bit to your laptop using an USB cable.
 The micro:bit should now appear as a USB device (file) in `/dev/bus/usb`.
 Let's find out how it got enumerated:
 
-``` console
+``` shell
 $ lsusb | grep -i NXP
 Bus 002 Device 033: ID 0d28:0204 NXP ARM mbed
     ^^^        ^^^
@@ -21,7 +21,7 @@ In my case, the micro:bit got connected to the bus #2 and got enumerated as the 
 This means the file `/dev/bus/usb/002/033` *is* the Fmicro:bit3.
 Let's check its permissions:
 
-``` console
+``` shell
 $ ls -l /dev/bus/usb/002/033
 crw-rw---- 1 root uucp 189, 160 Jul  8 14:06 /dev/bus/usb/002/033
                   ^^^^
@@ -32,7 +32,7 @@ If it's not ... then check your [udev rules] and try re-loading them with:
 
 [udev rules]: setup/LINUX.html#udev%20rules
 
-``` console
+``` shell
 $ sudo udevadm control --reload-rules
 ```
 
@@ -45,7 +45,7 @@ The *yellow* LED next to the USB input should turn on right after connecting the
 
 Next, run this command:
 
-``` console
+``` shell
 $ # *nix
 $ openocd-f interface/cmsis-dap.cfg -f target/nrf51.cfg
 
@@ -59,7 +59,7 @@ $ openocd -s C:\OpenOCD\share\scripts -f interface/cmsis-dap.cfg -f target/nrf51
 
 You should see output like this:
 
-``` console
+``` shell
 Open On-Chip Debugger 0.10.0
 Licensed under GNU GPL v2
 For bug reports, read

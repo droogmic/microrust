@@ -31,16 +31,22 @@ fn default_handler(irqn: i16) {
 entry!(main);
 fn main() -> ! {
     let mut stdout = hio::hstdout().unwrap();
-    stdout.write_str("semihosting test\n\r").unwrap();
-
+    writeln!(stdout, "Start").unwrap();
     if let Some(p) = microbit::Peripherals::take() {
+        // Split GPIO
         let mut gpio = p.GPIO.split();
         // Configure RX and TX pins accordingly
         let tx = gpio.pin24.into_push_pull_output().downgrade();
         let rx = gpio.pin25.into_floating_input().downgrade();
+        // Configure serial communication
         let (mut tx, _) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
-        let _ = write!(tx, "serial test\n\r");
+        write!(tx, "serial - start\r\n");
+        // Get row and column for display
+        let mut led = gpio.pin13.into_push_pull_output();
+        let _ = gpio.pin4.into_push_pull_output();
+        // Set row high (column starts low)
+        led.set_high();
+        write!(tx, "serial - LED on\r\n");
     }
-
-    panic!("test-panic");
+    panic!("End");
 }
