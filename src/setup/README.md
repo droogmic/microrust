@@ -1,7 +1,8 @@
 # Development environment setup
 
-Dealing with microcontrollers involves several tools as we'll be dealing with an architecture
-different than your laptop's and we'll have to run and debug programs on a "remote" device.
+Dealing with microcontrollers involves several tools,
+as we'll be dealing with an architecture different than your laptop's,
+and we'll have to run and debug programs on a "remote" device.
 
 ## Documentation
 
@@ -15,8 +16,8 @@ We'll be referring to the [micro:bit hardware page][microbit] and the links foun
 
 ## Tools
 
-We'll use all the tools listed below. Where a minimum version is not specified, any recent version
-should work but we have listed the version we have tested.
+We'll use all the tools listed below. Where a minimum version is not specified,
+any recent version should work but we have listed the version we have tested.
 
 - Cargo & `rustc`.
 
@@ -49,12 +50,6 @@ $ rustup default nightly
 ``` shell
 $ rustc -V
 rustc 1.28.0-nightly (056f589fb 2018-06-22)
-```
-
-### `itmdump`
-
-``` shell
-$ cargo install itm
 ```
 
 ### OS specific instructions

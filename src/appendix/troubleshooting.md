@@ -90,39 +90,6 @@ The USB connection was lost.
 - Disconnect and re-connect the USB cable.
 - Re-launch OpenOCD
 
-### Can't flash the device - "Ignoring packet error, continuing..."
-
-#### Symptoms
-
-While flashing the device, you get:
-
-```
-$ arm-none-eabi-gdb $file
-Start address 0x8000194, load size 31588
-Transfer rate: 22 KB/sec, 5264 bytes/write.
-Ignoring packet error, continuing...
-Ignoring packet error, continuing...
-```
-
-#### Cause
-
-Closed `itmdump` while a program that "printed" to the ITM was running. The
-current GDB session will appear to work normally, just without ITM output but
-the next GDB session will error with the message that was shown in the previous
-section.
-
-Or, `itmdump` was called **after** the `monitor tpiu` was issued thus making
-`itmdump` delete the file / named-pipe that OpenOCD was writing to.
-
-#### Fix
-
-- Close/kill GDB, OpenOCD and `itmdump`
-- Remove the file / named-pipe that `itmdump` was using (for example,
-  `itm.txt`).
-- Launch OpenOCD
-- Then, launch `itmdump`
-- Then, launch the GDB session that executes the `monitor tpiu` command.
-
 ## Cargo problems
 
 ### "can't find crate for `core`"

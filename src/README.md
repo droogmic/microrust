@@ -15,7 +15,7 @@ The following topics will be covered:
 - How to write, build, flash and debug an embedded program.
 
 - Functionality ("peripherals") commonly found in microcontrollers:
-  - Digital input and output, using buttons and LEDs
+  - Digital input and output, including buttons and LEDs
 
 <!-- - Functionality ("peripherals") commonly found in microcontrollers: Digital input and output, Pulse
   Width Modulation (PWM), Analog to Digital Converters (ADC), common communication protocols like
