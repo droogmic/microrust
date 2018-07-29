@@ -58,8 +58,9 @@ What's out of scope for this book:
 ## Reporting problems
 
 The source of this book is in [this repository].
-If you encounter any typo or problem with the code report it on the [issue tracker],
-or even submit a pull request.
+If you encounter any typo or problem please report it on the [issue tracker],
+or even submit a [pull request].
 
 [this repository]: https://github.com/droogmic/microrust
 [issue tracker]: https://github.com/droogmic/microrust/issues
+[pull request]: https://github.com/droogmic/microrust/pulls

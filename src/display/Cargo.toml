@@ -1,0 +1,9 @@
+[package]
+name = "display"
+version = "0.1.0"
+
+[dependencies]
+cortex-m-rt="~0.5"
+cortex-m-semihosting="~0.3"
+panic-semihosting = "~0.3"
+microbit="~0.5"

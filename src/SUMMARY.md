@@ -37,7 +37,7 @@
   - [Solution](display/03.00.SOLUTION.md)
     - [Layout](display/03.01.LAYOUT.md)
     - [Multiplexing](display/03.02.MULT.md)
-    - [Full](display/03.03.FULL.md)
+    - [Full Solution](display/03.03.FULL.md)
 
 - [WIP - Sensors and I²C](sensors/00.00.README.md)
 

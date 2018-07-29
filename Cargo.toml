@@ -2,6 +2,7 @@
 members = [
   "src/getting-started",
   "src/hello-world",
+  "src/display",
 ]
 
 [profile.dev]
