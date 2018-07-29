@@ -13,7 +13,12 @@ main() {
     fi
 
     if [ "$(mdbook -V)" != "mdbook v0.1.8" ]; then
-        cargo install --target x86_64-unknown-linux-gnu --version 0.1.8 mdbook
+        cargo install --target x86_64-unknown-linux-gnu --version 0.1.8 mdbook \
+        || true
+    fi
+
+    if [ "$(mdbook -V)" != "mdbook v0.1.8" ]; then
+        cargo install --force --target x86_64-unknown-linux-gnu --version 0.1.8 mdbook
     fi
 
     rustup target add thumbv6m-none-eabi
