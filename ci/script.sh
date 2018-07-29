@@ -7,15 +7,16 @@ main() {
     linkchecker book
 
     # first (fast) pass: check that examples compile
-    for chapter in $(echo src/*); do
-        if [ ! -f $chapter/Cargo.toml ]; then
-            continue
-        fi
-
-        pushd $chapter
-        cargo check
-        popd
-    done
+    if [ $TRAVIS_BRANCH = master ]; then
+        for chapter in $(echo src/*); do
+            if [ ! -f $chapter/Cargo.toml ]; then
+                continue
+            fi
+            pushd $chapter
+            cargo check
+            popd
+        done
+    fi
 
     # second (slow) pass: check that examples link
     # for chapter in $(echo src/*); do
@@ -34,6 +35,7 @@ main() {
     cargo build --release
 }
 
-if [ $TRAVIS_BRANCH != master ]; then
-    main
-fi
+# if [ $TRAVIS_BRANCH != master ]; then
+#     main
+# fi
+main
