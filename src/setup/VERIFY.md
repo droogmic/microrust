@@ -47,7 +47,7 @@ Next, run this command:
 
 ``` shell
 $ # *nix
-$ openocd-f interface/cmsis-dap.cfg -f target/nrf51.cfg
+$ openocd -f interface/cmsis-dap.cfg -f target/nrf51.cfg
 
 $ # Windows
 $ # NOTE cygwin users have reported problems with the -s flag. If you run into
