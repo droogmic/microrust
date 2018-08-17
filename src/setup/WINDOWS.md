@@ -1,7 +1,5 @@
 # Windows
 
-> UNTESTED: please submit an issue if you can confirm this works.
-
 ## `arm-none-eabi-*`
 
 ARM provides `.exe` installers for Windows. Grab one from [here][gcc], and follow the instructions.

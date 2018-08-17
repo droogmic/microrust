@@ -4,6 +4,8 @@
 
 > Learn embedded software in Rust on the micro:bit
 
+[**droogmic.github.io/microrust**](https://droogmic.github.io/microrust/)
+
 ## License
 
 The documentation is licensed under
@@ -23,6 +25,7 @@ at your option.
 
 ### Contribution
 
+Contribution is welcome by either submitting an issue or a pull request.
 Unless you explicitly state otherwise, any contribution intentionally submitted
 for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
 licensed as above, without any additional terms or conditions.

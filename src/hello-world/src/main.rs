@@ -46,6 +46,7 @@ fn main() -> ! {
         let _ = gpio.pin4.into_push_pull_output();
         // Set row high (column starts low)
         led.set_high();
+        // Write string with newline and carriage return
         write!(tx, "serial - LED on\r\n");
     }
     panic!("End");

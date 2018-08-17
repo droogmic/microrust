@@ -5,14 +5,34 @@
 [Rust]: https://www.rust-lang.org/
 [microbit]: https://microbit.org/
 
-This book is an introductory course on microcontroller-based embedded systems that uses Rust as the
-teaching language (rather than the usual C/C++), and the micro:bit as target system.
+This book is an introductory course on microcontroller-based embedded systems
+that uses Rust as the teaching language (rather than the usual C/C++),
+and the micro:bit as the target system.
+
+## Approach
+
+- Beginner friendly.
+  No previous experience with microcontrollers or embedded systems is required.
+
+- Hands on.
+  *You* will be doing most of the work here.
+  When possible, pages will end on a problem for you to solve, with the solution on the next page.
+  There are plenty of exercises to put the theory into practice.
+  
+- Standard.
+  We'll make plenty use of standard tooling and processes to ease development
+  so you can apply the skills learnt to any Rust embedded project.
+  Fixing compiler errors, debugging with GDB, and logging will be introduced early on.
+  Using LEDs as a debugging mechanism has no place here.
 
 ## Scope
 
-The following topics will be covered:
+The following topics are covered in the core chapters:
 
 - How to write, build, flash and debug an embedded program.
+- Basic operation of a GPIO, ubiquitous in microcontrollers.
+
+The rest of the chapters are independent, only requiring the core knowledge:
 
 - Functionality ("peripherals") commonly found in microcontrollers:
   - Digital input and output, including buttons and LEDs
@@ -25,20 +45,6 @@ The following topics will be covered:
 
 <!-- - Control systems concepts: sensors, calibration, digital filters, actuators, open loop control,
   closed loop control, etc. -->
-
-## Approach
-
-- Beginner friendly.
-  No previous experience with microcontrollers or embedded systems is required.
-
-- Hands on.
-  *You* will be doing most of the work here.
-  When possible, pages will end on a problem for you to solve, with the solution on the next page.
-  Plenty of exercises to put the theory into practice.
-  
-- Standard. We'll make plenty use of standard tooling and processes to ease development.
-  Fixing compiler errors, debugging with GDB, and logging will be introduced early on.
-  Using LEDs as a debugging mechanism has no place here.
 
 ## Non-goals
 

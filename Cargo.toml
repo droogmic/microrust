@@ -3,6 +3,8 @@ members = [
   "src/getting-started",
   "src/hello-world",
   "src/display",
+  "src/microbit",
+  "src/serial",
 ]
 
 [profile.dev]
