@@ -141,7 +141,8 @@ fn main() -> ! {
         let rx = gpio.pin25.into_floating_input().downgrade();
         // Configure serial communication
         let (mut tx, _) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
-        write!(tx, "serial - start\r\n");
+        writeln!(tx, "");
+        writeln!(tx, "Init");
         
         // Create delay provider
         let mut delay = Delay::new(p.TIMER0);
@@ -192,10 +193,10 @@ fn main() -> ! {
             [0, 1, 1, 1, 0],
         ];
 
-        let _ = write!(tx, "\n\rStarting!\n\r");
+        writeln!(tx, "Starting!");
 
         loop {
-            let _ = write!(tx, "I <3 Rust on the micro:bit!\n\r");
+            writeln!(tx, "I <3 Rust on the micro:bit!");
             leds.display(&mut delay, letter_I, 1000);
             leds.display(&mut delay, heart, 1000);
             leds.display(&mut delay, letter_U, 1000);

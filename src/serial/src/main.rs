@@ -13,7 +13,6 @@ use rt::ExceptionFrame;
 use sh::hio;
 
 use microbit::hal::prelude::*;
-use microbit::hal::delay::Delay;
 use microbit::hal::serial;
 use microbit::hal::serial::BAUD115200;
 
@@ -36,14 +35,12 @@ fn main() -> ! {
     if let Some(p) = microbit::Peripherals::take() {
         // Split GPIO
         let mut gpio = p.GPIO.split();
-        // Create delay provider
-        let mut delay = Delay::new(p.TIMER0);
         // Configure RX and TX pins accordingly
         let tx = gpio.pin24.into_push_pull_output().downgrade();
         let rx = gpio.pin25.into_floating_input().downgrade();
         // Configure serial communication
         let (mut tx, mut rx) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
-        write!(tx, "Start\r\n");
+        writeln!(tx, "Start");
         loop {
             let val = block!(rx.read()).unwrap();
             block!(tx.write(val));
