@@ -4,6 +4,7 @@
 extern crate panic_semihosting;
 extern crate cortex_m_rt as rt;
 extern crate cortex_m_semihosting as sh;
+extern crate heapless;
 
 #[macro_use(entry, exception, block)]
 extern crate microbit;
@@ -11,6 +12,7 @@ extern crate microbit;
 use core::fmt::Write;
 use rt::ExceptionFrame;
 use sh::hio;
+use heapless::{consts, Vec};
 
 use microbit::hal::prelude::*;
 use microbit::hal::delay::Delay;
@@ -43,10 +45,34 @@ fn main() -> ! {
         let rx = gpio.pin25.into_floating_input().downgrade();
         // Configure serial communication
         let (mut tx, mut rx) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
-        write!(tx, "Start\r\n");
+        // A buffer with 32 bytes of capacity
+        let mut buffer: Vec<u8, consts::U32> = Vec::new();
+        writeln!(tx, "Start");
         loop {
-            let val = block!(rx.read()).unwrap();
-            block!(tx.write(val));
+            loop {
+                // Read
+                let byte = block!(rx.read()).unwrap();
+                // Echo
+                block!(tx.write(byte));
+                // Carriage return
+                if byte == b'\r' {
+                    break;
+                }
+                // Push to buffer
+                if buffer.push(byte).is_err() {
+                    // Buffer full
+                    writeln!(tx, "\r\nWarning: buffer full, dumping buffer");
+                    break;
+                }
+            }
+            // Uncomment to not overwrite input string
+            //writeln!(tx, "");
+            // Respond
+            for b in buffer.iter().rev() {
+                block!(tx.write(*b));
+            }
+            writeln!(tx, "");
+            buffer.clear();
         }
     }
     panic!("End");

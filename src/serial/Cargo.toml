@@ -3,6 +3,7 @@ name = "serial"
 version = "0.1.0"
 
 [dependencies]
+heapless="~0.3"
 cortex-m-rt="~0.5"
 cortex-m-semihosting=""
 panic-semihosting = "~0.3"

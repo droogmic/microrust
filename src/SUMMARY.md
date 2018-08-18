@@ -33,7 +33,7 @@
   - [Delays](microbit/02.00.DELAY.md)
   - [Display](microbit/03.00.DISPLAY.md)
 
-- [WIP - Serial UART](serial/00.00.README.md)
+- [Serial UART - Blocking](serial/00.00.README.md)
   - [Echo Server](serial/01.00.ECHO.md)
     - [Theory](serial/01.01.THEORY.md)
     - [Solution](serial/01.02.ECHO.md)
@@ -42,8 +42,6 @@
       - [Solution](serial/02.01.SOLUTION.md)
     - [Countdown](serial/02.02.md)
       - [Solution](serial/02.02.SOLUTION.md)
-    - [Display echo](serial/02.03.md)
-      - [Solution](serial/02.03.SOLUTION.md)
     - [Quiz](serial/02.04.md)
       - [Solution](serial/02.04.SOLUTION.md)
 
@@ -57,6 +55,8 @@
     - [Layout](display/03.01.LAYOUT.md)
     - [Multiplexing](display/03.02.MULT.md)
     - [Full Solution](display/03.03.FULL.md)
+
+- [WIP - Non-blocking](nb/00.00.README.md)
 
 - [WIP - Sensors and I²C](sensors/00.00.README.md)
 

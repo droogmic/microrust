@@ -7,6 +7,6 @@ monitor arm semihosting enable
 # Load your program, breaks at entry
 load
 # (optional) Add breakpoint at function
-break serial::main
+#break serial::main
 # Continue with execution
-continue
+#continue
