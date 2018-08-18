@@ -28,10 +28,10 @@
 
 - [Choose Your Own Adventure](choice/00.00.README.md)
 
-- [WIP - micro:bit HAL basics](microbit/00.00.README.md)
-  - [WIP - Buttons](microbit/01.00.BUTTONS.md)
-  - [WIP - Delays](microbit/02.00.DELAY.md)
-  - [WIP - Display](microbit/03.00.DISPLAY.md)
+- [micro:bit HAL basics](microbit/00.00.README.md)
+  - [Buttons](microbit/01.00.BUTTONS.md)
+  - [Delays](microbit/02.00.DELAY.md)
+  - [Display](microbit/03.00.DISPLAY.md)
 
 - [WIP - Serial UART](serial/00.00.README.md)
   - [Echo Server](serial/01.00.ECHO.md)
