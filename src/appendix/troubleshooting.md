@@ -136,7 +136,7 @@ $ rustup target add thumbv7em-none-eabihf
 
 ## Build problems
 
-### `error: language item required, but not found: \`eh_personality\``
+### `error: language item required, but not found: 'eh_personality'`
 
 #### Cause
 
