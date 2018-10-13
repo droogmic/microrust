@@ -27,7 +27,7 @@ any recent version should work but we have listed the version we have tested.
 
 - `arm-none-eabi-gdb`.
 
-- `minicom` on Linux and macOS. Tested version: 2.7. 
+- `minicom` on Linux and macOS. Tested version: 2.7.
   Readers report that `picocom` also works but we'll use `minicom` in this book.
 
 - `PuTTY` on Windows.
@@ -44,18 +44,18 @@ Then, install or switch to the nightly channel.
 $ rustup default nightly
 ```
 
-**NOTE** Make sure you have a nightly newer than `nightly-2018-06-22`.
+**NOTE** Make sure you have a nightly newer than `nightly-2018-10-12`.
 `rustc -V` should return a date newer than the one shown below:
 
 ``` shell
 $ rustc -V
-rustc 1.28.0-nightly (056f589fb 2018-06-22)
+rustc 1.31.0-nightly (2c2e2c57d 2018-10-12)
 ```
 
 ### OS specific instructions
 
 Now follow the instructions specific to the OS you are using:
 
-- [Linux](setup/LINUX.html)
-- [Windows](setup/WINDOWS.html)
-- [macOS](setup/MACOS.html)
+- [Linux](../setup/LINUX.html)
+- [Windows](../setup/WINDOWS.html)
+- [macOS](../setup/MACOS.html)

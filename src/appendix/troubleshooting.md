@@ -26,7 +26,7 @@ in procedure 'ocd_bouncer'
   without root privilege.
 - Windows: You are probably missing the USB drivers.
 
-[these instructions]: setup/LINUX.html#udev%20rules
+[these instructions]: ../setup/LINUX.html#udev%20rules
 
 ### can't connect to OpenOCD - "Polling again in X00ms"
 
@@ -136,7 +136,7 @@ $ rustup target add thumbv7em-none-eabihf
 
 ## Build problems
 
-### `error: language item required, but not found: \`eh_personality\``
+### `error: language item required, but not found: 'eh_personality'`
 
 #### Cause
 
@@ -147,3 +147,14 @@ The `eh_personality` language item is used to implement stack unwinding in case 
 You need to use the correct target
 by using `--target thumbv6m-none-eabi`
 or modifying `.cargo/config`
+
+### `error: ld: cannot open linker script file memory.x: No such file or directory`
+
+#### Cause
+
+A memory.x file is needed, this specifies memory layout.
+
+#### Fix
+
+Either ask the board support crate maintainer to add memory.x to their crate,
+or add a memory.x file to your project.

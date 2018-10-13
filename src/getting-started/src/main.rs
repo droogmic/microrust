@@ -1,27 +1,13 @@
 #![no_std]
 #![no_main]
 
-extern crate panic_abort;
-extern crate cortex_m_rt as rt;
-
-#[macro_use(entry, exception)]
+extern crate cortex_m_rt;
 extern crate microbit;
+extern crate panic_abort;
 
-use rt::ExceptionFrame;
+use cortex_m_rt::entry;
 
-exception!(HardFault, hard_fault);
-
-fn hard_fault(ef: &ExceptionFrame) -> ! {
-    panic!("{:#?}", ef);
-}
-
-exception!(*, default_handler);
-
-fn default_handler(irqn: i16) {
-    panic!("Unhandled exception (IRQn = {})", irqn);
-}
-
-entry!(main);
+#[entry]
 fn main() -> ! {
     let _y;
     let x = 42;

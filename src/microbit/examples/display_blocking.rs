@@ -8,29 +8,15 @@ extern crate cortex_m_semihosting as sh;
 extern crate panic_abort;
 
 use core::fmt::Write;
-
-use rt::ExceptionFrame;
+use rt::entry;
 
 use microbit::hal::delay::Delay;
 use microbit::hal::prelude::*;
 use microbit::hal::serial;
 use microbit::hal::serial::BAUD115200;
-
 use microbit::led;
 
-exception!(HardFault, hard_fault);
-
-fn hard_fault(ef: &ExceptionFrame) -> ! {
-    panic!("{:#?}", ef);
-}
-
-exception!(*, default_handler);
-
-fn default_handler(irqn: i16) {
-    panic!("Unhandled exception (IRQn = {})", irqn);
-}
-
-entry!(main);
+#[entry]
 fn main() -> ! {
     if let Some(p) = microbit::Peripherals::take() {
         let mut gpio = p.GPIO.split();

@@ -4,31 +4,17 @@
 extern crate panic_semihosting;
 extern crate cortex_m_rt as rt;
 extern crate cortex_m_semihosting as sh;
-
-#[macro_use(entry, exception)]
 extern crate microbit;
 
 use core::fmt::Write;
-use rt::ExceptionFrame;
+use rt::entry;
 use sh::hio;
 
 use microbit::hal::prelude::*;
 use microbit::hal::serial;
 use microbit::hal::serial::BAUD115200;
 
-exception!(HardFault, hard_fault);
-
-fn hard_fault(ef: &ExceptionFrame) -> ! {
-    panic!("{:#?}", ef);
-}
-
-exception!(*, default_handler);
-
-fn default_handler(irqn: i16) {
-    panic!("Unhandled exception (IRQn = {})", irqn);
-}
-
-entry!(main);
+#[entry]
 fn main() -> ! {
     let mut stdout = hio::hstdout().unwrap();
     writeln!(stdout, "Start").unwrap();

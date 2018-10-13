@@ -30,7 +30,7 @@ crw-rw---- 1 root uucp 189, 160 Jul  8 14:06 /dev/bus/usb/002/033
 The group should be `uucp`.
 If it's not ... then check your [udev rules] and try re-loading them with:
 
-[udev rules]: setup/LINUX.html#udev%20rules
+[udev rules]: ../setup/LINUX.html#udev%20rules
 
 ``` shell
 $ sudo udevadm control --reload-rules
@@ -79,7 +79,7 @@ Info : nrf51.cpu: hardware has 4 breakpoints, 2 watchpoints
 
 (If you don't ... then check the [general troubleshooting] instructions.)
 
-[general troubleshooting]: appendix/troubleshooting.html
+[general troubleshooting]: ../appendix/troubleshooting.html
 
 `openocd` will block the terminal. That's fine.
 

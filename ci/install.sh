@@ -1,24 +1,26 @@
 set -euxo pipefail
 
+MDBOOK_VER=0.2.1
+
 main() {
 
-    if [ "$(mdbook -V)" != "mdbook v0.1.8" ]; then
+    if [ "$(mdbook -V)" != "mdbook v$MDBOOK_VER" ]; then
         curl -LSfs https://japaric.github.io/trust/install.sh | \
             sh -s -- \
             --force \
             --git rust-lang-nursery/mdBook \
-            --tag v0.1.8 \
+            --tag v$MDBOOK_VER \
             --target x86_64-unknown-linux-musl \
         || true
     fi
 
-    if [ "$(mdbook -V)" != "mdbook v0.1.8" ]; then
-        cargo install --target x86_64-unknown-linux-gnu --version 0.1.8 mdbook \
+    if [ "$(mdbook -V)" != "mdbook v$MDBOOK_VER" ]; then
+        cargo install --target x86_64-unknown-linux-gnu --version $MDBOOK_VER mdbook \
         || true
     fi
 
-    if [ "$(mdbook -V)" != "mdbook v0.1.8" ]; then
-        cargo install --force --target x86_64-unknown-linux-gnu --version 0.1.8 mdbook
+    if [ "$(mdbook -V)" != "mdbook v$MDBOOK_VER" ]; then
+        cargo install --force --target x86_64-unknown-linux-gnu --version $MDBOOK_VER mdbook
     fi
 
     rustup target add thumbv6m-none-eabi
