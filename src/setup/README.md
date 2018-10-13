@@ -56,6 +56,6 @@ rustc 1.28.0-nightly (056f589fb 2018-06-22)
 
 Now follow the instructions specific to the OS you are using:
 
-- [Linux](setup/LINUX.html)
-- [Windows](setup/WINDOWS.html)
-- [macOS](setup/MACOS.html)
+- [Linux](../setup/LINUX.html)
+- [Windows](../setup/WINDOWS.html)
+- [macOS](../setup/MACOS.html)

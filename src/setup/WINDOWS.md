@@ -40,4 +40,4 @@ Download the latest `putty.exe` from [this site] and place it somewhere in your 
 
 That's all! Go to the [next section].
 
-[next section]: setup/VERIFY.html
+[next section]: ../setup/VERIFY.html

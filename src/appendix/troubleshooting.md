@@ -26,7 +26,7 @@ in procedure 'ocd_bouncer'
   without root privilege.
 - Windows: You are probably missing the USB drivers.
 
-[these instructions]: setup/LINUX.html#udev%20rules
+[these instructions]: ../setup/LINUX.html#udev%20rules
 
 ### can't connect to OpenOCD - "Polling again in X00ms"
 

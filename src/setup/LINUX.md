@@ -85,8 +85,6 @@ $ #  ^^^^
 
 If `uucp` appears in the output. You are all set! Go to the [next section]. Otherwise, keep reading:
 
-[next section]: setup/VERIFY.html
-
 - Add yourself to the `uucp` group.
 
 ``` shell
@@ -117,3 +115,5 @@ shells *won't* have access to `uucp` devices unless you manually re-log on them 
 command.
 
 Now, go to the [next section].
+
+[next section]: ../setup/VERIFY.html
