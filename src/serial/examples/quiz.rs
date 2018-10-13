@@ -4,12 +4,10 @@
 extern crate panic_semihosting;
 extern crate cortex_m_rt as rt;
 extern crate cortex_m_semihosting as sh;
-
-#[macro_use(entry, exception, block)]
 extern crate microbit;
 
 use core::fmt::Write;
-use rt::ExceptionFrame;
+use rt::entry;
 use sh::hio;
 
 use microbit::hal::delay::Delay;
@@ -17,18 +15,6 @@ use microbit::hal::prelude::*;
 use microbit::hal::serial;
 use microbit::hal::serial::BAUD115200;
 use microbit::led;
-
-exception!(HardFault, hard_fault);
-
-fn hard_fault(ef: &ExceptionFrame) -> ! {
-    panic!("{:#?}", ef);
-}
-
-exception!(*, default_handler);
-
-fn default_handler(irqn: i16) {
-    panic!("Unhandled exception (IRQn = {})", irqn);
-}
 
 const WINNING_SCORE: u8 = 6;
 const QUESTION_COUNT: u8 = 2*WINNING_SCORE - 1;
@@ -49,7 +35,7 @@ const LETTER_B: [[u8; 5]; 5] = [
     [0, 1, 1, 0, 0],
 ];
 
-entry!(main);
+#[entry]
 fn main() -> ! {
     let mut stdout = hio::hstdout().unwrap();
     writeln!(stdout, "Start").unwrap();

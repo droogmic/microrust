@@ -56,9 +56,11 @@
     - [Multiplexing](display/03.02.MULT.md)
     - [Full Solution](display/03.03.FULL.md)
 
+- [WIP - Sensors and I²C](sensors/00.00.README.md)
+
 - [WIP - Non-blocking](nb/00.00.README.md)
 
-- [WIP - Sensors and I²C](sensors/00.00.README.md)
+- [WIP - Interrupts](nb/00.00.README.md)
 
 - [WIP - Real time](rtfm/00.00.README.md)
 
