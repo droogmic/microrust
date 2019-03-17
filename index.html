@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - MicroRust</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li class="affix"><a href="index.html">Introduction</a></li><li class="affix"><a href="background/index.html">Background</a></li><li class="affix"><a href="requirements/index.html">Requirements</a></li><li><a href="hardware/index.html"><strong aria-hidden="true">1.</strong> Meet your hardware</a></li><li><a href="setup/index.html"><strong aria-hidden="true">2.</strong> Development environment setup</a></li><li><ol class="section"><li><a href="setup/LINUX.html"><strong aria-hidden="true">2.1.</strong> Linux</a></li><li><a href="setup/WINDOWS.html"><strong aria-hidden="true">2.2.</strong> Windows</a></li><li><a href="setup/MACOS.html"><strong aria-hidden="true">2.3.</strong> macOS</a></li><li><a href="setup/VERIFY.html"><strong aria-hidden="true">2.4.</strong> Verify the installation</a></li></ol></li><li><a href="getting-started/00.00.README.html"><strong aria-hidden="true">3.</strong> Getting started</a></li><li><ol class="section"><li><a href="getting-started/01.00.BUILD.html"><strong aria-hidden="true">3.1.</strong> Building</a></li><li><a href="getting-started/02.00.FLASH.html"><strong aria-hidden="true">3.2.</strong> Flashing</a></li><li><a href="getting-started/03.00.DEBUG.html"><strong aria-hidden="true">3.3.</strong> Debugging</a></li><li><a href="getting-started/04.00.SOLUTION.html"><strong aria-hidden="true">3.4.</strong> Solution</a></li></ol></li><li><a href="hello-world/00.00.README.html"><strong aria-hidden="true">4.</strong> Hello world</a></li><li><ol class="section"><li><a href="hello-world/01.00.SEMIHOSTING.html"><strong aria-hidden="true">4.1.</strong> Semihosting</a></li><li><a href="hello-world/02.00.UART.html"><strong aria-hidden="true">4.2.</strong> Serial communication</a></li><li><ol class="section"><li><a href="hello-world/02.01.NIX.html"><strong aria-hidden="true">4.2.1.</strong> *nix</a></li><li><a href="hello-world/02.02.WINDOWS.html"><strong aria-hidden="true">4.2.2.</strong> Windows</a></li></ol></li><li><a href="hello-world/03.00.LED.html"><strong aria-hidden="true">4.3.</strong> GPIO and LEDs</a></li><li><ol class="section"><li><a href="hello-world/03.01.SOLUTION.html"><strong aria-hidden="true">4.3.1.</strong> Solution</a></li></ol></li></ol></li><li><a href="choice/00.00.README.html"><strong aria-hidden="true">5.</strong> Choose Your Own Adventure</a></li><li><a href="microbit/00.00.README.html"><strong aria-hidden="true">6.</strong> micro:bit HAL basics</a></li><li><ol class="section"><li><a href="microbit/01.00.BUTTONS.html"><strong aria-hidden="true">6.1.</strong> Buttons</a></li><li><a href="microbit/02.00.DELAY.html"><strong aria-hidden="true">6.2.</strong> Delays</a></li><li><a href="microbit/03.00.DISPLAY.html"><strong aria-hidden="true">6.3.</strong> Display</a></li></ol></li><li><a href="serial/00.00.README.html"><strong aria-hidden="true">7.</strong> Serial UART - Blocking</a></li><li><ol class="section"><li><a href="serial/01.00.ECHO.html"><strong aria-hidden="true">7.1.</strong> Echo Server</a></li><li><ol class="section"><li><a href="serial/01.01.THEORY.html"><strong aria-hidden="true">7.1.1.</strong> Theory</a></li><li><a href="serial/01.02.ECHO.html"><strong aria-hidden="true">7.1.2.</strong> Solution</a></li></ol></li><li><a href="serial/02.00.html"><strong aria-hidden="true">7.2.</strong> Exercises</a></li><li><ol class="section"><li><a href="serial/02.01.html"><strong aria-hidden="true">7.2.1.</strong> Reverse echo</a></li><li><ol class="section"><li><a href="serial/02.01.SOLUTION.html"><strong aria-hidden="true">7.2.1.1.</strong> Solution</a></li></ol></li><li><a href="serial/02.02.html"><strong aria-hidden="true">7.2.2.</strong> Countdown</a></li><li><ol class="section"><li><a href="serial/02.02.SOLUTION.html"><strong aria-hidden="true">7.2.2.1.</strong> Solution</a></li></ol></li><li><a href="serial/02.04.html"><strong aria-hidden="true">7.2.3.</strong> Quiz</a></li><li><ol class="section"><li><a href="serial/02.04.SOLUTION.html"><strong aria-hidden="true">7.2.3.1.</strong> Solution</a></li></ol></li></ol></li></ol></li><li><a href="display/00.00.README.html"><strong aria-hidden="true">8.</strong> LED display</a></li><li><ol class="section"><li><a href="display/01.00.THEORY.html"><strong aria-hidden="true">8.1.</strong> Theory</a></li><li><a href="display/02.00.PROBLEM.html"><strong aria-hidden="true">8.2.</strong> Problem</a></li><li><ol class="section"><li><a href="display/02.01.LAYOUT.html"><strong aria-hidden="true">8.2.1.</strong> Layout</a></li><li><a href="display/02.02.DELAY.html"><strong aria-hidden="true">8.2.2.</strong> Delays</a></li><li><a href="display/02.03.MULT.html"><strong aria-hidden="true">8.2.3.</strong> Multiplexing</a></li></ol></li><li><a href="display/03.00.SOLUTION.html"><strong aria-hidden="true">8.3.</strong> Solution</a></li><li><ol class="section"><li><a href="display/03.01.LAYOUT.html"><strong aria-hidden="true">8.3.1.</strong> Layout</a></li><li><a href="display/03.02.MULT.html"><strong aria-hidden="true">8.3.2.</strong> Multiplexing</a></li><li><a href="display/03.03.FULL.html"><strong aria-hidden="true">8.3.3.</strong> Full Solution</a></li></ol></li></ol></li><li><a href="sensors/00.00.README.html"><strong aria-hidden="true">9.</strong> WIP - Sensors and I²C</a></li><li><a href="nb/00.00.README.html"><strong aria-hidden="true">10.</strong> WIP - Non-blocking</a></li><li><a href="nb/00.00.README.html"><strong aria-hidden="true">11.</strong> WIP - Interrupts</a></li><li><a href="rtfm/00.00.README.html"><strong aria-hidden="true">12.</strong> WIP - Real time</a></li><li><a href="hal/00.00.README.html"><strong aria-hidden="true">13.</strong> WIP - Creating a HAL</a></li><li class="affix"><a href="appendix/explore.html">Explore</a></li><li class="affix"><a href="appendix/gdb.html">GDB cheatsheet</a></li><li class="affix"><a href="appendix/troubleshooting.html">General troubleshooting</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">MicroRust</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            <a href="https://github.com/droogmic/microrust" class="icon-button" title="Go to GitHub repo" aria-label="Link to GitHub repo">
+                                <i id="github-button" class="fa fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#microrust" id="microrust"><h1>MicroRust</h1></a>
+<blockquote>
+<p>Discover the world of microcontrollers through <a href="https://www.rust-lang.org/">Rust</a> on the <a href="https://microbit.org/">BBC micro:bit</a>!</p>
+</blockquote>
+<p>This book is an introductory course on microcontroller-based embedded systems
+that uses Rust as the teaching language (rather than the usual C/C++),
+and the micro:bit as the target system.</p>
+<a class="header" href="#approach" id="approach"><h2>Approach</h2></a>
+<ul>
+<li>
+<p>Beginner friendly.
+No previous experience with microcontrollers or embedded systems is required.</p>
+</li>
+<li>
+<p>Hands on.
+<em>You</em> will be doing most of the work here.
+When possible, pages will end on a problem for you to solve, with the solution on the next page.
+There are plenty of exercises to put the theory into practice.</p>
+</li>
+<li>
+<p>Standard.
+We'll make plenty use of standard tooling and processes to ease development
+so you can apply the skills learnt to any Rust embedded project.
+Fixing compiler errors, debugging with GDB, and logging will be introduced early on.
+Using LEDs as a debugging mechanism has no place here.</p>
+</li>
+</ul>
+<a class="header" href="#scope" id="scope"><h2>Scope</h2></a>
+<p>The following topics are covered in the core chapters:</p>
+<ul>
+<li>How to write, build, flash and debug an embedded program.</li>
+<li>Basic operation of a GPIO, ubiquitous in microcontrollers.</li>
+</ul>
+<p>The rest of the chapters are independent, only requiring the core knowledge:</p>
+<ul>
+<li>Functionality (&quot;peripherals&quot;) commonly found in microcontrollers:
+<ul>
+<li>Digital input and output, including buttons and LEDs</li>
+</ul>
+</li>
+</ul>
+<!-- - Functionality ("peripherals") commonly found in microcontrollers: Digital input and output, Pulse
+  Width Modulation (PWM), Analog to Digital Converters (ADC), common communication protocols like
+  Serial, I2C and SPI, etc. -->
+<!-- - Multitasking concepts: cooperative vs preemptive multitasking, interrupts, schedulers, etc. -->
+<!-- - Control systems concepts: sensors, calibration, digital filters, actuators, open loop control,
+  closed loop control, etc. -->
+<a class="header" href="#non-goals" id="non-goals"><h2>Non-goals</h2></a>
+<p>What's out of scope for this book:</p>
+<ul>
+<li>
+<p>Teaching Rust.
+There's plenty of material on that topic already.
+We'll focus on microcontrollers and embedded systems.</p>
+</li>
+<li>
+<p>Teaching electric circuit theory or electronics.
+We'll cover the minimum required to understand how some devices work along the way.</p>
+</li>
+<li>
+<p>Covering Rustic, low level details.
+We won't be talking about linker scripts, the boot process,
+or how to glue those two into a minimally working Rust program.</p>
+</li>
+</ul>
+<a class="header" href="#reporting-problems" id="reporting-problems"><h2>Reporting problems</h2></a>
+<p>The source of this book is in <a href="https://github.com/droogmic/microrust">this repository</a>.
+If you encounter any typo or problem please report it on the <a href="https://github.com/droogmic/microrust/issues">issue tracker</a>,
+or even submit a <a href="https://github.com/droogmic/microrust/pulls">pull request</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

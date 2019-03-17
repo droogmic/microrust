@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Explore - MicroRust</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li class="affix"><a href="../index.html">Introduction</a></li><li class="affix"><a href="../background/index.html">Background</a></li><li class="affix"><a href="../requirements/index.html">Requirements</a></li><li><a href="../hardware/index.html"><strong aria-hidden="true">1.</strong> Meet your hardware</a></li><li><a href="../setup/index.html"><strong aria-hidden="true">2.</strong> Development environment setup</a></li><li><ol class="section"><li><a href="../setup/LINUX.html"><strong aria-hidden="true">2.1.</strong> Linux</a></li><li><a href="../setup/WINDOWS.html"><strong aria-hidden="true">2.2.</strong> Windows</a></li><li><a href="../setup/MACOS.html"><strong aria-hidden="true">2.3.</strong> macOS</a></li><li><a href="../setup/VERIFY.html"><strong aria-hidden="true">2.4.</strong> Verify the installation</a></li></ol></li><li><a href="../getting-started/00.00.README.html"><strong aria-hidden="true">3.</strong> Getting started</a></li><li><ol class="section"><li><a href="../getting-started/01.00.BUILD.html"><strong aria-hidden="true">3.1.</strong> Building</a></li><li><a href="../getting-started/02.00.FLASH.html"><strong aria-hidden="true">3.2.</strong> Flashing</a></li><li><a href="../getting-started/03.00.DEBUG.html"><strong aria-hidden="true">3.3.</strong> Debugging</a></li><li><a href="../getting-started/04.00.SOLUTION.html"><strong aria-hidden="true">3.4.</strong> Solution</a></li></ol></li><li><a href="../hello-world/00.00.README.html"><strong aria-hidden="true">4.</strong> Hello world</a></li><li><ol class="section"><li><a href="../hello-world/01.00.SEMIHOSTING.html"><strong aria-hidden="true">4.1.</strong> Semihosting</a></li><li><a href="../hello-world/02.00.UART.html"><strong aria-hidden="true">4.2.</strong> Serial communication</a></li><li><ol class="section"><li><a href="../hello-world/02.01.NIX.html"><strong aria-hidden="true">4.2.1.</strong> *nix</a></li><li><a href="../hello-world/02.02.WINDOWS.html"><strong aria-hidden="true">4.2.2.</strong> Windows</a></li></ol></li><li><a href="../hello-world/03.00.LED.html"><strong aria-hidden="true">4.3.</strong> GPIO and LEDs</a></li><li><ol class="section"><li><a href="../hello-world/03.01.SOLUTION.html"><strong aria-hidden="true">4.3.1.</strong> Solution</a></li></ol></li></ol></li><li><a href="../choice/00.00.README.html"><strong aria-hidden="true">5.</strong> Choose Your Own Adventure</a></li><li><a href="../microbit/00.00.README.html"><strong aria-hidden="true">6.</strong> micro:bit HAL basics</a></li><li><ol class="section"><li><a href="../microbit/01.00.BUTTONS.html"><strong aria-hidden="true">6.1.</strong> Buttons</a></li><li><a href="../microbit/02.00.DELAY.html"><strong aria-hidden="true">6.2.</strong> Delays</a></li><li><a href="../microbit/03.00.DISPLAY.html"><strong aria-hidden="true">6.3.</strong> Display</a></li></ol></li><li><a href="../serial/00.00.README.html"><strong aria-hidden="true">7.</strong> Serial UART - Blocking</a></li><li><ol class="section"><li><a href="../serial/01.00.ECHO.html"><strong aria-hidden="true">7.1.</strong> Echo Server</a></li><li><ol class="section"><li><a href="../serial/01.01.THEORY.html"><strong aria-hidden="true">7.1.1.</strong> Theory</a></li><li><a href="../serial/01.02.ECHO.html"><strong aria-hidden="true">7.1.2.</strong> Solution</a></li></ol></li><li><a href="../serial/02.00.html"><strong aria-hidden="true">7.2.</strong> Exercises</a></li><li><ol class="section"><li><a href="../serial/02.01.html"><strong aria-hidden="true">7.2.1.</strong> Reverse echo</a></li><li><ol class="section"><li><a href="../serial/02.01.SOLUTION.html"><strong aria-hidden="true">7.2.1.1.</strong> Solution</a></li></ol></li><li><a href="../serial/02.02.html"><strong aria-hidden="true">7.2.2.</strong> Countdown</a></li><li><ol class="section"><li><a href="../serial/02.02.SOLUTION.html"><strong aria-hidden="true">7.2.2.1.</strong> Solution</a></li></ol></li><li><a href="../serial/02.04.html"><strong aria-hidden="true">7.2.3.</strong> Quiz</a></li><li><ol class="section"><li><a href="../serial/02.04.SOLUTION.html"><strong aria-hidden="true">7.2.3.1.</strong> Solution</a></li></ol></li></ol></li></ol></li><li><a href="../display/00.00.README.html"><strong aria-hidden="true">8.</strong> LED display</a></li><li><ol class="section"><li><a href="../display/01.00.THEORY.html"><strong aria-hidden="true">8.1.</strong> Theory</a></li><li><a href="../display/02.00.PROBLEM.html"><strong aria-hidden="true">8.2.</strong> Problem</a></li><li><ol class="section"><li><a href="../display/02.01.LAYOUT.html"><strong aria-hidden="true">8.2.1.</strong> Layout</a></li><li><a href="../display/02.02.DELAY.html"><strong aria-hidden="true">8.2.2.</strong> Delays</a></li><li><a href="../display/02.03.MULT.html"><strong aria-hidden="true">8.2.3.</strong> Multiplexing</a></li></ol></li><li><a href="../display/03.00.SOLUTION.html"><strong aria-hidden="true">8.3.</strong> Solution</a></li><li><ol class="section"><li><a href="../display/03.01.LAYOUT.html"><strong aria-hidden="true">8.3.1.</strong> Layout</a></li><li><a href="../display/03.02.MULT.html"><strong aria-hidden="true">8.3.2.</strong> Multiplexing</a></li><li><a href="../display/03.03.FULL.html"><strong aria-hidden="true">8.3.3.</strong> Full Solution</a></li></ol></li></ol></li><li><a href="../sensors/00.00.README.html"><strong aria-hidden="true">9.</strong> WIP - Sensors and I²C</a></li><li><a href="../nb/00.00.README.html"><strong aria-hidden="true">10.</strong> WIP - Non-blocking</a></li><li><a href="../nb/00.00.README.html"><strong aria-hidden="true">11.</strong> WIP - Interrupts</a></li><li><a href="../rtfm/00.00.README.html"><strong aria-hidden="true">12.</strong> WIP - Real time</a></li><li><a href="../hal/00.00.README.html"><strong aria-hidden="true">13.</strong> WIP - Creating a HAL</a></li><li class="affix"><a href="../appendix/explore.html" class="active">Explore</a></li><li class="affix"><a href="../appendix/gdb.html">GDB cheatsheet</a></li><li class="affix"><a href="../appendix/troubleshooting.html">General troubleshooting</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">MicroRust</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            <a href="https://github.com/droogmic/microrust" class="icon-button" title="Go to GitHub repo" aria-label="Link to GitHub repo">
+                                <i id="github-button" class="fa fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#whats-left-for-you-to-explore" id="whats-left-for-you-to-explore"><h1>What's left for you to explore</h1></a>
+<p>We have barely scratched the surface! There's lots of stuff left for you to explore:</p>
+<a class="header" href="#multitasking" id="multitasking"><h2>Multitasking</h2></a>
+<p>All our programs executed a single task. How could we achieve multitasking in a system with no OS,
+and thus no threads. There are two main approaches to multitasking: preemptive multitasking and
+cooperative multitasking.</p>
+<p>In preemptive multitasking a task that's currently being executed can, at any point in time, be
+<em>preempted</em> (interrupted) by another task. On preemption, the first task will be suspended and the
+processor will instead execute the second task. At some point the first task will be resumed.
+Microcontrollers provide hardware support for preemption in the form of <em>interrupts</em>.</p>
+<p>In cooperative multitasking a task that's being executed will run until it reaches a <em>suspension
+point</em>. When the processor reaches that suspension point it will stop executing the current task and
+instead go and execute a different task. At some point the first task will be resumed. The main
+difference between these two approaches to multitasking is that in cooperative multitasking <em>yields</em>
+execution control at <em>known</em> suspension points instead of being forcefully preempted at any point of
+its execution.</p>
+<a class="header" href="#direct-memory-access-dma" id="direct-memory-access-dma"><h2>Direct Memory Access (DMA).</h2></a>
+<p>This peripheral is a kind of <em>asynchronous</em> <code>memcpy</code>. So far our programs have
+been pumping data, byte by byte, into peripherals like UART and I2C. This DMA
+peripheral can be used to perform bulk transfers of data. Either from RAM to
+RAM, from a peripheral, like a UART, to RAM or from RAM to a peripheral. You can
+schedule a DMA transfer, like read 256 bytes from USART1 into this buffer, leave
+it running in the background and then poll some register to see if it has
+completed so you can do other stuff while the transfer is ongoing.</p>
+<a class="header" href="#sleeping" id="sleeping"><h2>Sleeping</h2></a>
+<p>All our programs have been continuously polling peripherals to see if there's
+anything that needs to be done. However, some times there's nothing to be done!
+At those times, the microcontroller should &quot;sleep&quot;.</p>
+<p>When the processor sleeps, it stops executing instructions and this saves power.
+It's almost always a good idea to save power so your microcontroller should be
+sleeping as much as possible. But, how does it know when it has to wake up to
+perform some action? &quot;Interrupts&quot; are one of the events that wake up the
+microcontroller but there are others and the <code>wfi</code> and <code>wfe</code> are the
+instructions that make the processor &quot;sleep&quot;.</p>
+<a class="header" href="#pulse-width-modulation-pwm" id="pulse-width-modulation-pwm"><h2>Pulse Width Modulation (PWM)</h2></a>
+<p>In a nutshell, PWM is turning on something and then turning it off periodically
+while keeping some proportion (&quot;duty cycle&quot;) between the &quot;on time&quot; and the &quot;off
+time&quot;. When used on a LED with a sufficiently high frequency, this can be used
+to dim the LED. A low duty cycle, say 10% on time and 90% off time, will make
+the LED very dim wheres a high duty cycle, say 90% on time and 10% off time,
+will make the LED much brighter (almost as if it were fully powered).</p>
+<p>In general, PWM can be used to control how much <em>power</em> is given to some
+electric device. With proper (power) electronics between a microcontroller and
+an electrical motor, PWM can be used to control how much power is given to the
+motor thus it can be used to control its torque and speed. Then you can add an
+angular position sensor and you got yourself a closed loop controller that can
+control the position of the motor at different loads.</p>
+<a class="header" href="#digital-input" id="digital-input"><h2>Digital input</h2></a>
+<p>We have used the microcontroller pins as digital outputs, to drive LEDs. But
+these pins can also be configured as digital inputs. As digital inputs, these
+pins can read the binary state of switches (on/off) or buttons (pressed/not
+pressed).</p>
+<p>(<em>spoilers</em> reading the binary state of switches / buttons is not as
+straightforward as it sounds ;-)</p>
+<a class="header" href="#sensor-fusion" id="sensor-fusion"><h2>Sensor fusion</h2></a>
+<p>The STM32F3DISCOVERY contains three motion sensors: an accelerometer, a
+gyroscope and a magnetometer. On their own these measure: (proper) acceleration,
+angular speed and (the Earth's) magnetic field. But these magnitudes can be
+&quot;fused&quot; into something more useful: a &quot;robust&quot; measurement of the orientation of
+the board. Where robust means with less measurement error than a single sensor
+would be capable of.</p>
+<p>This idea of deriving more reliable data from different sources is known as
+sensor fusion.</p>
+<a class="header" href="#analog-to-digital-converters-adc" id="analog-to-digital-converters-adc"><h2>Analog-to-Digital Converters (ADC)</h2></a>
+<p>There are a lots of digital sensors out there. You can use a protocol like I2C
+and SPI to read them. But analog sensors also exist! These sensors just output a
+voltage level that's proportional to the magnitude they are sensing.</p>
+<p>The ADC peripheral can be use to convert that &quot;analog&quot; voltage level, say <code>1.25</code>
+Volts,into a &quot;digital&quot; number, say in the <code>[0, 65535]</code> range, that the processor
+can use in its calculations.</p>
+<a class="header" href="#digital-to-analog-converters-dac" id="digital-to-analog-converters-dac"><h2>Digital-to-Analog Converters (DAC)</h2></a>
+<p>As you might expect a DAC is exactly the opposite of ADC. You can write some
+digital value into a register to produce a voltage in the <code>[0, 3.3V]</code> range
+(assuming a <code>3.3V</code> power supply) on some &quot;analog&quot; pin. When this analog pin is
+connected to some appropriate electronics and the register is written to at some
+constant, fast rate (frequency) with the right values you can produce sounds or
+even music!</p>
+<a class="header" href="#real-time-clock-rtc" id="real-time-clock-rtc"><h2>Real Time Clock (RTC)</h2></a>
+<p>This peripheral can be used to track time in &quot;human format&quot;. Seconds, minutes,
+hours, days, months and years. This peripheral handles the translation from
+&quot;ticks&quot; to these human friendly units of time. It even handles leap years and
+Daylight Save Time for you!</p>
+<a class="header" href="#other-communication-protocols" id="other-communication-protocols"><h2>Other communication protocols</h2></a>
+<p>SPI, I2S, SMBUS, CAN, IrDA, Ethernet, USB, Bluetooth, etc.</p>
+<p>Different applications use different communication protocols. User facing
+applications usually have an USB connector because USB is an ubiquitous
+protocol in PCs and smartphones. Whereas inside cars you'll find plenty of CAN
+&quot;buses&quot;. Some digital sensors use SPI, others use I2C and others, SMBUS.</p>
+<hr />
+<p>So where to next? There are several options:</p>
+<ul>
+<li>You could check out the examples in the <a href="https://github.com/therealprof/microbit"><code>microbit</code></a> board support crate repository. All those examples work for
+the micro:bit board you have.</li>
+</ul>
+<ul>
+<li>You could try out <a href="https://mobile.twitter.com/japaricious/status/962770003325005824">this motion sensors demo</a>. Details about the implementation and
+source code are available in <a href="http://blog.japaric.io/wd-1-2-l3gd20-lsm303dlhc-madgwick/">this blog post</a>.</li>
+</ul>
+<ul>
+<li>You could check out <a href="https://docs.rs/cortex-m-rtfm">Real Time for The Masses</a>. A very efficient preemptive multitasking framework
+that supports task prioritization and dead lock free execution.</li>
+</ul>
+<ul>
+<li>You could try running Rust on a different development board. The easiest way to get started is to
+use the <a href="https://docs.rs/cortex-m-quickstart/0.2.4/cortex_m_quickstart"><code>cortex-m-quickstart</code></a> Cargo project template.</li>
+</ul>
+<ul>
+<li>You could check out <a href="http://blog.japaric.io/brave-new-io/">this blog post</a> which describes how Rust type system can
+prevent bugs in I/O configuration.</li>
+</ul>
+<ul>
+<li>You could check out my <a href="http://blog.japaric.io">blog</a> for miscellaneous topics about embedded development with Rust.</li>
+</ul>
+<ul>
+<li>You could check out the <a href="https://github.com/japaric/embedded-hal"><code>embedded-hal</code></a> project which aims to build abstractions (traits) for all
+the embedded I/O functionality commonly found on microcontrollers.</li>
+</ul>
+<ul>
+<li>You could join the <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/39">Weekly driver initiative</a> and help us write generic drivers on top of the
+<code>embedded-hal</code> traits and that work for all sorts of platforms (ARM Cortex-M, AVR, MSP430, RISCV,
+etc.)</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../hal/00.00.README.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../appendix/gdb.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../hal/00.00.README.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../appendix/gdb.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,2708 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>MicroRust</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li class="affix"><a href="index.html">Introduction</a></li><li class="affix"><a href="background/index.html">Background</a></li><li class="affix"><a href="requirements/index.html">Requirements</a></li><li><a href="hardware/index.html"><strong aria-hidden="true">1.</strong> Meet your hardware</a></li><li><a href="setup/index.html"><strong aria-hidden="true">2.</strong> Development environment setup</a></li><li><ol class="section"><li><a href="setup/LINUX.html"><strong aria-hidden="true">2.1.</strong> Linux</a></li><li><a href="setup/WINDOWS.html"><strong aria-hidden="true">2.2.</strong> Windows</a></li><li><a href="setup/MACOS.html"><strong aria-hidden="true">2.3.</strong> macOS</a></li><li><a href="setup/VERIFY.html"><strong aria-hidden="true">2.4.</strong> Verify the installation</a></li></ol></li><li><a href="getting-started/00.00.README.html"><strong aria-hidden="true">3.</strong> Getting started</a></li><li><ol class="section"><li><a href="getting-started/01.00.BUILD.html"><strong aria-hidden="true">3.1.</strong> Building</a></li><li><a href="getting-started/02.00.FLASH.html"><strong aria-hidden="true">3.2.</strong> Flashing</a></li><li><a href="getting-started/03.00.DEBUG.html"><strong aria-hidden="true">3.3.</strong> Debugging</a></li><li><a href="getting-started/04.00.SOLUTION.html"><strong aria-hidden="true">3.4.</strong> Solution</a></li></ol></li><li><a href="hello-world/00.00.README.html"><strong aria-hidden="true">4.</strong> Hello world</a></li><li><ol class="section"><li><a href="hello-world/01.00.SEMIHOSTING.html"><strong aria-hidden="true">4.1.</strong> Semihosting</a></li><li><a href="hello-world/02.00.UART.html"><strong aria-hidden="true">4.2.</strong> Serial communication</a></li><li><ol class="section"><li><a href="hello-world/02.01.NIX.html"><strong aria-hidden="true">4.2.1.</strong> *nix</a></li><li><a href="hello-world/02.02.WINDOWS.html"><strong aria-hidden="true">4.2.2.</strong> Windows</a></li></ol></li><li><a href="hello-world/03.00.LED.html"><strong aria-hidden="true">4.3.</strong> GPIO and LEDs</a></li><li><ol class="section"><li><a href="hello-world/03.01.SOLUTION.html"><strong aria-hidden="true">4.3.1.</strong> Solution</a></li></ol></li></ol></li><li><a href="choice/00.00.README.html"><strong aria-hidden="true">5.</strong> Choose Your Own Adventure</a></li><li><a href="microbit/00.00.README.html"><strong aria-hidden="true">6.</strong> micro:bit HAL basics</a></li><li><ol class="section"><li><a href="microbit/01.00.BUTTONS.html"><strong aria-hidden="true">6.1.</strong> Buttons</a></li><li><a href="microbit/02.00.DELAY.html"><strong aria-hidden="true">6.2.</strong> Delays</a></li><li><a href="microbit/03.00.DISPLAY.html"><strong aria-hidden="true">6.3.</strong> Display</a></li></ol></li><li><a href="serial/00.00.README.html"><strong aria-hidden="true">7.</strong> Serial UART - Blocking</a></li><li><ol class="section"><li><a href="serial/01.00.ECHO.html"><strong aria-hidden="true">7.1.</strong> Echo Server</a></li><li><ol class="section"><li><a href="serial/01.01.THEORY.html"><strong aria-hidden="true">7.1.1.</strong> Theory</a></li><li><a href="serial/01.02.ECHO.html"><strong aria-hidden="true">7.1.2.</strong> Solution</a></li></ol></li><li><a href="serial/02.00.html"><strong aria-hidden="true">7.2.</strong> Exercises</a></li><li><ol class="section"><li><a href="serial/02.01.html"><strong aria-hidden="true">7.2.1.</strong> Reverse echo</a></li><li><ol class="section"><li><a href="serial/02.01.SOLUTION.html"><strong aria-hidden="true">7.2.1.1.</strong> Solution</a></li></ol></li><li><a href="serial/02.02.html"><strong aria-hidden="true">7.2.2.</strong> Countdown</a></li><li><ol class="section"><li><a href="serial/02.02.SOLUTION.html"><strong aria-hidden="true">7.2.2.1.</strong> Solution</a></li></ol></li><li><a href="serial/02.04.html"><strong aria-hidden="true">7.2.3.</strong> Quiz</a></li><li><ol class="section"><li><a href="serial/02.04.SOLUTION.html"><strong aria-hidden="true">7.2.3.1.</strong> Solution</a></li></ol></li></ol></li></ol></li><li><a href="display/00.00.README.html"><strong aria-hidden="true">8.</strong> LED display</a></li><li><ol class="section"><li><a href="display/01.00.THEORY.html"><strong aria-hidden="true">8.1.</strong> Theory</a></li><li><a href="display/02.00.PROBLEM.html"><strong aria-hidden="true">8.2.</strong> Problem</a></li><li><ol class="section"><li><a href="display/02.01.LAYOUT.html"><strong aria-hidden="true">8.2.1.</strong> Layout</a></li><li><a href="display/02.02.DELAY.html"><strong aria-hidden="true">8.2.2.</strong> Delays</a></li><li><a href="display/02.03.MULT.html"><strong aria-hidden="true">8.2.3.</strong> Multiplexing</a></li></ol></li><li><a href="display/03.00.SOLUTION.html"><strong aria-hidden="true">8.3.</strong> Solution</a></li><li><ol class="section"><li><a href="display/03.01.LAYOUT.html"><strong aria-hidden="true">8.3.1.</strong> Layout</a></li><li><a href="display/03.02.MULT.html"><strong aria-hidden="true">8.3.2.</strong> Multiplexing</a></li><li><a href="display/03.03.FULL.html"><strong aria-hidden="true">8.3.3.</strong> Full Solution</a></li></ol></li></ol></li><li><a href="sensors/00.00.README.html"><strong aria-hidden="true">9.</strong> WIP - Sensors and I²C</a></li><li><a href="nb/00.00.README.html"><strong aria-hidden="true">10.</strong> WIP - Non-blocking</a></li><li><a href="nb/00.00.README.html"><strong aria-hidden="true">11.</strong> WIP - Interrupts</a></li><li><a href="rtfm/00.00.README.html"><strong aria-hidden="true">12.</strong> WIP - Real time</a></li><li><a href="hal/00.00.README.html"><strong aria-hidden="true">13.</strong> WIP - Creating a HAL</a></li><li class="affix"><a href="appendix/explore.html">Explore</a></li><li class="affix"><a href="appendix/gdb.html">GDB cheatsheet</a></li><li class="affix"><a href="appendix/troubleshooting.html">General troubleshooting</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">MicroRust</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            <a href="https://github.com/droogmic/microrust" class="icon-button" title="Go to GitHub repo" aria-label="Link to GitHub repo">
+                                <i id="github-button" class="fa fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#microrust" id="microrust"><h1>MicroRust</h1></a>
+<blockquote>
+<p>Discover the world of microcontrollers through <a href="https://www.rust-lang.org/">Rust</a> on the <a href="https://microbit.org/">BBC micro:bit</a>!</p>
+</blockquote>
+<p>This book is an introductory course on microcontroller-based embedded systems
+that uses Rust as the teaching language (rather than the usual C/C++),
+and the micro:bit as the target system.</p>
+<a class="header" href="#approach" id="approach"><h2>Approach</h2></a>
+<ul>
+<li>
+<p>Beginner friendly.
+No previous experience with microcontrollers or embedded systems is required.</p>
+</li>
+<li>
+<p>Hands on.
+<em>You</em> will be doing most of the work here.
+When possible, pages will end on a problem for you to solve, with the solution on the next page.
+There are plenty of exercises to put the theory into practice.</p>
+</li>
+<li>
+<p>Standard.
+We'll make plenty use of standard tooling and processes to ease development
+so you can apply the skills learnt to any Rust embedded project.
+Fixing compiler errors, debugging with GDB, and logging will be introduced early on.
+Using LEDs as a debugging mechanism has no place here.</p>
+</li>
+</ul>
+<a class="header" href="#scope" id="scope"><h2>Scope</h2></a>
+<p>The following topics are covered in the core chapters:</p>
+<ul>
+<li>How to write, build, flash and debug an embedded program.</li>
+<li>Basic operation of a GPIO, ubiquitous in microcontrollers.</li>
+</ul>
+<p>The rest of the chapters are independent, only requiring the core knowledge:</p>
+<ul>
+<li>Functionality (&quot;peripherals&quot;) commonly found in microcontrollers:
+<ul>
+<li>Digital input and output, including buttons and LEDs</li>
+</ul>
+</li>
+</ul>
+<!-- - Functionality ("peripherals") commonly found in microcontrollers: Digital input and output, Pulse
+  Width Modulation (PWM), Analog to Digital Converters (ADC), common communication protocols like
+  Serial, I2C and SPI, etc. -->
+<!-- - Multitasking concepts: cooperative vs preemptive multitasking, interrupts, schedulers, etc. -->
+<!-- - Control systems concepts: sensors, calibration, digital filters, actuators, open loop control,
+  closed loop control, etc. -->
+<a class="header" href="#non-goals" id="non-goals"><h2>Non-goals</h2></a>
+<p>What's out of scope for this book:</p>
+<ul>
+<li>
+<p>Teaching Rust.
+There's plenty of material on that topic already.
+We'll focus on microcontrollers and embedded systems.</p>
+</li>
+<li>
+<p>Teaching electric circuit theory or electronics.
+We'll cover the minimum required to understand how some devices work along the way.</p>
+</li>
+<li>
+<p>Covering Rustic, low level details.
+We won't be talking about linker scripts, the boot process,
+or how to glue those two into a minimally working Rust program.</p>
+</li>
+</ul>
+<a class="header" href="#reporting-problems" id="reporting-problems"><h2>Reporting problems</h2></a>
+<p>The source of this book is in <a href="https://github.com/droogmic/microrust">this repository</a>.
+If you encounter any typo or problem please report it on the <a href="https://github.com/droogmic/microrust/issues">issue tracker</a>,
+or even submit a <a href="https://github.com/droogmic/microrust/pulls">pull request</a>.</p>
+<a class="header" href="#background" id="background"><h1>Background</h1></a>
+<a class="header" href="#what-is-a-microcontroller" id="what-is-a-microcontroller"><h2>What is a microcontroller?</h2></a>
+<p>A microcontroller is a <em>system</em> on a chip. Whereas your laptop is made up of several discrete
+components: a processor, RAM sticks, a hard drive, an ethernet port, etc.; a microcontroller has all
+those components built into a single &quot;chip&quot; or package. This makes it possible to build systems with
+minimal part count.</p>
+<a class="header" href="#what-can-you-do-with-a-microcontroller" id="what-can-you-do-with-a-microcontroller"><h2>What can you do with a microcontroller?</h2></a>
+<p>Lots of things! Microcontrollers are the central part of systems known as <em>embedded</em> systems. These
+systems are everywhere but you don't usually notice them. These systems control the brakes of your
+car, wash your clothes, print your documents, keep you warm, keep you cool, optimize the fuel
+consumption of your car, etc.</p>
+<p>The main trait of these systems is that they operate without user intervention even if they expose a
+user interface like a washing machine does; most of their operation is done on their own.</p>
+<p>The other common trait of these systems is that they <em>control</em> a process. And for that these systems
+usually have one or more sensors and one or more actuators. For example, an HVAC system has several
+sensors, thermometers and humidy sensors spread across some area, and several actuators as well,
+heating elements and fans connected to ducts.</p>
+<a class="header" href="#when-should-i-use-a-microcontroller" id="when-should-i-use-a-microcontroller"><h2>When should I use a microcontroller?</h2></a>
+<p>All these application I've mentioned, you can probably implement with a Raspberry Pi, a computer
+that runs Linux. Why should I bother with a microcontroller that operates without an OS? Sounds like
+it would be harder to develop a program.</p>
+<p>One main reason is cost. A microcontroller is much cheaper than a general purpose computer. Not only
+the microcontroller is cheaper; it also requires much less external electrical components to
+operate. This makes Printed Circuit Boards (PCB) smaller and cheaper to design and manufacture.</p>
+<p>Another big reason is power consumption. A microcontroller consumes orders of magnitude less power
+than a full blown processor. If your application will run on batteries that makes a huge difference.</p>
+<p>And last but not least: (hard) <em>real time</em> constraints. Some processes require their controllers to
+respond to some events within some time interval (e.g. a quadcopter/drone hit by a wind gust). If
+this <em>deadline</em> is not met, the process could end in catastrophic failure (e.g. the drone crashes to
+the ground). A general purpose computer  running a general purpose OS has many services running in
+the background. This makes it hard to guarantee execution of a program within tight time constraints.</p>
+<a class="header" href="#when-should-i-not-use-a-microcontroller" id="when-should-i-not-use-a-microcontroller"><h2>When should I <em>not</em> use a microcontroller?</h2></a>
+<p>Where heavy computations are involved. To keep their power consumption low, microcontrollers have
+very limited computational resources available to them. For example, some microcontrollers don't
+even have hardware support for floating point operations. On those devices, performing a simple
+addition of single precision numbers can take hundreds of CPU cycles.</p>
+<a class="header" href="#development-on-the-microbit" id="development-on-the-microbit"><h2>Development on the micro:bit</h2></a>
+<p>The <a href="https://microbit.org/code/">micro:bit website</a> offers several very simple ways of programming a
+microbit, aimed at teaching school children how to program. This is a very good introduction to the
+world of microcontollers <strong>and</strong> programming, but falls short of teaching true embedded development.
+From there you would usually move to C to develop skills useful in industry, developing performant
+embedded software.</p>
+<a class="header" href="#why-use-rust-and-not-c" id="why-use-rust-and-not-c"><h2>Why use Rust and not C?</h2></a>
+<p>Hopefully I don't need to convince you here as you are probably familiar with the language
+differences between Rust and C. One point I do want to bring up is package management. C lacks an
+official, widely accepted package management solution whereas Rust has Cargo. This makes development
+<em>much</em> easier. And, IMO, easy package management encourages code reuse because libraries can be
+easily integrated into an application which is also a good thing as libraries get more &quot;battle
+testing&quot;.</p>
+<a class="header" href="#why-should-i-not-use-rust" id="why-should-i-not-use-rust"><h2>Why should I not use Rust?</h2></a>
+<p>Or why should I prefer C over Rust?</p>
+<p>The C ecosystem is way more mature. Off the shelf solution for several problems already exist. If
+you need to control a time sensitive process, you can grab one of the existing commercial Real Time
+Operating Systems (RTOS) out there and solve your problem. There are no commercial, production-grade
+RTOSes in Rust yet so you would have to either create one yourself or try one of the ones that are
+in development. If you are looking to develop your skills to find a job, it is currently unlikely
+that a company doing embedded software development will be using Rust, and so your time would be
+better spent learning normal embedded development using C.</p>
+<a class="header" href="#requirements" id="requirements"><h1>Requirements</h1></a>
+<a class="header" href="#knowledge" id="knowledge"><h2>Knowledge</h2></a>
+<p>The only knowledge requirement to read this book is to know <em>some</em> Rust. It's hard to
+quantify <em>some</em> but a good benchmark is having read and understood the first 14 chapters of <a href="https://doc.rust-lang.org/nightly/book/">the Rust book</a>.</p>
+<a class="header" href="#hardware" id="hardware"><h2>Hardware</h2></a>
+<p>To follow this material you'll only need a <a href="http://tech.microbit.org/hardware/">micro:bit</a>.</p>
+<p>You can purchase the BBC micro:bit from <a href="https://microbit.org/resellers/">a large list of international resellers</a>.</p>
+<p align="center">
+<img title="microbit" src="https://microbit.org/images/microbit-front.png" width="45%">
+<img title="microbit" src="https://microbit.org/images/microbit-back.png" width="45%">
+</p>
+<blockquote>
+<p><strong>FAQ</strong>: Wait, why do I need this specific device?</p>
+</blockquote>
+<p>It makes my life and yours much easier.</p>
+<p>The material is much, much more approachable if we don't have to worry about hardware differences.
+Trust me on this one.</p>
+<blockquote>
+<p><strong>FAQ</strong>: Can I follow this material with a different development board?</p>
+</blockquote>
+<p>Maybe? It depends mainly on two things: your previous experience with microcontrollers and/or
+whether there already exists a high level crate. A list of boards with high level crates available can be found <a href="https://github.com/rust-embedded/awesome-embedded-rust#board-support-crates">here</a>.</p>
+<p>With other development boards, this text would lose most if not all its beginner friendliness
+and &quot;easy to follow&quot;-ness, IMO.</p>
+<p>There are other similar guides for different hardware. For a full list see <a href="https://github.com/rust-embedded/awesome-embedded-rust/#books-blogs-and-training-materials">this list</a>.</p>
+<p>The following are worth a special mention:</p>
+<ul>
+<li><a href="https://japaric.github.io/discovery/">Discovery</a> by @japaric: The genesis guide which this is based on. Uses the STM32F3DISCOVERY.</li>
+</ul>
+<p>If you have a different cortex-m development board and you don't consider yourself a total beginner, you are
+better off starting with the <a href="https://docs.rs/crate/cortex-m-quickstart">cortex-m-quickstart</a> project template.</p>
+<a class="header" href="#meet-your-hardware" id="meet-your-hardware"><h1>Meet your hardware</h1></a>
+<p>Let's get familiar with the hardware we'll be working with.</p>
+<a class="header" href="#bbc-microbit-the-microbit" id="bbc-microbit-the-microbit"><h2>BBC micro:bit (the &quot;microbit&quot;)</h2></a>
+<p align="center">
+<img title="microbit" src="http://tech.microbit.org/docs/hardware/assets/microbit-overview.png">
+</p>
+<p>What does this board contain? For full details see the <a href="http://tech.microbit.org/hardware">microbit hardware page</a>.</p>
+<ul>
+<li>
+<p>A Nordic nRF51822 microcontroller. This microcontroller has</p>
+<ul>
+<li>
+<p>A single core ARM Cortex-M0 processor with a maximum clock frequency of 16 MHz.</p>
+</li>
+<li>
+<p>256 KB of flash memory. (1 KB = 10<strong>24</strong> bytes)</p>
+</li>
+<li>
+<p>16 KB of static RAM.</p>
+</li>
+<li>
+<p>many &quot;peripherals&quot;: timers, GPIO, I2C, SPI, UART, etc.</p>
+</li>
+<li>
+<p>This microcontroller operates at (around) 3.3V.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>2 user buttons on the front and 1 reset button on the back.</p>
+</li>
+<li>
+<p>A 5x5 array of user LEDs.</p>
+</li>
+<li>
+<p>A configureable 23-pin edge connector</p>
+</li>
+<li>
+<p>A 2.4GHz radio transciever with support for <a href="https://en.wikipedia.org/wiki/Bluetooth_Low_Energy">bluetooth low energy</a> (BLE).</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>An on-core nRF51 temperature sensor.</p>
+</li>
+<li>
+<p>An NXP/Freescale MMA8652 3-axis <a href="https://en.wikipedia.org/wiki/Accelerometer">accelerometer</a>.</p>
+</li>
+</ul>
+<ul>
+<li>An NXP/Freescale MAG3110 3-axis <a href="https://en.wikipedia.org/wiki/Magnetometer">magnetometer</a>.</li>
+</ul>
+<ul>
+<li>A second microcontroller: NXP/Freescale KL26Z. This microcontroller handles the USB interface,
+communication between your computer and the main microcontroller,
+and converting the USB's input voltage from 5V to 3.3V.</li>
+</ul>
+<a class="header" href="#micro-usb-cable" id="micro-usb-cable"><h2>Micro-USB Cable</h2></a>
+<p>This comes with your microbit but can be any generic cable,
+and is used to connect the microbit to your computer.</p>
+<a class="header" href="#external-battery-pack" id="external-battery-pack"><h2>External battery pack</h2></a>
+<p>The external battery pack that comes with the microbit will not be used explicitly as part of this guide,
+but feel free to use it to test your software without being tethered to a computer.</p>
+<a class="header" href="#plugging-it-in" id="plugging-it-in"><h2>Plugging it in</h2></a>
+<p>You can use the micro-USB cable to power the micro:bit, and to transfer data.
+When you power up a new micro:bit you will see the display light up as the factory-installed program is executed.
+Otherwise, the last program will automatically be executed.
+The black reset button next to the USB input will restart the program being run.</p>
+<a class="header" href="#development-environment-setup" id="development-environment-setup"><h1>Development environment setup</h1></a>
+<p>Dealing with microcontrollers involves several tools,
+as we'll be dealing with an architecture different than your laptop's,
+and we'll have to run and debug programs on a &quot;remote&quot; device.</p>
+<a class="header" href="#documentation" id="documentation"><h2>Documentation</h2></a>
+<p>Without documentation it is pretty much impossible to work with microcontrollers.</p>
+<p>We'll be referring to the <a href="http://tech.microbit.org/hardware">micro:bit hardware page</a> and the links found within.</p>
+<p><em>HEADS UP</em> Some of the links point to large PDF files several MBs in size.</p>
+<a class="header" href="#tools" id="tools"><h2>Tools</h2></a>
+<p>We'll use all the tools listed below. Where a minimum version is not specified,
+any recent version should work but we have listed the version we have tested.</p>
+<ul>
+<li>
+<p>Cargo &amp; <code>rustc</code>.</p>
+</li>
+<li>
+<p>OpenOCD. version &gt;=0.8</p>
+</li>
+<li>
+<p><code>arm-none-eabi</code> toolchain. Tested version: gcc 8.1.0, binutils 2.30.</p>
+</li>
+<li>
+<p><code>arm-none-eabi-gdb</code>.</p>
+</li>
+<li>
+<p><code>minicom</code> on Linux and macOS. Tested version: 2.7.
+Readers report that <code>picocom</code> also works but we'll use <code>minicom</code> in this book.</p>
+</li>
+<li>
+<p><code>PuTTY</code> on Windows.</p>
+</li>
+</ul>
+<p>Next, follow OS-agnostic installation instructions for a few of the tools:</p>
+<a class="header" href="#rustc--cargo" id="rustc--cargo"><h3><code>rustc</code> &amp; Cargo</h3></a>
+<p>Install rustup by following the instructions at <a href="https://rustup.rs">https://rustup.rs</a>.</p>
+<p>Then, install or switch to the nightly channel.</p>
+<pre><code class="language-shell">$ rustup default nightly
+</code></pre>
+<p><strong>NOTE</strong> Make sure you have a nightly newer than <code>nightly-2018-10-12</code>.
+<code>rustc -V</code> should return a date newer than the one shown below:</p>
+<pre><code class="language-shell">$ rustc -V
+rustc 1.31.0-nightly (2c2e2c57d 2018-10-12)
+</code></pre>
+<a class="header" href="#os-specific-instructions" id="os-specific-instructions"><h3>OS specific instructions</h3></a>
+<p>Now follow the instructions specific to the OS you are using:</p>
+<ul>
+<li><a href="../setup/LINUX.html">Linux</a></li>
+<li><a href="../setup/WINDOWS.html">Windows</a></li>
+<li><a href="../setup/MACOS.html">macOS</a></li>
+</ul>
+<a class="header" href="#linux" id="linux"><h1>Linux</h1></a>
+<p>Here are the installation commands for a few Linux distributions.</p>
+<a class="header" href="#required-packages" id="required-packages"><h2>REQUIRED packages</h2></a>
+<ul>
+<li>Ubuntu 16.04 or newer / Debian Jessie or newer</li>
+</ul>
+<pre><code class="language-shell">$ sudo apt-get install \
+  gcc-arm-none-eabi \
+  gdb-arm-none-eabi \
+  minicom \
+  openocd
+</code></pre>
+<ul>
+<li>Fedora 23 or newer</li>
+</ul>
+<pre><code class="language-shell">$ sudo dnf install \
+  arm-none-eabi-gcc-cs \
+  arm-none-eabi-gdb \
+  minicom \
+  openocd
+</code></pre>
+<ul>
+<li>Arch Linux</li>
+</ul>
+<pre><code class="language-shell">$ sudo pacman -S \
+  arm-none-eabi-gcc \
+  arm-none-eabi-gdb \
+  minicom \
+  openocd
+</code></pre>
+<ul>
+<li>Other distros</li>
+</ul>
+<p>For distros that don't have packages for <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">ARM's pre-built toolchain</a>, download the &quot;Linux 64-bit&quot; file and put its <code>bin</code> directory on your path. Here's one way to do it:</p>
+<pre><code class="language-shell">$ mkdir -p ~/local &amp;&amp; cd ~/local
+$ tar xjf /path/to/downloaded/file/gcc-arm-none-eabi-7-2017-q4-major-linux.tar.bz2.tbz
+</code></pre>
+<p>Then, use your editor of choice to append to your <code>PATH</code> in the appropriate shell init file (e.g. <code>~/.zshrc</code> or <code>~/.bashrc</code>):</p>
+<pre><code>PATH=$PATH:$HOME/local/gcc-arm-none-eabi-7-2017-q4-major/bin
+</code></pre>
+<a class="header" href="#udev-rules" id="udev-rules"><h2>udev rules</h2></a>
+<p>These rules let you use USB devices like the F3 and the Serial module without root privilege, i.e.
+<code>sudo</code>.</p>
+<p>Create this file in <code>/etc/udev/rules.d</code> with the contents shown below.</p>
+<pre><code class="language-shell">$ cat /etc/udev/rules.d/99-openocd.rules
+</code></pre>
+<pre><code class="language-text"># microbit - CMSIS-DAP
+ATTRS{idVendor}==&quot;0d28&quot;, ATTRS{idProduct}==&quot;0204&quot;, GROUP=&quot;uucp&quot;
+</code></pre>
+<p>Then reload the udev rules with:</p>
+<pre><code class="language-shell">$ sudo udevadm control --reload-rules
+</code></pre>
+<p>If you had any board plugged to your laptop, unplug them and then plug them in again.</p>
+<p>Finally, check if you are in the <code>uucp</code> group.</p>
+<pre><code class="language-shell">$ groups $(id -nu)
+(..) uucp (..)
+$ #  ^^^^
+</code></pre>
+<p>(<code>$(id -nu)</code> returns your user name.)</p>
+<p>If <code>uucp</code> appears in the output. You are all set! Go to the <a href="../setup/VERIFY.html">next section</a>. Otherwise, keep reading:</p>
+<ul>
+<li>Add yourself to the <code>uucp</code> group.</li>
+</ul>
+<pre><code class="language-shell">$ sudo usermod -a -G uucp $(id -u -n)
+</code></pre>
+<ul>
+<li>Check again the output of <code>groups</code>. <code>uucp</code> should be there this time!</li>
+</ul>
+<pre><code class="language-shell">$ groups $(id -nu)
+(..) uucp (..)
+$ #  ^^^^
+</code></pre>
+<p>You'll have to re-log for these changes to take effect. You have two options:</p>
+<p>You can reboot or log out from your current session and then log in; this will close all the
+programs you have open right now.</p>
+<p>The other option is to use the command below:</p>
+<pre><code class="language-shell">$ su - $(id -nu)
+</code></pre>
+<p>to re-log <em>only in the current shell</em> and get access to <code>uucp</code> devices <em>only on that shell</em>. Other
+shells <em>won't</em> have access to <code>uucp</code> devices unless you manually re-log on them with the same <code>su</code>
+command.</p>
+<p>Now, go to the <a href="../setup/VERIFY.html">next section</a>.</p>
+<a class="header" href="#windows" id="windows"><h1>Windows</h1></a>
+<a class="header" href="#arm-none-eabi-" id="arm-none-eabi-"><h2><code>arm-none-eabi-*</code></h2></a>
+<p>ARM provides <code>.exe</code> installers for Windows. Grab one from <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">here</a>, and follow the instructions.
+Just before the installation process finishes tick/select the &quot;Add path to environment variable&quot;
+option. Then verify that the tools are in your <code>%PATH%</code>:</p>
+<pre><code class="language-shell">$ arm-none-eabi-gcc -v
+(..)
+gcc version 5.4.1 20160919 (release) (..)
+</code></pre>
+<a class="header" href="#openocd" id="openocd"><h2>OpenOCD</h2></a>
+<p>There's no official binary release of OpenOCD for Windows but there are unofficial releases
+available <a href="https://github.com/gnu-mcu-eclipse/openocd/releases">here</a>. Grab the 0.10.x zipfile and extract it somewhere in your drive (I
+recommend <code>C:\OpenOCD</code> but with the drive letter that makes sense to you) then update your <code>%PATH%</code>
+environment variable to include the following path: <code>C:\OpenOCD\bin</code> (or the path that you used
+before).</p>
+<p>Verify that OpenOCD is in yout <code>%PATH%</code> with:</p>
+<pre><code class="language-shell">$ openocd -v
+Open On-Chip Debugger 0.10.0
+(..)
+</code></pre>
+<a class="header" href="#putty" id="putty"><h2>PuTTY</h2></a>
+<p>Download the latest <code>putty.exe</code> from <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/download.html">this site</a> and place it somewhere in your <code>%PATH%</code>.</p>
+<p>That's all! Go to the <a href="../setup/VERIFY.html">next section</a>.</p>
+<a class="header" href="#macos" id="macos"><h1>macOS</h1></a>
+<blockquote>
+<p>UNTESTED: please submit an issue if you can confirm this works.</p>
+</blockquote>
+<p>All the tools can be install using <a href="http://brew.sh/">Homebrew</a>:</p>
+<pre><code class="language-shell">$ brew cask install gcc-arm-embedded
+$ brew install minicom openocd
+</code></pre>
+<p>If the <code>brew cask</code> command doesn't work (<code>Error: Unknown command: cask</code>), then run <code>brew tap Caskroom/tap</code> first and try again.</p>
+<p>That's all! Go to the <a href="../setup/VERIFY.html">next section</a>.</p>
+<a class="header" href="#verify-the-installation" id="verify-the-installation"><h1>Verify the installation</h1></a>
+<p>Let's verify that all the tools were installed correctly.</p>
+<a class="header" href="#linux-only" id="linux-only"><h2>Linux only</h2></a>
+<a class="header" href="#verify-permissions" id="verify-permissions"><h3>Verify permissions</h3></a>
+<p>Connect the micro:bit to your laptop using an USB cable.</p>
+<p>The micro:bit should now appear as a USB device (file) in <code>/dev/bus/usb</code>.
+Let's find out how it got enumerated:</p>
+<pre><code class="language-shell">$ lsusb | grep -i NXP
+Bus 002 Device 033: ID 0d28:0204 NXP ARM mbed
+    ^^^        ^^^
+</code></pre>
+<p>In my case, the micro:bit got connected to the bus #2 and got enumerated as the device #33.
+This means the file <code>/dev/bus/usb/002/033</code> <em>is</em> the Fmicro:bit3.
+Let's check its permissions:</p>
+<pre><code class="language-shell">$ ls -l /dev/bus/usb/002/033
+crw-rw---- 1 root uucp 189, 160 Jul  8 14:06 /dev/bus/usb/002/033
+                  ^^^^
+</code></pre>
+<p>The group should be <code>uucp</code>.
+If it's not ... then check your <a href="../setup/LINUX.html#udev%20rules">udev rules</a> and try re-loading them with:</p>
+<pre><code class="language-shell">$ sudo udevadm control --reload-rules
+</code></pre>
+<a class="header" href="#all" id="all"><h2>All</h2></a>
+<a class="header" href="#first-openocd-connection" id="first-openocd-connection"><h3>First OpenOCD connection</h3></a>
+<p>First, connect the micro:bit to your computer using the micro-USB cable.
+The <em>yellow</em> LED next to the USB input should turn on right after connecting the USB cable to the board.</p>
+<p>Next, run this command:</p>
+<pre><code class="language-shell">$ # *nix
+$ openocd -f interface/cmsis-dap.cfg -f target/nrf51.cfg
+
+$ # Windows
+$ # NOTE cygwin users have reported problems with the -s flag. If you run into
+$ # that you can call openocd from the `C:\OpenOCD\share\scripts` directory
+$ openocd -s C:\OpenOCD\share\scripts -f interface/cmsis-dap.cfg -f target/nrf51.cfg
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> Windows users: <code>C:\OpenOCD</code> is the directory where you installed OpenOCD to.</p>
+</blockquote>
+<p>You should see output like this:</p>
+<pre><code class="language-shell">Open On-Chip Debugger 0.10.0
+Licensed under GNU GPL v2
+For bug reports, read
+    http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport &quot;swd&quot;. To override use 'transport select &lt;transport&gt;'.
+cortex_m reset_config sysresetreq
+adapter speed: 1000 kHz
+Info : CMSIS-DAP: SWD  Supported
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : CMSIS-DAP: FW Version = 1.0
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 1000 kHz
+Info : SWD DPIDR 0x0bb11477
+Info : nrf51.cpu: hardware has 4 breakpoints, 2 watchpoints
+</code></pre>
+<p>(If you don't ... then check the <a href="../appendix/troubleshooting.html">general troubleshooting</a> instructions.)</p>
+<p><code>openocd</code> will block the terminal. That's fine.</p>
+<p>Also, the <code>yellow</code> LED should start blinking very fast.
+It may seem concerning, but it is a good sign.</p>
+<p>That's it! It works. You can now close/kill <code>openocd</code>.</p>
+<a class="header" href="#getting-started" id="getting-started"><h1>Getting started</h1></a>
+<p>Alright, let's start as you usually would with Rust.</p>
+<pre><code class="language-console">$ rustup update
+</code></pre>
+<p>It is always good to keep your toolchain up to date.</p>
+<p>Now let's make a new binary project.
+You might not do this often, so it is understandeable to forget.
+If you run <code>$ cargo</code>, you will be given a hint.</p>
+<a class="header" href="#new-project" id="new-project"><h1>New Project</h1></a>
+<pre><code class="language-shell">$ cargo new microrust-start
+     Created binary (application) `microrust-start` project
+$ cd microrust-start
+Cargo.toml  src
+</code></pre>
+<p>This has created a binary crate.</p>
+<p>Now we could <code>$ cargo build</code> this, and even <code>$ cargo run</code> it,
+but everything is being compiled for, and run on, your computer.</p>
+<a class="header" href="#targets" id="targets"><h2>Targets</h2></a>
+<p>The micro:bit has a different architecture than your computer,
+so the first step will be to cross compile for the micro:bit's architecture.
+If you were to do an internet search, you would find a <a href="https://forge.rust-lang.org/platform-support.html">platform support list for Rust</a>.
+Looking into this page, you will find the micro:bit's nRF51822 Cortex-M0 microprocessor:</p>
+<blockquote>
+<p><code>thumbv6m-none-eabi [*] [ ] [ ] Bare Cortex-M0, M0+, M1</code></p>
+</blockquote>
+<p>&quot;thumbv6m-none-eabi&quot; is known a a target triple. Note what the star represents:</p>
+<blockquote>
+<p>These are bare-metal microcontroller targets that only have access to the core library, not std.</p>
+</blockquote>
+<p>To install this target:</p>
+<pre><code class="language-console">$ rustup target add thumbv6m-none-eabi
+</code></pre>
+<a class="header" href="#build-1" id="build-1"><h2>Build 1</h2></a>
+<p>Now how should we use this? Well, if you were to take a look at <code>$ cargo build -h</code>, you would try:</p>
+<pre><code class="language-shell">$ cargo build --target thumbv6m-none-eabi
+</code></pre>
+<pre><code class="language-shell">error[E0463]: can't find crate for `std`
+  |
+  = note: the `thumbv6m-none-eabi` target may not be installed
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0463`.
+error: Could not compile `microrust-start`.
+
+To learn more, run the command again with --verbose.
+</code></pre>
+<p>The help note is rather unhelpful because we just installed that target.
+We also just noted that the thumbv6m-none-eabi target does not include std,
+only the core crate, which is has a platform independent subset of the std features.
+Why is it still looking for the std crate when we build?</p>
+<a class="header" href="#no_std" id="no_std"><h3><code>no_std</code></h3></a>
+<p>It turns out, rust will always look for the std crate unless explicitly disabled,
+so we will add the no_std attribute</p>
+<p><code>src/main.rs</code></p>
+<pre><pre class="playpen"><code class="language-rust">#![no_std]
+
+fn main() {
+    println!(&quot;Hello, world!&quot;);
+}
+</code></pre></pre>
+<a class="header" href="#build-2" id="build-2"><h2>Build 2</h2></a>
+<pre><code class="language-shell">$ cargo build --target thumbv6m-none-eabi
+error: cannot find macro `println!` in this scope
+ --&gt; src/main.rs:4:5
+  |
+4 |     println!(&quot;Hello, world!&quot;);
+  |     ^^^^^^^
+</code></pre>
+<p><code>println</code> is a macro found in the std crate.
+We don't need it at the moment, so we can remove it and try to build again.</p>
+<a class="header" href="#build-3" id="build-3"><h2>Build 3</h2></a>
+<pre><code class="language-shell">$ cargo build --target thumbv6m-none-eabi
+error: `#[panic_handler]` function required, but not found
+</code></pre>
+<p>This error, is because rustc required a panic handler to be implemented.</p>
+<a class="header" href="#panic_impl" id="panic_impl"><h3><code>panic_impl</code></h3></a>
+<p>We could try and implement the panic macro ourselves,
+but it's easier and more portable to use a crate that does it for us.</p>
+<p>If we look on <a href="https://crates.io/keywords/panic-impl">crates.io for the panic-impl keyword</a> we will find some examples.
+Let us pic the simplest one, and add it to our Cargo.toml.
+If you have forgotten how to do this, try looking at <a href="https://doc.rust-lang.org/stable/cargo/">the cargo book</a>.</p>
+<p><code>Cargo.toml</code></p>
+<pre><code class="language-toml">[dependencies]
+panic-halt = &quot;~0.2&quot;
+</code></pre>
+<p><code>src/main.rs</code></p>
+<pre><pre class="playpen"><code class="language-rust">#![no_std]
+
+extern crate panic_halt;
+
+fn main() {
+}
+</code></pre></pre>
+<a class="header" href="#build-4" id="build-4"><h2>Build 4</h2></a>
+<pre><code class="language-shell">$ cargo build --target thumbv6m-none-eabi
+error: requires `start` lang_item
+</code></pre>
+<a class="header" href="#no_main" id="no_main"><h3><code>no_main</code></h3></a>
+<p>In the normal command line rust binaries you would be used to making,
+executing the binary usually has the operating system start by executing the C runtime library (crt0).
+This in turn invokes the Rust runtime, as marked by the <code>start</code> language item,
+which in turn invokes the main function.</p>
+<p>Having enabled <code>no_std</code>, as we are targeting on a microcontroller,
+neither the crt0 nor the rust runtime are available,
+so even implementing <code>start</code> would not help us.
+We need to replace the operating system entry point.</p>
+<p>You could for example name a function after the default entry point,
+which for linux is <code>_start</code>, and start that way.
+Note, you would also need to disable <a href="https://en.wikipedia.org/wiki/Name_mangling">name mangling</a>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#![no_std]
+#![no_main]
+
+#fn main() {
+#[no_mangle]
+pub extern &quot;C&quot; fn _start() -&gt; ! {
+    loop {}
+}
+#}</code></pre></pre>
+<p>This is the end of the road for trying to get this to work on our own.
+At this point we need the help of a board-specific support crate and a few cargo tweaks to get this working.</p>
+<a class="header" href="#microbit-crate" id="microbit-crate"><h2>microbit crate</h2></a>
+<p>Let us add a dependency on the board crate for the micro:bit.</p>
+<pre><code class="language-toml">[dependencies]
+panic-halt = &quot;~0.2&quot;
+microbit=&quot;~0.7&quot;
+</code></pre>
+<p>The microbit crate has 2 notable dependencies:</p>
+<a class="header" href="#embedded-hal" id="embedded-hal"><h3><code>embedded-hal</code></h3></a>
+<p>This crate is a HAL implementation crate, where HAL stands for <em>hardware abstraction layer</em>.
+As rust becomes more and more popular in embedded development,
+it is desireable to have as little hardware specific implementation as possible.</p>
+<p>For this reason, the <code>embedded-hal</code> crate contains a range of hardware abstraction traits which can
+be implemented by board specific crates.</p>
+<a class="header" href="#cortex-m-rt" id="cortex-m-rt"><h3><code>cortex-m-rt</code></h3></a>
+<p>This crate implements the minimal startup / runtime for Cortex-M microcontrollers.
+Among other things this crate provides:</p>
+<ul>
+<li>the <code>#[entry]</code> attribute, to define the entry point of the program.</li>
+<li>a definition of the hard fault handler</li>
+<li>a definition of the default exception handler</li>
+</ul>
+<p>This crate requires:</p>
+<ul>
+<li>a definition of the specific microcontroller's memory layout as a memory.x file.
+fortunately this is usually provided by the board support crates</li>
+</ul>
+<p>To use the <code>#[entry]</code> attribute, we will need to add this as a dependency.</p>
+<p>For more detailed information,
+you can use the helpful <a href="https://docs.rs/crate/cortex-m-quickstart">cortex-m-quickstart crate</a> and <a href="https://docs.rs/cortex-m-quickstart">its documentation</a>.</p>
+<a class="header" href="#cargo-config" id="cargo-config"><h2>cargo config</h2></a>
+<p>Before we go any further,
+we are going to tweak the cargo's configuration by editing <code>microrust-start/.cargo/config</code>.
+For more information, you can read <a href="https://doc.rust-lang.org/cargo/reference/config.html">the documentation here</a>.</p>
+<a class="header" href="#cargoconfig" id="cargoconfig"><h3><code>.cargo/config</code></h3></a>
+<pre><code class="language-toml"># Configure builds for our target, the micro:bit's architecture
+[target.thumbv6m-none-eabi]
+# Execute binary using gdb when calling cargo run
+runner = &quot;arm-none-eabi-gdb&quot;
+# Tweak to the linking process required by the cortex-m-rt crate
+rustflags = [
+    &quot;-C&quot;, &quot;link-arg=-Tlink.x&quot;,
+    # The LLD linker is selected by default
+    #&quot;-C&quot;, &quot;linker=arm-none-eabi-ld&quot;,
+]
+
+# Automatically select this target when cargo building this project
+[build]
+target = &quot;thumbv6m-none-eabi&quot;
+
+</code></pre>
+<a class="header" href="#arm-none-eabi-gdb" id="arm-none-eabi-gdb"><h3>arm-none-eabi-gdb</h3></a>
+<p>This is a version of gdb (the GNU debugger) for the ARM EABI (embedded application binary interface).
+It will allow us to debug the code running on our micro:bit, from your computer.</p>
+<a class="header" href="#build-target" id="build-target"><h3>Build target</h3></a>
+<p>Now, all you need to do is run <code>$ cargo build</code>,
+and cargo will automatically add <code>--target thumbv6m-none-eabi</code>.</p>
+<a class="header" href="#build-5" id="build-5"><h2>Build 5</h2></a>
+<a class="header" href="#cargotoml" id="cargotoml"><h3><code>Cargo.toml</code></h3></a>
+<pre><code class="language-toml">[dependencies]
+panic-halt = &quot;~0.2&quot;
+microbit=&quot;~0.7&quot;
+cortex-m-rt=&quot;~0.6&quot;
+</code></pre>
+<a class="header" href="#srcmainrs" id="srcmainrs"><h3><code>src/main.rs</code></h3></a>
+<pre><pre class="playpen"><code class="language-rust">#![no_std]
+#![no_main]
+
+extern crate panic_halt;
+
+use cortex_m_rt::entry;
+
+#[entry]
+fn main() {
+}
+</code></pre></pre>
+<pre><code class="language-shell">$ cargo build
+</code></pre>
+<pre><code class="language-shell">error: custom attribute panicked
+ --&gt; src/main.rs:7:1
+  |
+7 | #[entry]
+  | ^^^^^^^^
+  |
+  = help: message: `#[entry]` function must have signature `[unsafe] fn() -&gt; !`
+</code></pre>
+<a class="header" href="#a-return-type" id="a-return-type"><h2><code>!</code> return type</h2></a>
+<p>A little known rust feature, so I will forgive you if you do not know what this means.
+A return type of <code>!</code> means that the function cannot return.
+An easy way to implement this is to use an infinite loop.</p>
+<a class="header" href="#srcmainrs-1" id="srcmainrs-1"><h3><code>src/main.rs</code></h3></a>
+<pre><pre class="playpen"><code class="language-rust">#![no_std]
+#![no_main]
+
+extern crate panic_halt;
+
+use cortex_m_rt::entry;
+
+#[entry]
+fn main() -&gt; ! {
+    loop {}
+}
+</code></pre></pre>
+<a class="header" href="#build-6" id="build-6"><h2>Build 6</h2></a>
+<p>If you try building now, you should finally be greeted with <code>Finished</code>!</p>
+<pre><code class="language-shell">$ cargo build
+    Finished dev [unoptimized + debuginfo] target(s) in 0.04s
+</code></pre>
+<a class="header" href="#build-complete" id="build-complete"><h2>Build Complete</h2></a>
+<p>As a sanity check, let's verify that the produced executable is actually an ARM binary:</p>
+<pre><code class="language-shell">$ file target/thumbv6m-none-eabi/debug/microrust-start
+target/thumbv6m-none-eabi/debug/microrust-start: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+                                                                            ^^^  ^^^^^
+</code></pre>
+<a class="header" href="#flashing" id="flashing"><h1>Flashing</h1></a>
+<p>Flashing is the process of moving our program into the microcontroller's (persistent) memory. Once flashed, the microcontroller will execute the flashed program every time it is powered on.</p>
+<p>In this case, our <code>rustled</code> program will be the only program in the microcontroller memory. By this I mean that there's nothing else running on the microcontroller: no OS, no daemon, nothing. <code>rustled</code> has full control over the device. This is what is meant by <em>bare-metal</em> programming.</p>
+<dl>
+  <dt>OS</dt>
+  <dd>operating system</dd>
+  <dt>Daemon</dt>
+  <dd>program running in the background</dd>
+</dl>
+<p>Connect the micro:bit to your computer and run the following commands on a new terminal.</p>
+<p>We need to give OCD the name of the interfaces we are using:</p>
+<pre><code class="language-console">$ # All
+$ # Windows: remember that you need an extra `-s %PATH_TO_OPENOCD%\&lt;version&gt;\scripts`
+$ openocd -f interface/cmsis-dap.cfg -f target/nrf51.cfg
+</code></pre>
+<p>The program will block; leave that terminal open.</p>
+<p>Now it's a good time to explain what this command is actually doing.</p>
+<p>I mentioned that the micro:bit actually has two microcontrollers.
+One of them is used as a USB interface and programmer/debugger.
+This microcontroller is connected to the target microcontroller using a Serial Wire Debug (SWD) interface
+(this interface is an ARM standard so you'll run into it when dealing with other Cortex-M based microcontrollers).
+This SWD interface can be used to flash and debug a microcontroller.
+It uses the CMSIS-DAP protocol for host debugging of application programs.
+It will appear as a USB device when you connect the micro:bit to your laptop.</p>
+<p>As for OpenOCD,
+it's software that provides some services like a <em>GDB server</em>
+on top of USB devices that expose a debugging protocol like SWD or JTAG.</p>
+<blockquote>
+<p>GDB: The <strong>G</strong>NU <strong>d</strong>e<strong>b</strong>ugger will allow us to debug our software
+by controlling the execution of our program.
+We will learn more about this a little bit later.</p>
+</blockquote>
+<p>Onto the actual command: those <code>.cfg</code> files we are using instruct OpenOCD to look for</p>
+<ul>
+<li>a CMSIS-DAP USB interface device (<code>interface/cmsis-dap.cfg</code>)</li>
+<li>a nRF51XXX microcontroller target (<code>target/nrf51.cfg</code>) to be connected to the USB interface.</li>
+</ul>
+<p>The OpenOCD output looks like this:</p>
+<pre><code class="language-console">Open On-Chip Debugger 0.10.0
+Licensed under GNU GPL v2
+For bug reports, read
+    http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport &quot;swd&quot;. To override use 'transport select &lt;transport&gt;'.
+cortex_m reset_config sysresetreq
+adapter speed: 1000 kHz
+Info : CMSIS-DAP: SWD  Supported
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : CMSIS-DAP: FW Version = 1.0
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 1000 kHz
+Info : SWD DPIDR 0x0bb11477
+Info : nrf51.cpu: hardware has 4 breakpoints, 2 watchpoints
+</code></pre>
+<p>The &quot;4 breakpoints, 2 watchpoints&quot; part indicates the debugging features the processor has
+available.</p>
+<p>I mentioned that OpenOCD provides a GDB server so let's connect to that right now:</p>
+<pre><code class="language-console">$ arm-none-eabi-gdb -q target/thumbv6m-none-eabi/debug/rustled
+Reading symbols from target/thumbv6m-none-eabi/debug/rustled...done.
+(gdb)
+</code></pre>
+<p>This only opens a GDB shell. To actually connect to the OpenOCD GDB server, use the following
+command within the GDB shell:</p>
+<pre><code class="language-gdb">(gdb) target remote :3333
+Remote debugging using :3333
+0x00000000 in ?? ()
+</code></pre>
+<p>By default OpenOCD's GDB server listens on TCP port 3333 (localhost). This command is connecting to
+that port.</p>
+<p>After entering this command, you'll see new output in the OpenOCD terminal:</p>
+<pre><code class="language-diff"> Info : stm32f3x.cpu: hardware has 4 breakpoints, 2 watchpoints
++Info : accepting 'gdb' connection on tcp/3333
++Info : nRF51822-QFAA(build code: H0) 256kB Flash
+</code></pre>
+<p>Almost there. To flash the device, we'll use the <code>load</code> command inside the GDB shell:</p>
+<pre><code class="language-gdb">(gdb) load
+Loading section .vector_table, size 0x188 lma 0x8000000
+Loading section .text, size 0x38a lma 0x8000188
+Loading section .rodata, size 0x8 lma 0x8000514
+Start address 0x8000188, load size 1306
+Transfer rate: 6 KB/sec, 435 bytes/write.
+</code></pre>
+<p>And that's it. You'll also see new output in the OpenOCD terminal.</p>
+<pre><code class="language-diff"> Info : flash size = 256kbytes
++Info : Unable to match requested speed 1000 kHz, using 950 kHz
++Info : Unable to match requested speed 1000 kHz, using 950 kHz
++adapter speed: 950 kHz
++target state: halted
++target halted due to debug-request, current mode: Thread
++xPSR: 0x01000000 pc: 0x08000194 msp: 0x2000a000
++Info : Unable to match requested speed 8000 kHz, using 4000 kHz
++Info : Unable to match requested speed 8000 kHz, using 4000 kHz
++adapter speed: 4000 kHz
++target state: halted
++target halted due to breakpoint, current mode: Thread
++xPSR: 0x61000000 pc: 0x2000003a msp: 0x2000a000
++Info : Unable to match requested speed 1000 kHz, using 950 kHz
++Info : Unable to match requested speed 1000 kHz, using 950 kHz
++adapter speed: 950 kHz
++target state: halted
++target halted due to debug-request, current mode: Thread
++xPSR: 0x01000000 pc: 0x08000194 msp: 0x2000a000
+</code></pre>
+<p>Our program is loaded, we can now run it!</p>
+<pre><code class="language-gdb">(gdb) continue
+Continuing.
+</code></pre>
+<p>Continue runs the program until the next breakpoint.
+This time it blocks, nothing happens.
+This is because all we have in our code is a loop!</p>
+<a class="header" href="#gdbinit" id="gdbinit"><h2><code>.gdbinit</code></h2></a>
+<p>Before we move on though, we are going to add one more file to our project.
+This will automate the last few steps so we don't need to repeatedly do the same actions in gdb:</p>
+<p><code>.gdbinit</code></p>
+<pre><code class="language-gdbinit"># Connects GDB to OpenOCD server port
+target remote :3333
+# (optional) Unmangle function names when debugging
+set print asm-demangle on
+# Load your program, breaks at entry
+load
+# (optional) Add breakpoint at function
+break rustled::main
+# Continue with execution
+continue
+</code></pre>
+<p>Now we can learn how to debug code on the micro:bit.</p>
+<a class="header" href="#debugging" id="debugging"><h1>Debugging</h1></a>
+<a class="header" href="#setup" id="setup"><h2>Setup</h2></a>
+<p>Before we start, let's add some code to debug:</p>
+<pre><pre class="playpen"><code class="language-rust">// -- snip --
+entry!(main);
+fn main() -&gt; ! {
+    let _y;
+    let x = 42;
+    _y = x;
+    loop {}
+}
+</code></pre></pre>
+<a class="header" href="#gdb-session" id="gdb-session"><h2>GDB session</h2></a>
+<p>We are already inside a debugging session so let's debug our program.</p>
+<p>After the <code>load</code> command, our program is stopped at its <em>entry point</em>. This is indicated by the
+&quot;Start address 0x8000XXX&quot; part of GDB's output. The entry point is the part of a program that a
+processor / CPU will execute first.</p>
+<p>The starter project I've provided to you has some extra code that runs <em>before</em> the <code>main</code> function.
+At this time, we are not interested in that &quot;pre-main&quot; part so let's skip right to the beginning of
+the <code>main</code> function. We'll do that using a breakpoint:</p>
+<pre><code>(gdb) break rustled::main
+Breakpoint 1 at 0x8000218: file src/main.rs, line 8.
+
+(gdb) continue
+Continuing.
+Note: automatically using hardware breakpoints for read-only addresses.
+
+Breakpoint 1, rustled::main () at src/rustled/src/main.rs:13
+13          let x = 42;
+</code></pre>
+<p>Breakpoints can be used to stop the normal flow of a program.
+The <code>continue</code> command will let the program run freely <em>until</em> it reaches a breakpoint.
+In this case, until it reaches the <code>main</code> function because there's a breakpoint there.</p>
+<p>Note that GDB output says &quot;Breakpoint 1&quot;.
+Remember that our processor can only use four of these
+breakpoints so it's a good idea to pay attention to these messages.</p>
+<p>For a nicer debugging experience, we'll be using GDB's Text User Interface (TUI).
+To enter into that mode, on the GDB shell enter the following command:</p>
+<pre><code>(gdb) layout src
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> Apologies Windows users.
+The GDB shipped with the GNU ARM Embedded Toolchain doesn't support this TUI mode <code>:(</code>.</p>
+</blockquote>
+<p>At any point you can leave the TUI mode using the following command:</p>
+<pre><code>(gdb) tui disable
+</code></pre>
+<p>OK. We are now at the beginning of <code>main</code>.
+We can advance the program statement by statement using the <code>step</code> command.
+So let's use that twice to reach the <code>y = x</code> statement.
+Once you've typed <code>step</code> once you can just hit enter to run it again.</p>
+<pre><code>(gdb) step
+14           _y = x;
+</code></pre>
+<p>If you are not using the TUI mode,
+on each <code>step</code> call GDB will print back the current statement along with its line number.</p>
+<p>We are now &quot;on&quot; the <code>y = x</code> statement; that statement hasn't been executed yet. This means that <code>x</code>
+is initialized but <code>y</code> is not. Let's inspect those stack/local variables using the <code>print</code> command:</p>
+<pre><code>(gdb) print x
+$1 = 42
+
+(gdb) print &amp;x
+$2 = (i32 *) 0x10001fdc
+
+(gdb) print _y
+$3 = 134219052
+
+(gdb) print &amp;_y
+$4 = (i32 *) 0x10001fd8
+</code></pre>
+<p>As expected, <code>x</code> contains the value <code>42</code>.
+<code>_y</code> however, contains the value <code>134219052</code> (?).
+Because <code>_y</code> has not been initialized yet, it contains some garbage value.</p>
+<p>The command <code>print &amp;x</code> prints the address of the variable <code>x</code>.
+The interesting bit here is that GDB output shows the type of the reference:
+<code>i32*</code>, a pointer to an <code>i32</code> value.
+Another interesting thing is that the addresses of <code>x</code> and <code>_y</code> are very close to each other:
+their addresses are just <code>4</code> bytes apart.</p>
+<p>Instead of printing the local variables one by one, you can also use the <code>info locals</code> command:</p>
+<pre><code>(gdb) info locals
+x = 42
+_y = 134219052
+</code></pre>
+<p>OK. With another <code>step</code>, we'll be on top of the <code>loop {}</code> statement:</p>
+<pre><code>(gdb) step
+17          loop {}
+</code></pre>
+<p>And <code>_y</code> should now be initialized.</p>
+<pre><code>(gdb) print _y
+$5 = 42
+</code></pre>
+<p>If we use <code>step</code> again on top of the <code>loop {}</code> statement, we'll get stuck because the program will
+never pass that statement. Instead, we'll switch to the disassemble view with the <code>layout asm</code>
+command and advance one instruction at a time using <code>stepi</code>.</p>
+<blockquote>
+<p><strong>NOTE</strong> If you used the <code>step</code> command by mistake and GDB got stuck, you can get unstuck by hitting <code>Ctrl+C</code>.</p>
+</blockquote>
+<pre><code>(gdb) layout asm
+</code></pre>
+<p>If you are not using the TUI mode,
+you can use the <code>disassemble /m</code> command to disassemble the program around the line you are currently at.</p>
+<pre><code>(gdb) disassemble /m
+Dump of assembler code for function led_roulette::main:
+11      fn main() -&gt; ! {
+   0x08000188 &lt;+0&gt;:     sub     sp, #8
+
+12          let _y;
+13          let x = 42;
+   0x0800018a &lt;+2&gt;:     movs    r0, #42 ; 0x2a
+   0x0800018c &lt;+4&gt;:     str     r0, [sp, #4]
+
+14          _y = x;
+   0x0800018e &lt;+6&gt;:     ldr     r0, [sp, #4]
+   0x08000190 &lt;+8&gt;:     str     r0, [sp, #0]
+
+15
+16          // infinite loop; just so we don't leave this stack frame
+17          loop {}
+=&gt; 0x08000192 &lt;+10&gt;:    b.n     0x8000194 &lt;led_roulette::main+12&gt;
+   0x08000194 &lt;+12&gt;:    b.n     0x8000194 &lt;led_roulette::main+12&gt;
+
+End of assembler dump.
+</code></pre>
+<p>See the fat arrow <code>=&gt;</code> on the left side? It shows the instruction the processor will execute next.</p>
+<p>If not inside the TUI mode on each <code>stepi</code> command GDB will print the statement,
+the line number <em>and</em> the address of the instruction the processor will execute next.</p>
+<pre><code>(gdb) stepi
+0x08000194      17          loop {}
+
+(gdb) stepi
+0x08000194      17          loop {}
+</code></pre>
+<p>One last trick before we move to something more interesting.
+Enter the following commands into GDB:</p>
+<pre><code>(gdb) monitor reset halt
+Unable to match requested speed 1000 kHz, using 950 kHz
+Unable to match requested speed 1000 kHz, using 950 kHz
+adapter speed: 950 kHz
+target halted due to debug-request, current mode: Thread
+xPSR: 0x01000000 pc: 0x08000188 msp: 0x10002000
+
+(gdb) continue
+Continuing.
+
+Breakpoint 1, led_roulette::main () at src/main.rs:8
+8           let x = 42;
+</code></pre>
+<p>We are now back at the beginning of <code>main</code>!</p>
+<p><code>monitor reset halt</code> will reset the microcontroller and stop it right at the program entry point.
+The following <code>continue</code> command will let the program run freely until it reaches the <code>main</code> function that has a breakpoint on it.</p>
+<p>This combo is handy when you, by mistake,
+skipped over a part of the program that you were interested in inspecting.
+You can easily roll back the state of your program back to its very beginning.</p>
+<blockquote>
+<p><strong>The fine print</strong>: This <code>reset</code> command doesn't clear or touch RAM.
+That memory will retain its values from the previous run.
+That shouldn't be a problem though, unless your program behavior depends of the value of <em>uninitialized</em> variables,
+but that's the definition of <em>undefined behavior</em> (UB).</p>
+</blockquote>
+<p>We are done with this debug session. You can end it with the <code>quit</code> command.</p>
+<pre><code>(gdb) quit
+A debugging session is active.
+
+        Inferior 1 [Remote target] will be detached.
+
+Quit anyway? (y or n) y
+Detaching from program: $PWD/target/thumbv7em-none-eabihf/debug/led-roulette, Remote target
+Ending remote debugging.
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> If the default GDB CLI is not to your liking check out <a href="https://github.com/cyrus-and/gdb-dashboard#gdb-dashboard">gdb-dashboard</a>.
+It uses Python to turn the default GDB CLI into a dashboard that shows registers,
+the source view, the assembly view and other things.</p>
+</blockquote>
+<p>Don't close OpenOCD though! We'll use it again and again later on. It's better
+just to leave it running.</p>
+<a class="header" href="#what-next" id="what-next"><h2>What next?</h2></a>
+<p>In the next chapter we will learn
+how to send messages from the micro:bit to your computer,
+as well as howt to control the HAL GPIO.</p>
+<a class="header" href="#solution" id="solution"><h1>Solution</h1></a>
+<p>This is a recap of what we have done so far.</p>
+<a class="header" href="#cargotoml-1" id="cargotoml-1"><h2>Cargo.toml</h2></a>
+<pre><code class="language-toml">[package]
+name = &quot;start&quot;
+version = &quot;0.2.0&quot;
+
+[dependencies]
+panic-halt = &quot;~0.2&quot;
+microbit=&quot;~0.7&quot;
+cortex-m-rt=&quot;~0.6&quot;
+
+</code></pre>
+<a class="header" href="#rust" id="rust"><h2>Rust</h2></a>
+<pre><pre class="playpen"><code class="language-rust">#![no_std]
+#![no_main]
+
+extern crate cortex_m_rt;
+extern crate microbit;
+extern crate panic_halt;
+
+use cortex_m_rt::entry;
+
+#[entry]
+fn main() -&gt; ! {
+    let _y;
+    let x = 42;
+    _y = x;
+    loop {}
+}
+
+</code></pre></pre>
+<a class="header" href="#cargoconfig-1" id="cargoconfig-1"><h2><code>.cargo/config</code></h2></a>
+<pre><code class="language-toml"># Configure builds for our target, the micro:bit's architecture
+[target.thumbv6m-none-eabi]
+# Execute binary using gdb when calling cargo run
+runner = &quot;arm-none-eabi-gdb&quot;
+# Tweak to the linking process required by the cortex-m-rt crate
+rustflags = [
+    &quot;-C&quot;, &quot;link-arg=-Tlink.x&quot;,
+    # The LLD linker is selected by default
+    #&quot;-C&quot;, &quot;linker=arm-none-eabi-ld&quot;,
+]
+
+# Automatically select this target when cargo building this project
+[build]
+target = &quot;thumbv6m-none-eabi&quot;
+
+</code></pre>
+<a class="header" href="#gdbinit-1" id="gdbinit-1"><h2><code>.gdbinit</code></h2></a>
+<pre><code class="language-gdb"># Connects GDB to OpenOCD server port
+target remote :3333
+# (optional) Unmangle function names when debugging
+set print asm-demangle on
+# Load your program, breaks at entry
+load
+# (optional) Add breakpoint at function
+break main
+# Continue with execution
+continue
+</code></pre>
+<a class="header" href="#hello-world" id="hello-world"><h1>Hello world</h1></a>
+<p>In this chapter, we will discuss the basic I/O of embedded development in rust.</p>
+<p>After this chapter,you should have all the neccesary basic knowledge to do embedded development in Rust,
+with anything remaining being solution specific.</p>
+<a class="header" href="#semihosting" id="semihosting"><h1>Semihosting</h1></a>
+<p>Semihosting is a feature which allows targets without I/O support to use the I/O of the host.
+When the special <code>BKPT</code> instruction is reached, the host reads the characters directly from the micro:bit's memory.</p>
+<a class="header" href="#semihosting-is-slow" id="semihosting-is-slow"><h2>Semihosting is slow</h2></a>
+<p>The most important thing to remember about semihosting is that it is slow.
+The processor halts entirely for each operation, making each operation take 107 milliseconds.
+This means that if you are doing any time sensitive work, you should not use it for logging.
+<a href="http://blog.japaric.io/itm/">Check out this blog post for more information.</a></p>
+<a class="header" href="#gdb" id="gdb"><h2>GDB</h2></a>
+<p>The first thing to do is to enable semihosting in GDB.
+As before, we will add this to <code>.gdbinit</code> to avoid typing it every time.</p>
+<p><code>.gdbinit</code></p>
+<pre><code class="language-gdb">target remote :3333
+monitor arm semihosting enable
+load
+</code></pre>
+<a class="header" href="#openocd-1" id="openocd-1"><h2>OpenOCD</h2></a>
+<p>You may have incorrectly assumed at this point that the outpust would appear in GDB.
+Remember that GDB simply connects to OpenOCD to interface with the micro:bit.
+OpenOCD is very loud currently,
+so it will be quite hard to see the output of our micro:bit in the noise.
+Fix this by stopping and restarting it with logging dumped to a file.</p>
+<pre><code class="language-console">openocd -f interface/cmsis-dap.cfg -f target/nrf51.cfg -l /tmp/openocd.log
+</code></pre>
+<a class="header" href="#panic" id="panic"><h2>Panic</h2></a>
+<p>The easiest way to use semihosting is to use it for the <code>panic!</code> macro.</p>
+<p><code>Cargo.toml</code></p>
+<pre><code class="language-toml">panic-semihosting = &quot;&quot;
+</code></pre>
+<p>You can then see what happens if you add a <code>panic!</code> to your code:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() -&gt; ! {
+    panic!(&quot;test-panic&quot;);
+}
+</code></pre></pre>
+<pre><code>Open On-Chip Debugger 0.10.0
+Licensed under GNU GPL v2
+For bug reports, read
+    http://openocd.org/doc/doxygen/bugs.html
+panicked at 'test-panic', src/hello-world/src/main.rs:27:5
+</code></pre>
+<a class="header" href="#stdout" id="stdout"><h2>stdout</h2></a>
+<p>Finally, this is how to write to stdout.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+extern crate cortex_m_semihosting as sh;
+use core::fmt::Write;
+use sh::hio;
+// -- snip --
+    let mut stdout = hio::hstdout().unwrap();
+    stdout.write_str(&quot;semitest\n\r&quot;).unwrap();
+    // or
+    writeln!(hio::hstdout().unwrap(), &quot;Init&quot;).unwrap();
+#}</code></pre></pre>
+<p>Writing to stderr is just as easy.</p>
+<a class="header" href="#serial-communication" id="serial-communication"><h1>Serial communication</h1></a>
+<p>The micro:bit has a perihperal called UART,
+a Universal Asynchronous Receiver/Transmitter.
+This is a form of serial communication, data is transferred serially,
+i.e. one bit at a a time.
+It is asynchronous communication, and there is no clock signal to dictate the bitrate,
+intead this is agreed upon beforehand.
+The protocol has frames consisting of a start bit, data bits, parity bits, and stop bits.
+We will be using 8 bits per frame: 1 start, 6 data and 1 stop.
+The data rate is called the <em>baud rate</em>, and we will use 115200bps.</p>
+<a class="header" href="#usb" id="usb"><h2>USB</h2></a>
+<p>The micro:bit allows us to transmit and receive this serial communication over USB with no additional hardware.</p>
+<a class="header" href="#tooling" id="tooling"><h2>Tooling</h2></a>
+<p>To read and write to the serial bus from your computer, you will need to configure your tooling:</p>
+<ul>
+<li><a href="../hello-world/02.01.NIX.html">*nix</a></li>
+<li><a href="../hello-world/02.02.WINDOWS.html">Windows</a></li>
+</ul>
+<a class="header" href="#code" id="code"><h2>Code</h2></a>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use microbit::hal::prelude::*;
+use microbit::hal::serial;
+use microbit::hal::serial::BAUD115200;
+// -- snip --
+if let Some(p) = microbit::Peripherals::take() {
+    let mut gpio = p.GPIO.split();
+    // Configure RX and TX pins accordingly
+    let tx = gpio.pin24.into_push_pull_output().downgrade();
+    let rx = gpio.pin25.into_floating_input().downgrade();
+    // Configure serial communication
+    let (mut tx, _) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
+    // Write string with newline and carriage return
+    // This could also be a format string
+    let _ = write!(tx, &quot;serial test\n\r&quot;);
+}
+#}</code></pre></pre>
+<p>In minicom/PuTTY you should see:</p>
+<pre><code>serial test
+</code></pre>
+<p>This is a very simple introduction to using the UART as one way serial logging.
+The chapter on UART serial communication goes into much more detail.</p>
+<a class="header" href="#nix-tooling" id="nix-tooling"><h1>*nix tooling</h1></a>
+<p>Connect the serial module to your laptop and let's find out what name the OS assigned to it.</p>
+<pre><code class="language-console">$ dmesg | grep -i tty
+(..)
+[  +0.000155] usb 3-2: FTDI USB Serial Device converter now attached to ttyUSB0
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> On macs, the USB device will named like this: <code>cu.usbserial-*</code>.  Adjust the following
+commands accordingly!</p>
+</blockquote>
+<p>But what's this <code>ttyUSB0</code> thing? It's a file of course! Everything is a file in *nix:</p>
+<pre><code class="language-console">$ ls -l /dev/ttyUSB0
+crw-rw---- 1 root uucp 188, 0 Oct 27 00:00 /dev/ttyUSB0
+</code></pre>
+<p>You can send out data by simply writing to this file:</p>
+<pre><code class="language-console">$ echo 'Hello, world!' &gt; /dev/ttyUSB0
+</code></pre>
+<p>You should see the TX (red) LED on the serial module blink, just once and very fast!</p>
+<a class="header" href="#minicom" id="minicom"><h2>minicom</h2></a>
+<p>Dealing with serial devices using <code>echo</code> is far from ergonomic. So, we'll use the program <code>minicom</code>
+to interact with the serial device using the keyboard.</p>
+<p>We must configure <code>minicom</code> before we use it. There are quite a few ways to do that but we'll use a
+<code>.minirc.dfl</code> file in the home directory. Create a file in <code>~/.minirc.dfl</code> with the following
+contents:</p>
+<pre><code class="language-console">$ cat ~/.minirc.dfl
+pu baudrate 115200
+pu bits 8
+pu parity N
+pu stopbits 1
+pu rtscts No
+pu xonxoff No
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> Make sure this file ends in a newline! Otherwise, <code>minicom</code> will fail to read it.</p>
+</blockquote>
+<p>That file should be straightforward to read (except for the last two lines), but nonetheless let's
+go over it line by line:</p>
+<ul>
+<li><code>pu baudrate 115200</code>. Sets baud rate to 115200 bps.</li>
+<li><code>pu bits 8</code>. 8 bits per frame.</li>
+<li><code>pu parity N</code>. No parity check.</li>
+<li><code>pu stopbits 1</code>. 1 stop bit.</li>
+<li><code>pu rtscts No</code>. No hardware control flow.</li>
+<li><code>pu xonxoff No</code>. No software control flow.</li>
+</ul>
+<p>Once that's in place. We can launch <code>minicom</code></p>
+<pre><code class="language-console">$ minicom -D /dev/ttyUSB0 -b 115200
+</code></pre>
+<p>This tells <code>minicom</code> to open the serial device at <code>/dev/ttyUSB0</code> and set its baud rate to 115200.
+A text-based user interface (TUI) will pop out.</p>
+<pre><code>Welcome to minicom 2.7.1
+
+OPTIONS: I18n 
+Compiled on Jun  5 2018, 10:54:41.
+Port /dev/ttyACM0, 19:50:57
+
+Press CTRL-A Z for help on special keys
+
+</code></pre>
+<p>You can now send data using the keyboard! Go ahead and type something.
+Note that the TUI <em>won't</em> echo back what you type (nothing will happen when you type)
+but you'll see TX (red) LED on the serial module blink with each keystroke.</p>
+<a class="header" href="#minicom-commands" id="minicom-commands"><h2><code>minicom</code> commands</h2></a>
+<p><code>minicom</code> exposes commands via keyboard shortcuts. On Linux, the shortcuts start with <code>Ctrl+A</code>. On
+mac, the shortcuts start with the <code>Meta</code> key. Some useful commands below:</p>
+<ul>
+<li><code>Ctrl+A</code> + <code>Z</code>. Minicom Command Summary</li>
+<li><code>Ctrl+A</code> + <code>C</code>. Clear the screen</li>
+<li><code>Ctrl+A</code> + <code>X</code>. Exit and reset</li>
+<li><code>Ctrl+A</code> + <code>Q</code>. Quit with no reset</li>
+</ul>
+<blockquote>
+<p><strong>NOTE</strong> mac users: In the above commands, replace <code>Ctrl+A</code> with <code>Meta</code>.</p>
+</blockquote>
+<a class="header" href="#windows-tooling" id="windows-tooling"><h1>Windows tooling</h1></a>
+<p>Before plugging the Serial module, run the following command on the terminal:</p>
+<pre><code class="language-console">$ mode
+</code></pre>
+<p>It will print a list of devices that are connected to your laptop. The ones that start with <code>COM</code> in
+their names are serial devices. This is the kind of device we'll be working with. Take note of all
+the <code>COM</code> <em>ports</em> <code>mode</code> outputs <em>before</em> plugging the serial module.</p>
+<p>Now, plug the Serial module and run the <code>mode</code> command again. You should see a new <code>COM</code> port appear
+on the list. That's the COM port assigned to the serial module.</p>
+<p>Now launch <code>putty</code>. A GUI will pop out.</p>
+<p>On the starter screen, which should have the &quot;Session&quot; category open, pick &quot;Serial&quot; as the
+&quot;Connection type&quot;. On the &quot;Serial line&quot; field enter the <code>COM</code> device you got on the previous step,
+for example <code>COM3</code>.</p>
+<p>Next, pick the &quot;Connection/Serial&quot; category from the menu on the left. On this new view, make sure
+that the serial port is configured as follows:</p>
+<ul>
+<li>&quot;Speed (baud)&quot;: 115200</li>
+<li>&quot;Data bits&quot;: 8</li>
+<li>&quot;Stop bits&quot;: 1</li>
+<li>&quot;Parity&quot;: None</li>
+<li>&quot;Flow control&quot;: None</li>
+</ul>
+<p>Finally, click the Open button. A console will show up now.</p>
+<p>If you type on this console, the TX (red) LED on the Serial module should blink. Each key stroke
+should make the LED blink once. Note that the console won't echo back what you type so the screen
+will remain blank.</p>
+<a class="header" href="#gpio-and-leds" id="gpio-and-leds"><h1>GPIO and LEDs</h1></a>
+<a class="header" href="#gpio" id="gpio"><h2>GPIO</h2></a>
+<blockquote>
+<p>GPIO: General purpose input-output</p>
+</blockquote>
+<p>The GPIO is a block of pins found on nearly all microcontrollers.
+As the name implies, they are general-purpose, configureable, analog or digital, input or output, electrical pins.
+Exactly what features each pin has on a given microcontroller will require looking at a datasheet.</p>
+<blockquote>
+<p>Analog vs Digital: Analog signals carry data in their amplitude as they continuously vary over time,
+whereas digital signals have a fixed rate and fixed amplitudes. Digital signals are usually just 0 or 1, i.e. 0V or 3.3V</p>
+</blockquote>
+<a class="header" href="#led" id="led"><h2>LED</h2></a>
+<blockquote>
+<p>LED: Light emitting diode</p>
+</blockquote>
+<p>Let us now turn on an LED! But how?</p>
+<p>Many integrated periperals like LEDs and buttons are already connected to certain GPIO pins,
+so lighting up an LED can be as simple as configuring a GPIO pin to be a digital output.</p>
+<p>First we should look at the <a href="https://docs.rs/microbit/0.5.1/microbit/">documentation of our crate</a>,
+and you should be able to figure out how to get access to the gpio,
+and set individual pins high and low:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// This takes singleton ownership of the micro:bit's peripherals
+if let Some(p) = microbit::Peripherals::take() {
+    // Take the micro:bit's GPIO
+    let mut gpio = p.GPIO.split();
+    // Take pin 1 of the GPIO, and configure it as a digital output
+    let mut pin1 = gpio.pin1.into_push_pull_output();
+    // Set pin 1 high
+    pin1.set_high();
+}
+#}</code></pre></pre>
+<p>Next we need to see how these pins are hooked up,
+for that we need <a href="https://github.com/bbcmicrobit/hardware/blob/master/SCH_BBC-Microbit_V1.3B.pdf">the micro:bit schematics</a> linked to at the bottom of <a href="http://tech.microbit.org/hardware/">the hardware overview</a>.
+On the first sheet you should find a diagram with a grid of numbered LEDs.</p>
+<blockquote>
+<p>If you do not know much about electronics:
+Each row and column (labelled ROW and COL) represent a GPIO output pin.
+The components labelled are LEDs.
+LEDs only let current flow one way, and only emit light when current is flowing.
+If a row is set high, high voltage, and a column is set low, low voltage,
+the LED at the point that they cross will have a potential difference across it;
+current will flow and it will light up.</p>
+</blockquote>
+<p>As you can see, the micro:bit's display LEDs are a bit more complicated than being connected to a single pin.
+Each LED is connected to 2 pins, where one needs to be high, and the other low for the LED to light up.</p>
+<p>The 5x5 array of LEDs are actually wired up as a 3x9 array (3 rows by 9 columns), with 2 missing.
+This is usually done to make the circuit design easier.</p>
+<p>The fifth sheet shows how each row and column correspond to each GPIO pin.</p>
+<p>You should now have enough information to try and turn on an LED.</p>
+<a class="header" href="#solution-1" id="solution-1"><h1>Solution</h1></a>
+<p>This is my solution:</p>
+<pre><pre class="playpen"><code class="language-rust">#![no_std]
+#![no_main]
+
+extern crate panic_semihosting;
+extern crate cortex_m_rt as rt;
+extern crate cortex_m_semihosting as sh;
+extern crate microbit;
+
+use core::fmt::Write;
+use rt::entry;
+use sh::hio;
+
+use microbit::hal::prelude::*;
+use microbit::hal::serial;
+use microbit::hal::serial::BAUD115200;
+
+#[entry]
+fn main() -&gt; ! {
+    let mut stdout = hio::hstdout().unwrap();
+    writeln!(stdout, &quot;Start&quot;).unwrap();
+    if let Some(p) = microbit::Peripherals::take() {
+        // Split GPIO
+        let mut gpio = p.GPIO.split();
+        // Configure RX and TX pins accordingly
+        let tx = gpio.pin24.into_push_pull_output().downgrade();
+        let rx = gpio.pin25.into_floating_input().downgrade();
+        // Configure serial communication
+        let (mut tx, _) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
+        write!(tx, &quot;serial - start\r\n&quot;);
+        // Get row and column for display
+        let mut led = gpio.pin13.into_push_pull_output();
+        let _ = gpio.pin4.into_push_pull_output();
+        // Set row high (column starts low)
+        led.set_high();
+        // Write string with newline and carriage return
+        write!(tx, &quot;serial - LED on\r\n&quot;);
+    }
+    panic!(&quot;End&quot;);
+}
+
+</code></pre></pre>
+<p>It is worth noting that pin4 starts low, so does not need to be explicitly set low.</p>
+<p>You now know enough to start playing around with the micro:bit's LED display and GPIO,
+as well as logging data back to the host.</p>
+<p>You should know that the microbit crate already includes an abstraction for the LED display for you to use.
+How to implemented a simple blocking display driver is demonstrated in the <a href="../display/00.00.README.html">LED display chapter</a>.</p>
+<a class="header" href="#choose-your-own-adventure" id="choose-your-own-adventure"><h1>Choose your own adventure</h1></a>
+<p>At this point of the book,
+you know the basics to get started with embedded development with Rust.</p>
+<p>The following chapters are more independent of each other, and can be done in any order;
+the only required knowledge is found in the chapters before this.
+If attempting the exerises, it is best to follow the book in order to pace the difficulty.</p>
+<blockquote>
+<p>A large portion of this book is still unfinished and I would love your support.
+Please submit an issue to request a new section, and a pull request to add a section.</p>
+</blockquote>
+<a class="header" href="#microbit-hal" id="microbit-hal"><h1>micro:bit HAL</h1></a>
+<p>This chapter will demosntrate the common uses of the micro:bit crate,
+and its specific hardware abstraction layer (HAL) features.
+The content in this chapter should be deduceable from the HAL crate,
+but are given here as a reference.</p>
+<p>More examples can be found in the <a href="https://github.com/therealprof/microbit/tree/master/examples">micro:bit crate's examples</a>.</p>
+<a class="header" href="#buttons" id="buttons"><h1>Buttons</h1></a>
+<p>The micro:bit as 3 hardware buttons, 2 user buttons and the reset button.</p>
+<a class="header" href="#user-buttons" id="user-buttons"><h2>User Buttons</h2></a>
+<p>The user buttons are wired up to be high when unpressed and low when pressed.</p>
+<pre><pre class="playpen"><code class="language-rust">#![no_std]
+#![no_main]
+
+extern crate panic_abort;
+extern crate cortex_m_rt as rt;
+extern crate microbit;
+
+use core::fmt::Write;
+use rt::entry;
+
+use microbit::hal::prelude::*;
+use microbit::hal::serial;
+use microbit::hal::serial::BAUD115200;
+
+#[entry]
+fn main() -&gt; ! {
+    if let Some(p) = microbit::Peripherals::take() {
+        // Split GPIO
+        let mut gpio = p.GPIO.split();
+        // Configure RX and TX pins accordingly
+        let tx = gpio.pin24.into_push_pull_output().downgrade();
+        let rx = gpio.pin25.into_floating_input().downgrade();
+        // Configure serial communication
+        let (mut tx, _) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
+        // Configure button GPIOs as inputs
+        let button_a = gpio.pin17.into_floating_input();
+        let button_b = gpio.pin26.into_floating_input();
+        // loop variables
+        let mut state_a_low = false;
+        let mut state_b_low = false;
+        loop {
+            // Get button states
+            let button_a_low = button_a.is_low();
+            let button_b_low = button_b.is_low();
+            if button_a_low &amp;&amp; !state_a_low {
+                writeln!(tx, &quot;Button A down&quot;).unwrap();
+            }
+            if button_b_low &amp;&amp; !state_b_low {
+                writeln!(tx, &quot;Button B down&quot;).unwrap();
+            }
+            if !button_a_low &amp;&amp; state_a_low {
+                writeln!(tx, &quot;Button A up&quot;).unwrap();
+            }
+            if !button_b_low &amp;&amp; state_b_low {
+                writeln!(tx, &quot;Button B up&quot;).unwrap();
+            }
+            // Store buttons states
+            // This should not read the GPIO pins again, as the state
+            // may have changed and the change will not be recorded
+            state_a_low = button_a_low;
+            state_b_low = button_b_low;
+        }
+    }
+    panic!(&quot;End&quot;);
+}
+
+</code></pre></pre>
+<a class="header" href="#delays" id="delays"><h1>Delays</h1></a>
+<p>The microbit has 3 timers, the micro:bit crate currently only supports using TIMER0.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+if let Some(p) = microbit::Peripherals::take() {
+    let mut delay = Delay::new(p.TIMER0);
+    delay.delay_ms(1000_u32);
+}
+#}</code></pre></pre>
+<a class="header" href="#display" id="display"><h1>Display</h1></a>
+<p>The micro:bit display is not trivial to control, so a driver is needed;
+see <a href="../display/00.00.README.html">the display chapter</a> for more details.</p>
+<p>Display calls for now are only blocking, and can either be for binary images (0 for off, 1 for on),
+or for monochrome images with differing brightness levels</p>
+<a class="header" href="#blocking-binary-image-display" id="blocking-binary-image-display"><h2>Blocking binary image display</h2></a>
+<pre><pre class="playpen"><code class="language-rust">#![no_std]
+#![no_main]
+
+#[macro_use(entry, exception)]
+extern crate microbit;
+extern crate cortex_m_rt as rt;
+extern crate cortex_m_semihosting as sh;
+extern crate panic_abort;
+
+use core::fmt::Write;
+use rt::entry;
+
+use microbit::hal::delay::Delay;
+use microbit::hal::prelude::*;
+use microbit::hal::serial;
+use microbit::hal::serial::BAUD115200;
+use microbit::led;
+
+#[entry]
+fn main() -&gt; ! {
+    if let Some(p) = microbit::Peripherals::take() {
+        let mut gpio = p.GPIO.split();
+        let mut delay = Delay::new(p.TIMER0);
+
+        // Configure display pins
+        let row1 = gpio.pin13.into_push_pull_output().downgrade();
+        let row2 = gpio.pin14.into_push_pull_output().downgrade();
+        let row3 = gpio.pin15.into_push_pull_output().downgrade();
+        let col1 = gpio.pin4.into_push_pull_output().downgrade();
+        let col2 = gpio.pin5.into_push_pull_output().downgrade();
+        let col3 = gpio.pin6.into_push_pull_output().downgrade();
+        let col4 = gpio.pin7.into_push_pull_output().downgrade();
+        let col5 = gpio.pin8.into_push_pull_output().downgrade();
+        let col6 = gpio.pin9.into_push_pull_output().downgrade();
+        let col7 = gpio.pin10.into_push_pull_output().downgrade();
+        let col8 = gpio.pin11.into_push_pull_output().downgrade();
+        let col9 = gpio.pin12.into_push_pull_output().downgrade();
+
+        // Configure RX and TX pins accordingly
+        let tx = gpio.pin24.into_push_pull_output().downgrade();
+        let rx = gpio.pin25.into_floating_input().downgrade();
+
+        let mut leds = led::Display::new(
+            row1, row2, row3, col1, col2, col3, col4, col5, col6, col7, col8, col9,
+        );
+
+        let (mut tx, _) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
+
+        let _ = write!(tx, &quot;\n\rStarting!\n\r&quot;);
+
+        #[allow(non_snake_case)]
+        let letter_I = [
+            [0, 1, 1, 1, 0],
+            [0, 0, 1, 0, 0],
+            [0, 0, 1, 0, 0],
+            [0, 0, 1, 0, 0],
+            [0, 1, 1, 1, 0],
+        ];
+
+        let heart = [
+            [0, 1, 0, 1, 0],
+            [1, 0, 1, 0, 1],
+            [1, 0, 0, 0, 1],
+            [0, 1, 0, 1, 0],
+            [0, 0, 1, 0, 0],
+        ];
+
+        #[allow(non_snake_case)]
+        let letter_U = [
+            [0, 1, 0, 1, 0],
+            [0, 1, 0, 1, 0],
+            [0, 1, 0, 1, 0],
+            [0, 1, 0, 1, 0],
+            [0, 1, 1, 1, 0],
+        ];
+
+        loop {
+            let _ = write!(tx, &quot;I &lt;3 Rust!\n\r&quot;);
+            leds.display(&amp;mut delay, letter_I, 1000);
+            leds.display(&amp;mut delay, heart, 1000);
+            leds.display(&amp;mut delay, letter_U, 1000);
+            leds.clear();
+            delay.delay_ms(250_u32);
+        }
+    }
+    panic!(&quot;End&quot;);
+}
+</code></pre></pre>
+<a class="header" href="#wip---uart-serial-server" id="wip---uart-serial-server"><h1>WIP - UART serial server</h1></a>
+<p>In the first section of this book we saw how to do a simple debug print using serial.
+This is useful for logging and debugging, but does not cover the full potential of the UART peripheral.</p>
+<a class="header" href="#input-and-output" id="input-and-output"><h2>Input and output</h2></a>
+<p>The simultaneous input and output capabilities of the UART allow for both your computer and the micro:bit to act as a server.
+They can receive a transmission, process it, perform some action, and send a response.</p>
+<a class="header" href="#echo-server" id="echo-server"><h1>Echo Server</h1></a>
+<p>An echo server, is probably the simplest server we could make.
+It should receive a message, and echo it back to the sender.</p>
+<p>We earlier said that minicom/PuTTY would transmit any keystrokes we send,
+and display and data received,
+so the end result should be the familiar experience of typing and seeing the letters typed appear as expected.</p>
+<a class="header" href="#flow" id="flow"><h2>Flow</h2></a>
+<ol>
+<li>The character <code>a</code> is typed</li>
+<li>minicom/PuTTY encodes the <code>a</code> character's unicode code point (<code>097</code> in decimal) as a word in a serial frame</li>
+<li>The frame is transmitted to the micro:bit over USB</li>
+<li>The micro:bit software decodes the frame to get the word</li>
+<li>The microbit software re-encodes the word to get a (new but identical) frame</li>
+<li>The frame is transmitted to the computer over USB</li>
+<li>minicom/PuTTY decodes the frame's word as a unicode code point</li>
+<li>The letter <code>a</code> is displayed</li>
+</ol>
+<a class="header" href="#serial-theory" id="serial-theory"><h1>Serial Theory</h1></a>
+<p>The micro:bit core crate implements the embedded_hal::serial::Write and embedded_hal::serial::Read traits for the tx and rx pins respectively.</p>
+<a class="header" href="#writeln-and-carriage-return" id="writeln-and-carriage-return"><h2><code>writeln!</code> and Carriage Return</h2></a>
+<p>In the introduction page on serial communication, I brushed over this:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Write string with newline and carriage return
+let _ = write!(tx, &quot;serial test\r\n&quot;);
+#}</code></pre></pre>
+<p>A naïve assumption would be to try the seemingly more correct <code>writeln!</code> macro:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Write string with newline and carriage return
+let _ = writeln!(tx, &quot;serial test&quot;);
+#}</code></pre></pre>
+<p>This will usually fail to do what is intended,
+as multiple writes will only print one line in PuTTY,
+and produce the following in minicom:</p>
+<pre><code>serial test
+           serial test
+                      serial test
+                                 serial test
+</code></pre>
+<p>Your choices are to either configure minicom and PuTTY appropriately or use <code>write!</code> with <code>\r\n</code>.</p>
+<a class="header" href="#control-characters" id="control-characters"><h3>Control Characters</h3></a>
+<p>The control characters operate based on a print head, as used in <a href="https://en.wikipedia.org/wiki/Teleprinter">teleprinters</a>.</p>
+<p><code>\r</code> - Carriage Return - The print head is moves left to the start of the line.
+<code>\n</code> - Line Feed - The print head moves down once to a new line.</p>
+<a class="header" href="#writeln-macro" id="writeln-macro"><h3><code>writeln!</code> macro</h3></a>
+<p>The <code>writeln!</code> macro should append a new line,
+but he <a href="https://doc.rust-lang.org/core/macro.writeln.html">documentation for core::writeln</a> says:</p>
+<blockquote>
+<p>On all platforms, the newline is the LINE FEED character (\n/U+000A) alone (no additional CARRIAGE RETURN (\r/U+000D).</p>
+</blockquote>
+<a class="header" href="#minicom-1" id="minicom-1"><h3>minicom</h3></a>
+<p>CTRL-A + Z will tell you that CTRL-A + U will add a carriage return.
+This will add a carriage return to a received <code>\n</code></p>
+<a class="header" href="#putty-1" id="putty-1"><h3>PuTTY</h3></a>
+<p>In PuTTY, you can enable enable <code>Implicit LF in every CR</code> under Terminal options.</p>
+<a class="header" href="#blocking" id="blocking"><h2>Blocking</h2></a>
+<p>Behind the scenes, <code>embedded_hal::serial</code> uses the nb crate to allow for blocking and non-blocking operation.
+This is implemented in embedded_hal crates by returning nb::Error::WouldBlock
+when a read or write action cannot be performed immediately.
+In this chapter, we will only be using read and write as simple blocking calls.</p>
+<a class="header" href="#block" id="block"><h3><code>block!</code></h3></a>
+<p>The <code>block!</code> macro provided by the crate continuously calls the expression
+contained until it no longer returns Error::WouldBlock.</p>
+<a class="header" href="#tx---embedded_halserialwrite-or-corefmtwrite" id="tx---embedded_halserialwrite-or-corefmtwrite"><h2>Tx - <code>embedded_hal::serial::Write</code> or <code>core::fmt::Write</code></h2></a>
+<p>The <code>write!</code> and <code>writeln!</code> macros call <code>write_str</code> of the <code>core::fmt::Write</code> trait which is implemented for Tx.
+<code>write_str</code> is implemented as a blocking call to <code>write</code> of the <code>embedded_hal::serial::Write</code> trait.</p>
+<p>This means <code>write!(tx, &quot;a&quot;)</code> is equivalent to <code>block!(tx.write(b'a'))</code>.</p>
+<a class="header" href="#echo-solution" id="echo-solution"><h1>Echo Solution</h1></a>
+<pre><pre class="playpen"><code class="language-rust">#![no_std]
+#![no_main]
+
+extern crate panic_semihosting;
+extern crate cortex_m_rt as rt;
+extern crate cortex_m_semihosting as sh;
+extern crate microbit;
+
+use core::fmt::Write;
+use rt::entry;
+use sh::hio;
+
+use microbit::hal::prelude::*;
+use microbit::hal::serial;
+use microbit::hal::serial::BAUD115200;
+use microbit::nb::block;
+
+#[entry]
+fn main() -&gt; ! {
+    let mut stdout = hio::hstdout().unwrap();
+    writeln!(stdout, &quot;Start&quot;).unwrap();
+    if let Some(p) = microbit::Peripherals::take() {
+        // Split GPIO
+        let mut gpio = p.GPIO.split();
+        // Configure RX and TX pins accordingly
+        let tx = gpio.pin24.into_push_pull_output().downgrade();
+        let rx = gpio.pin25.into_floating_input().downgrade();
+        // Configure serial communication
+        let (mut tx, mut rx) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
+        writeln!(tx, &quot;Start&quot;);
+        loop {
+            let val = block!(rx.read()).unwrap();
+            block!(tx.write(val));
+        }
+    }
+    panic!(&quot;End&quot;);
+}
+
+</code></pre></pre>
+<a class="header" href="#exercises" id="exercises"><h1>Exercises</h1></a>
+<ul>
+<li>Reverse echo a line of input</li>
+<li>Numerical countdown</li>
+<li>Display echo</li>
+<li>Quiz game</li>
+</ul>
+<a class="header" href="#reverse-echo" id="reverse-echo"><h1>Reverse Echo</h1></a>
+<p>The micro:bit should buffer characters it receives until <code>\n</code> or <code>\r</code> is received
+(the enter key is pressed on the host computer).
+The characters should then be printed back in reverse order to the host computer.
+The characters may also be echoed like earlier to see what is being typed.</p>
+<a class="header" href="#flow-1" id="flow-1"><h2>Flow</h2></a>
+<ol>
+<li>Letter <code>a</code> is typed and transmitted to the micro:bit</li>
+<li>(optional) The micro:bit retransmits the letter <code>a</code> (echo)</li>
+<li>Letter <code>b</code> is typed and transmitted to the micro:bit</li>
+<li>(optional) The micro:bit retransmits the letter <code>b</code> (echo)</li>
+<li>Enter key is pressed and <code>\r</code> is transmitted to the micro:bit</li>
+<li>Letters <code>ba</code> are transmitted from the micro:bit</li>
+</ol>
+<a class="header" href="#useful-crates" id="useful-crates"><h2>Useful crates</h2></a>
+<ul>
+<li><a href="https://docs.rs/heapless">Heapless</a></li>
+</ul>
+<a class="header" href="#solution-2" id="solution-2"><h1>Solution</h1></a>
+<pre><pre class="playpen"><code class="language-rust">#![no_std]
+#![no_main]
+
+extern crate panic_semihosting;
+extern crate cortex_m_rt as rt;
+extern crate cortex_m_semihosting as sh;
+extern crate heapless;
+extern crate microbit;
+
+use core::fmt::Write;
+use rt::entry;
+use sh::hio;
+use heapless::{consts, Vec};
+
+use microbit::hal::prelude::*;
+use microbit::hal::delay::Delay;
+use microbit::hal::serial;
+use microbit::hal::serial::BAUD115200;
+
+#[entry]
+fn main() -&gt; ! {
+    let mut stdout = hio::hstdout().unwrap();
+    writeln!(stdout, &quot;Start&quot;).unwrap();
+    if let Some(p) = microbit::Peripherals::take() {
+        // Split GPIO
+        let mut gpio = p.GPIO.split();
+        // Create delay provider
+        let mut delay = Delay::new(p.TIMER0);
+        // Configure RX and TX pins accordingly
+        let tx = gpio.pin24.into_push_pull_output().downgrade();
+        let rx = gpio.pin25.into_floating_input().downgrade();
+        // Configure serial communication
+        let (mut tx, mut rx) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
+        // A buffer with 32 bytes of capacity
+        let mut buffer: Vec&lt;u8, consts::U32&gt; = Vec::new();
+        writeln!(tx, &quot;Start&quot;);
+        loop {
+            loop {
+                // Read
+                let byte = block!(rx.read()).unwrap();
+                // Echo
+                block!(tx.write(byte));
+                // Carriage return
+                if byte == b'\r' {
+                    break;
+                }
+                // Push to buffer
+                if buffer.push(byte).is_err() {
+                    // Buffer full
+                    writeln!(tx, &quot;\r\nWarning: buffer full, dumping buffer&quot;);
+                    break;
+                }
+            }
+            // Uncomment to not overwrite input string
+            //writeln!(tx, &quot;&quot;);
+            // Respond
+            for b in buffer.iter().rev() {
+                block!(tx.write(*b));
+            }
+            writeln!(tx, &quot;&quot;);
+            buffer.clear();
+        }
+    }
+    panic!(&quot;End&quot;);
+}
+
+</code></pre></pre>
+<p>I have used an implementation of a vector on the stack, provided by the heapless crate.
+After 32 characters (a char is a u8 byte) the heapless vector is full, and an error is shown.</p>
+<a class="header" href="#countdown" id="countdown"><h1>Countdown</h1></a>
+<p>You should be able to type a number greater than 0, press enter,
+and the micro:bit will return a countdown.</p>
+<pre><code>5
+4
+3
+2
+1
+</code></pre>
+<p>Feel free to add your own surprise at the end of the countdown</p>
+<a class="header" href="#useful-crates-1" id="useful-crates-1"><h2>Useful crates</h2></a>
+<ul>
+<li><a href="https://docs.rs/heapless">Heapless</a></li>
+</ul>
+<a class="header" href="#solution-3" id="solution-3"><h1>Solution</h1></a>
+<pre><pre class="playpen"><code class="language-rust">#![no_std]
+#![no_main]
+
+extern crate panic_semihosting;
+extern crate cortex_m_rt as rt;
+extern crate cortex_m_semihosting as sh;
+extern crate heapless;
+extern crate microbit;
+
+use core::fmt::Write;
+use rt::entry;
+use sh::hio;
+use heapless::{consts, Vec, String};
+
+use microbit::hal::prelude::*;
+use microbit::hal::delay::Delay;
+use microbit::hal::serial;
+use microbit::hal::serial::BAUD115200;
+
+#[entry]
+fn main() -&gt; ! {
+    let mut stdout = hio::hstdout().unwrap();
+    writeln!(stdout, &quot;Start&quot;).unwrap();
+    if let Some(p) = microbit::Peripherals::take() {
+        // Split GPIO
+        let mut gpio = p.GPIO.split();
+        // Create delay provider
+        let mut delay = Delay::new(p.TIMER0);
+        // Configure RX and TX pins accordingly
+        let tx = gpio.pin24.into_push_pull_output().downgrade();
+        let rx = gpio.pin25.into_floating_input().downgrade();
+        // Configure serial communication
+        let (mut tx, mut rx) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
+        writeln!(tx, &quot;Start&quot;);
+        loop {
+            // A buffer with 32 bytes of capacity
+            let mut buffer: Vec&lt;u8, consts::U32&gt; = Vec::new();
+            loop {
+                // Read
+                let byte = block!(rx.read()).unwrap();
+                // Echo
+                block!(tx.write(byte));
+                // Carriage return
+                if byte == b'\r' {
+                    break;
+                }
+                // Push to buffer
+                if buffer.push(byte).is_err() {
+                    // Buffer full
+                    writeln!(tx, &quot;\r\nWarning: buffer full, dumping buffer&quot;);
+                    break;
+                }
+            }
+            // Buffer to string
+            let buf_str = String::from_utf8(buffer).unwrap();
+            writeln!(tx, &quot;&quot;);
+            match buf_str.parse() {
+                // Transmit countdown
+                Ok(buf_int) =&gt; {
+                    for i in (1..buf_int).rev() {
+                        delay.delay_ms(1000_u32);
+                        writeln!(tx, &quot;{}&quot;, i);
+                    }
+                    // Add post countdown effects here
+                },
+                // Transmit parse error
+                Err(e) =&gt; writeln!(tx, &quot;{:?}&quot;, e).unwrap(),
+            }
+        }
+    }
+    panic!(&quot;End&quot;);
+}
+
+</code></pre></pre>
+<a class="header" href="#quiz" id="quiz"><h1>Quiz</h1></a>
+<a class="header" href="#solution-4" id="solution-4"><h1>Solution</h1></a>
+<a class="header" href="#wip---led-display" id="wip---led-display"><h1>WIP - LED display</h1></a>
+<p>This chapters follows on from the basic LED example from getting started.
+The LEDs are wired up in a matrix, as described in <a href="https://github.com/bbcmicrobit/hardware/blob/master/SCH_BBC-Microbit_V1.3B.pdf">these schematics</a>.
+Only a small proportion of images can be displayed at once with this layout;
+it is impossible for example to turn on both LED1 and LED11 without also having LED2 and LED10 turning on.</p>
+<p>In this chapter we will be talking through how to achieve the impossible,
+displaying any chosen image, and even adjusting the brightness!</p>
+<a class="header" href="#theory" id="theory"><h1>Theory</h1></a>
+<a class="header" href="#led-dot-matrix-display" id="led-dot-matrix-display"><h2>LED dot matrix display</h2></a>
+<p>A dot matrix display is a display containing a two dimensional array of points,
+used to represent characters, symbols, or images.
+All displays today are dot matrix displays, but vector displays also used to exist,
+examples include radar displays and 1980s arcade games.</p>
+<a class="header" href="#persistence-of-vision" id="persistence-of-vision"><h2>Persistence of vision</h2></a>
+<p>In order to achieve full control of all LEDs we need to use an optical illusion called the <a href="https://en.wikipedia.org/wiki/Persistence_of_vision">persistence of vision</a>.
+This effect causes light which has ceased entering the eye to still be seen for a little while after it has disappeared.</p>
+<a class="header" href="#multiplexing" id="multiplexing"><h2>Multiplexing</h2></a>
+<p>Multiplexing is the combination of multiple signals over shared medium.
+In this case, we will be using human vision to multiplex time and space divided signals</p>
+<a class="header" href="#method" id="method"><h2>Method</h2></a>
+<p>We are able to fully control one (circuit) row of LEDs at a time,
+so by quickly looping through the rows lof LEDs,
+we can let the brain blur them together into a complete image.</p>
+<a class="header" href="#problem-statement" id="problem-statement"><h1>Problem statement</h1></a>
+<blockquote>
+<p>Display any given image on the micro:bit display.
+The image will be a 5x5 array, where 0 will represent off and 1 will represent on.</p>
+</blockquote>
+<p>The following, for example, should display a heart:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let heart = [
+    [0, 1, 0, 1, 0],
+    [1, 0, 1, 0, 1],
+    [1, 0, 0, 0, 1],
+    [0, 1, 0, 1, 0],
+    [0, 0, 1, 0, 0],
+];
+#}</code></pre></pre>
+<p>At this point, you may know enough to solve the problem yourself.
+If you want to jump straight to the solution, you can go to the end of the next section in this chapter.</p>
+<p>This section will continue formally breaking this problem down into smaller and more tractable pieces.</p>
+<a class="header" href="#led-layout" id="led-layout"><h2>LED layout</h2></a>
+<blockquote>
+<p>Convert a 5x5 array into a 3x9 array to match the display's circuitry.</p>
+</blockquote>
+<a class="header" href="#schematics" id="schematics"><h3>Schematics</h3></a>
+<p>The <a href="https://github.com/bbcmicrobit/hardware/blob/master/SCH_BBC-Microbit_V1.3B.pdf">schem1</a> discussed earlier describe the electrical layout of the LEDs,
+but they do not describe how it relates to the visual layout.
+It would be a mistake to assume that the numbers 1 to 25 have any correlation
+to the visual layout of the LEDs on the micro:bit as they do <em>NOT</em>.
+It just happened to be that ROW0 and COL0 intersect at an LED in the top left corner.</p>
+<a class="header" href="#reference-design" id="reference-design"><h3>Reference design</h3></a>
+<p>To find the relationship between the electrical array and visual array,
+we need to look at the reference design for the micro:bit.
+This can be found through a link at the bottom of the <a href="http://tech.microbit.org/hardware/#links">micro:bit hardware page</a></p>
+<p>By navigating to the github page &gt; PDF &gt; Schematic Print,
+you can find a <a href="https://github.com/microbit-foundation/microbit-reference-design/blob/master/PDF/Schematic%20Print/Schematic%20Prints.PDF">detailed electrical schematic for the micro:bit</a>.</p>
+<p>In the top right, you will see an array which can be defined in Rust as follows:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+const LED_LAYOUT: [[(usize, usize); 5]; 5] = [
+    [(0, 0), (1, 3), (0, 1), (1, 4), (0, 2)],
+    [(2, 3), (2, 4), (2, 5), (2, 6), (2, 7)],
+    [(1, 1), (0, 8), (1, 2), (2, 8), (1, 0)],
+    [(0, 7), (0, 6), (0, 5), (0, 4), (0, 3)],
+    [(2, 2), (1, 6), (2, 0), (1, 5), (2, 1)],
+];
+#}</code></pre></pre>
+<a class="header" href="#delays-1" id="delays-1"><h2>Delays</h2></a>
+<blockquote>
+<p>Create a time delay.</p>
+</blockquote>
+<p>Another piece of information you will need is how to create a time delay before moving to the next row.
+we want the time spent switching LED lines on and off to be much shorter than the time spent waiting with LEDs on.</p>
+<a class="header" href="#for-loop" id="for-loop"><h3>For loop</h3></a>
+<p>A first attempt to implement the <code>delay</code> function
+without using any peripherals is to implement it as a <code>for</code> loop delay:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn delay(ms: u16) {
+    const K: u16 = 16_000; // 16MHz microprocessor, needs to be tweaked
+    for _ in 0..(K*ms) {}
+}
+#}</code></pre></pre>
+<p>When compiled in release mode however, this is optimized away.
+To solve this we could explicitly add an operation inside the loop.
+The perfect candidate is the <a href="https://en.wikipedia.org/wiki/NOP">NOP</a>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn delay(ms: u16) {
+    const K: u16 = 16_000; // 16MHz microprocessor, needs to be tweaked
+    for _ in 0..(K*ms) {
+        cortex_m::asm::nop();
+    }
+}
+#}</code></pre></pre>
+<a class="header" href="#timers" id="timers"><h3>Timers</h3></a>
+<p>A better way of implementing delays is by using timers.
+A one-shot timer (also called one pulse mode) works like an alarm clock.
+You set it once with the amount of time you want, and then wait until it goes off.
+Fortuinately for us, HAL crates usually have already solved this for us.</p>
+<a class="header" href="#microbit" id="microbit"><h3>Microbit</h3></a>
+<p>The microbit has 3 timers, we will use the first: TIMER0.
+To use it, do the following:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+if let Some(p) = microbit::Peripherals::take() {
+    let mut delay = Delay::new(p.TIMER0);
+    delay.delay_ms(1000_u32);
+}
+#}</code></pre></pre>
+<a class="header" href="#multiplexing-1" id="multiplexing-1"><h2>Multiplexing</h2></a>
+<blockquote>
+<p>Multiplex the rows of the matrix</p>
+</blockquote>
+<p>The final task is to multiplex the rows of electrical matrix into a full image.
+We will be doing this by scanning through the rows in the display.</p>
+<a class="header" href="#pseudocode" id="pseudocode"><h3>Pseudocode</h3></a>
+<p>In order to light up an LED,
+the row needs to be set high and the column needs to be set low.
+We will assume that at the start of a refresh cycle,
+that all the rows are set low and all the columns are set high.
+The order of operations during a refresh cycle is then, for each row:</p>
+<ol>
+<li>set the row high</li>
+<li>for each column
+<ul>
+<li>set low if the LED associated with that row-column pair should be on</li>
+</ul>
+</li>
+<li>sleep for a known duration, you should find 2ms is sufficient</li>
+<li>for each column
+<ul>
+<li>set high</li>
+</ul>
+</li>
+<li>set the row low</li>
+</ol>
+<a class="header" href="#solution-5" id="solution-5"><h1>Solution</h1></a>
+<p>This solution describes a blocking display driver.</p>
+<a class="header" href="#layout" id="layout"><h1>Layout</h1></a>
+<blockquote>
+<p>Convert a 5x5 array into a 3x9 array to match the display's circuitry.</p>
+</blockquote>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+const LED_LAYOUT: [[(usize, usize); 5]; 5] = [
+    [(0, 0), (1, 3), (0, 1), (1, 4), (0, 2)],
+    [(2, 3), (2, 4), (2, 5), (2, 6), (2, 7)],
+    [(1, 1), (0, 8), (1, 2), (2, 8), (1, 0)],
+    [(0, 7), (0, 6), (0, 5), (0, 4), (0, 3)],
+    [(2, 2), (1, 6), (2, 0), (1, 5), (2, 1)],
+];
+
+/// Convert 5x5 display image to 3x9 matrix image
+pub fn display2matrix(led_display: [[u8; 5]; 5]) -&gt; [[u8; 9]; 3] {
+    // Create 3x9 array
+    let mut led_matrix: [[u8; 9]; 3] = [[0; 9]; 3];
+    // Iterate through zip of input array and layout array
+    for (led_display_row, layout_row) in led_display.iter().zip(LED_LAYOUT.iter()) {
+        // Continue iterating through rows
+        for (led_display_val, layout_loc) in led_display_row.iter().zip(layout_row) {
+            // Assign dereferenced val to array
+            led_matrix[layout_loc.0][layout_loc.1] = *led_display_val;
+        }
+    }
+    return led_matrix;
+}
+#}</code></pre></pre>
+<a class="header" href="#multiplexing-2" id="multiplexing-2"><h1>Multiplexing</h1></a>
+<blockquote>
+<p>Multiplex the rows of the matrix</p>
+</blockquote>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Display 3x9 matrix image for a given duration.
+pub fn display_pre(&amp;mut self, delay: &amp;mut Delay, led_matrix: [[u8; 9]; 3], duration_ms: u32) {
+    // TODO
+    // These need to be populated with PINs, e.g.:
+    let rows = [PIN; 3];
+    let cols = [PIN; 9];
+    // Set refresh rate.
+    let delay_ms = 2;
+    // Calculate number of loops.
+    let loops = duration_ms / (rows.len() as u32 * delay_ms);
+    for _ in 0..loops {
+        for (row_line, led_matrix_row) in rows.iter_mut().zip(led_matrix.iter()) {
+            // Set the row high.
+            row_line.set_high();
+            // Set the correct pins low (on)
+            // This could lead to very small differences in execution time,
+            // but this is not worth correcting for, as it is &lt;&lt; 2ms.
+            for (col_line, led_matrix_val) in cols.iter_mut().zip(led_matrix_row.iter()) {
+                // We ignore any brightness setting, just use 0 and 1.
+                if *led_matrix_val &gt; 0 {
+                    col_line.set_low();
+                }
+            }
+            delay.delay_ms(delay_ms);
+            // It is not worth the logic to check which pins need resetting,
+            // so set all the pins back high.
+            for col_line in &amp;mut cols {
+                col_line.set_high();
+            }
+            // Set the row back low.
+            row_line.set_low();
+        }
+    }
+}
+#}</code></pre></pre>
+<a class="header" href="#full-solution" id="full-solution"><h1>Full Solution</h1></a>
+<p>For the most modern implementations,
+please look at the code in the <a href="https://github.com/therealprof/microbit">micro:bit crate</a>.</p>
+<pre><pre class="playpen"><code class="language-rust">#![no_std]
+#![no_main]
+
+extern crate panic_semihosting;
+extern crate cortex_m_rt as rt;
+extern crate cortex_m_semihosting as sh;
+extern crate microbit;
+
+use core::fmt::Write;
+use rt::entry;
+use sh::hio;
+
+use microbit::hal::delay::Delay;
+use microbit::hal::gpio::gpio::PIN;
+use microbit::hal::gpio::gpio::{PIN4, PIN5, PIN6, PIN7, PIN8, PIN9, PIN10, PIN11, PIN12, PIN13, PIN14, PIN15};
+use microbit::hal::gpio::{Output, PushPull};
+use microbit::hal::serial;
+use microbit::hal::serial::BAUD115200;
+use microbit::hal::prelude::*;
+
+type LED = PIN&lt;Output&lt;PushPull&gt;&gt;;
+
+const DEFAULT_DELAY_MS: u32 = 2;
+const LED_LAYOUT: [[(usize, usize); 5]; 5] = [
+    [(0, 0), (1, 3), (0, 1), (1, 4), (0, 2)],
+    [(2, 3), (2, 4), (2, 5), (2, 6), (2, 7)],
+    [(1, 1), (0, 8), (1, 2), (2, 8), (1, 0)],
+    [(0, 7), (0, 6), (0, 5), (0, 4), (0, 3)],
+    [(2, 2), (1, 6), (2, 0), (1, 5), (2, 1)],
+];
+
+/// Array of all the LEDs in the 5x5 display on the board
+pub struct Display {
+    delay_ms: u32,
+    rows: [LED; 3],
+    cols: [LED; 9],
+}
+
+impl Display {
+    /// Initializes all the user LEDs
+    pub fn new(
+        col1: PIN4&lt;Output&lt;PushPull&gt;&gt;,
+        col2: PIN5&lt;Output&lt;PushPull&gt;&gt;,
+        col3: PIN6&lt;Output&lt;PushPull&gt;&gt;,
+        col4: PIN7&lt;Output&lt;PushPull&gt;&gt;,
+        col5: PIN8&lt;Output&lt;PushPull&gt;&gt;,
+        col6: PIN9&lt;Output&lt;PushPull&gt;&gt;,
+        col7: PIN10&lt;Output&lt;PushPull&gt;&gt;,
+        col8: PIN11&lt;Output&lt;PushPull&gt;&gt;,
+        col9: PIN12&lt;Output&lt;PushPull&gt;&gt;,
+        row1: PIN13&lt;Output&lt;PushPull&gt;&gt;,
+        row2: PIN14&lt;Output&lt;PushPull&gt;&gt;,
+        row3: PIN15&lt;Output&lt;PushPull&gt;&gt;,
+    ) -&gt; Self {
+        let mut retval = Display {
+            delay_ms: DEFAULT_DELAY_MS,
+            rows: [row1.downgrade(), row2.downgrade(), row3.downgrade()],
+            cols: [
+                col1.downgrade(), col2.downgrade(), col3.downgrade(),
+                col4.downgrade(), col5.downgrade(), col6.downgrade(),
+                col7.downgrade(), col8.downgrade(), col9.downgrade()
+            ],
+        };
+        // This is needed to reduce flickering on reset
+        retval.clear();
+        retval
+    }
+
+    /// Clear display
+    pub fn clear(&amp;mut self) {
+        for row in &amp;mut self.rows {
+            row.set_low();
+        }
+        for col in &amp;mut self.cols {
+            col.set_high();
+        }
+    }
+
+    /// Convert 5x5 display image to 3x9 matrix image
+    pub fn display2matrix(led_display: [[u8; 5]; 5]) -&gt; [[u8; 9]; 3] {
+        let mut led_matrix: [[u8; 9]; 3] = [[0; 9]; 3];
+        for (led_display_row, layout_row) in led_display.iter().zip(LED_LAYOUT.iter()) {
+            for (led_display_val, layout_loc) in led_display_row.iter().zip(layout_row) {
+                led_matrix[layout_loc.0][layout_loc.1] = *led_display_val;
+            }
+        }
+        led_matrix
+    }
+
+    /// Display 5x5 display image for a given duration
+    pub fn display(&amp;mut self, delay: &amp;mut Delay, led_display: [[u8; 5]; 5], duration_ms: u32) {
+        let led_matrix = Display::display2matrix(led_display);
+        // Calculates how long to block for
+        // e.g. If the duration_ms is 500ms (half a second)
+        //      and self.delay_ms is 2ms (about 2ms per scan row),
+        //      each refresh takes 3rows×2ms, so we need 500ms / (3×2ms) loops.
+        let loops = duration_ms / (self.rows.len() as u32 * self.delay_ms);
+        for _ in 0..loops {
+            for (row_line, led_matrix_row) in self.rows.iter_mut().zip(led_matrix.iter()) {
+                row_line.set_high();
+                for (col_line, led_matrix_val) in self.cols.iter_mut().zip(led_matrix_row.iter()) {
+                    // We are keeping it simple, and not adding brightness
+                    if *led_matrix_val &gt; 0 {
+                        col_line.set_low();
+                    }
+                }
+                delay.delay_ms(self.delay_ms);
+                for col_line in &amp;mut self.cols {
+                    col_line.set_high();
+                }
+                row_line.set_low();
+            }
+        }
+    }
+}
+
+#[entry]
+fn main() -&gt; ! {
+    let mut stdout = hio::hstdout().unwrap();
+    writeln!(stdout, &quot;Start&quot;).unwrap();
+    if let Some(p) = microbit::Peripherals::take() {
+        // Split GPIO
+        let mut gpio = p.GPIO.split();
+        
+        // Configure RX and TX pins accordingly
+        let tx = gpio.pin24.into_push_pull_output().downgrade();
+        let rx = gpio.pin25.into_floating_input().downgrade();
+        // Configure serial communication
+        let (mut tx, _) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
+        writeln!(tx, &quot;&quot;);
+        writeln!(tx, &quot;Init&quot;);
+        
+        // Create delay provider
+        let mut delay = Delay::new(p.TIMER0);
+
+        // Display pins
+        let row1 = gpio.pin13.into_push_pull_output();
+        let row2 = gpio.pin14.into_push_pull_output();
+        let row3 = gpio.pin15.into_push_pull_output();
+        let col1 = gpio.pin4.into_push_pull_output();
+        let col2 = gpio.pin5.into_push_pull_output();
+        let col3 = gpio.pin6.into_push_pull_output();
+        let col4 = gpio.pin7.into_push_pull_output();
+        let col5 = gpio.pin8.into_push_pull_output();
+        let col6 = gpio.pin9.into_push_pull_output();
+        let col7 = gpio.pin10.into_push_pull_output();
+        let col8 = gpio.pin11.into_push_pull_output();
+        let col9 = gpio.pin12.into_push_pull_output();
+        let mut leds = Display::new(
+            col1, col2, col3,
+            col4, col5, col6,
+            col7, col8, col9,
+            row1, row2, row3,
+        );
+
+        #[allow(non_snake_case)]
+        let letter_I = [
+            [0, 1, 1, 1, 0],
+            [0, 0, 1, 0, 0],
+            [0, 0, 1, 0, 0],
+            [0, 0, 1, 0, 0],
+            [0, 1, 1, 1, 0],
+        ];
+
+        let heart = [
+            [0, 1, 0, 1, 0],
+            [1, 0, 1, 0, 1],
+            [1, 0, 0, 0, 1],
+            [0, 1, 0, 1, 0],
+            [0, 0, 1, 0, 0],
+        ];
+
+        #[allow(non_snake_case)]
+        let letter_U = [
+            [0, 1, 0, 1, 0],
+            [0, 1, 0, 1, 0],
+            [0, 1, 0, 1, 0],
+            [0, 1, 0, 1, 0],
+            [0, 1, 1, 1, 0],
+        ];
+
+        writeln!(tx, &quot;Starting!&quot;);
+
+        loop {
+            writeln!(tx, &quot;I &lt;3 Rust on the micro:bit!&quot;);
+            leds.display(&amp;mut delay, letter_I, 1000);
+            leds.display(&amp;mut delay, heart, 1000);
+            leds.display(&amp;mut delay, letter_U, 1000);
+            leds.clear();
+            delay.delay_ms(250_u32);
+        }
+
+    }
+    panic!(&quot;End&quot;);
+
+}
+
+</code></pre></pre>
+<a class="header" href="#wip---sensors-and-i²c" id="wip---sensors-and-i²c"><h1>WIP - Sensors and I²C</h1></a>
+<a class="header" href="#wip---interrupts" id="wip---interrupts"><h1>WIP - Interrupts</h1></a>
+<a class="header" href="#wip---interrupts-1" id="wip---interrupts-1"><h1>WIP - Interrupts</h1></a>
+<a class="header" href="#wip---real-time" id="wip---real-time"><h1>WIP - Real time</h1></a>
+<a class="header" href="#wip---creating-a-hal" id="wip---creating-a-hal"><h1>WIP - Creating a HAL</h1></a>
+<a class="header" href="#whats-left-for-you-to-explore" id="whats-left-for-you-to-explore"><h1>What's left for you to explore</h1></a>
+<p>We have barely scratched the surface! There's lots of stuff left for you to explore:</p>
+<a class="header" href="#multitasking" id="multitasking"><h2>Multitasking</h2></a>
+<p>All our programs executed a single task. How could we achieve multitasking in a system with no OS,
+and thus no threads. There are two main approaches to multitasking: preemptive multitasking and
+cooperative multitasking.</p>
+<p>In preemptive multitasking a task that's currently being executed can, at any point in time, be
+<em>preempted</em> (interrupted) by another task. On preemption, the first task will be suspended and the
+processor will instead execute the second task. At some point the first task will be resumed.
+Microcontrollers provide hardware support for preemption in the form of <em>interrupts</em>.</p>
+<p>In cooperative multitasking a task that's being executed will run until it reaches a <em>suspension
+point</em>. When the processor reaches that suspension point it will stop executing the current task and
+instead go and execute a different task. At some point the first task will be resumed. The main
+difference between these two approaches to multitasking is that in cooperative multitasking <em>yields</em>
+execution control at <em>known</em> suspension points instead of being forcefully preempted at any point of
+its execution.</p>
+<a class="header" href="#direct-memory-access-dma" id="direct-memory-access-dma"><h2>Direct Memory Access (DMA).</h2></a>
+<p>This peripheral is a kind of <em>asynchronous</em> <code>memcpy</code>. So far our programs have
+been pumping data, byte by byte, into peripherals like UART and I2C. This DMA
+peripheral can be used to perform bulk transfers of data. Either from RAM to
+RAM, from a peripheral, like a UART, to RAM or from RAM to a peripheral. You can
+schedule a DMA transfer, like read 256 bytes from USART1 into this buffer, leave
+it running in the background and then poll some register to see if it has
+completed so you can do other stuff while the transfer is ongoing.</p>
+<a class="header" href="#sleeping" id="sleeping"><h2>Sleeping</h2></a>
+<p>All our programs have been continuously polling peripherals to see if there's
+anything that needs to be done. However, some times there's nothing to be done!
+At those times, the microcontroller should &quot;sleep&quot;.</p>
+<p>When the processor sleeps, it stops executing instructions and this saves power.
+It's almost always a good idea to save power so your microcontroller should be
+sleeping as much as possible. But, how does it know when it has to wake up to
+perform some action? &quot;Interrupts&quot; are one of the events that wake up the
+microcontroller but there are others and the <code>wfi</code> and <code>wfe</code> are the
+instructions that make the processor &quot;sleep&quot;.</p>
+<a class="header" href="#pulse-width-modulation-pwm" id="pulse-width-modulation-pwm"><h2>Pulse Width Modulation (PWM)</h2></a>
+<p>In a nutshell, PWM is turning on something and then turning it off periodically
+while keeping some proportion (&quot;duty cycle&quot;) between the &quot;on time&quot; and the &quot;off
+time&quot;. When used on a LED with a sufficiently high frequency, this can be used
+to dim the LED. A low duty cycle, say 10% on time and 90% off time, will make
+the LED very dim wheres a high duty cycle, say 90% on time and 10% off time,
+will make the LED much brighter (almost as if it were fully powered).</p>
+<p>In general, PWM can be used to control how much <em>power</em> is given to some
+electric device. With proper (power) electronics between a microcontroller and
+an electrical motor, PWM can be used to control how much power is given to the
+motor thus it can be used to control its torque and speed. Then you can add an
+angular position sensor and you got yourself a closed loop controller that can
+control the position of the motor at different loads.</p>
+<a class="header" href="#digital-input" id="digital-input"><h2>Digital input</h2></a>
+<p>We have used the microcontroller pins as digital outputs, to drive LEDs. But
+these pins can also be configured as digital inputs. As digital inputs, these
+pins can read the binary state of switches (on/off) or buttons (pressed/not
+pressed).</p>
+<p>(<em>spoilers</em> reading the binary state of switches / buttons is not as
+straightforward as it sounds ;-)</p>
+<a class="header" href="#sensor-fusion" id="sensor-fusion"><h2>Sensor fusion</h2></a>
+<p>The STM32F3DISCOVERY contains three motion sensors: an accelerometer, a
+gyroscope and a magnetometer. On their own these measure: (proper) acceleration,
+angular speed and (the Earth's) magnetic field. But these magnitudes can be
+&quot;fused&quot; into something more useful: a &quot;robust&quot; measurement of the orientation of
+the board. Where robust means with less measurement error than a single sensor
+would be capable of.</p>
+<p>This idea of deriving more reliable data from different sources is known as
+sensor fusion.</p>
+<a class="header" href="#analog-to-digital-converters-adc" id="analog-to-digital-converters-adc"><h2>Analog-to-Digital Converters (ADC)</h2></a>
+<p>There are a lots of digital sensors out there. You can use a protocol like I2C
+and SPI to read them. But analog sensors also exist! These sensors just output a
+voltage level that's proportional to the magnitude they are sensing.</p>
+<p>The ADC peripheral can be use to convert that &quot;analog&quot; voltage level, say <code>1.25</code>
+Volts,into a &quot;digital&quot; number, say in the <code>[0, 65535]</code> range, that the processor
+can use in its calculations.</p>
+<a class="header" href="#digital-to-analog-converters-dac" id="digital-to-analog-converters-dac"><h2>Digital-to-Analog Converters (DAC)</h2></a>
+<p>As you might expect a DAC is exactly the opposite of ADC. You can write some
+digital value into a register to produce a voltage in the <code>[0, 3.3V]</code> range
+(assuming a <code>3.3V</code> power supply) on some &quot;analog&quot; pin. When this analog pin is
+connected to some appropriate electronics and the register is written to at some
+constant, fast rate (frequency) with the right values you can produce sounds or
+even music!</p>
+<a class="header" href="#real-time-clock-rtc" id="real-time-clock-rtc"><h2>Real Time Clock (RTC)</h2></a>
+<p>This peripheral can be used to track time in &quot;human format&quot;. Seconds, minutes,
+hours, days, months and years. This peripheral handles the translation from
+&quot;ticks&quot; to these human friendly units of time. It even handles leap years and
+Daylight Save Time for you!</p>
+<a class="header" href="#other-communication-protocols" id="other-communication-protocols"><h2>Other communication protocols</h2></a>
+<p>SPI, I2S, SMBUS, CAN, IrDA, Ethernet, USB, Bluetooth, etc.</p>
+<p>Different applications use different communication protocols. User facing
+applications usually have an USB connector because USB is an ubiquitous
+protocol in PCs and smartphones. Whereas inside cars you'll find plenty of CAN
+&quot;buses&quot;. Some digital sensors use SPI, others use I2C and others, SMBUS.</p>
+<hr />
+<p>So where to next? There are several options:</p>
+<ul>
+<li>You could check out the examples in the <a href="https://github.com/therealprof/microbit"><code>microbit</code></a> board support crate repository. All those examples work for
+the micro:bit board you have.</li>
+</ul>
+<ul>
+<li>You could try out <a href="https://mobile.twitter.com/japaricious/status/962770003325005824">this motion sensors demo</a>. Details about the implementation and
+source code are available in <a href="http://blog.japaric.io/wd-1-2-l3gd20-lsm303dlhc-madgwick/">this blog post</a>.</li>
+</ul>
+<ul>
+<li>You could check out <a href="https://docs.rs/cortex-m-rtfm">Real Time for The Masses</a>. A very efficient preemptive multitasking framework
+that supports task prioritization and dead lock free execution.</li>
+</ul>
+<ul>
+<li>You could try running Rust on a different development board. The easiest way to get started is to
+use the <a href="https://docs.rs/cortex-m-quickstart/0.2.4/cortex_m_quickstart"><code>cortex-m-quickstart</code></a> Cargo project template.</li>
+</ul>
+<ul>
+<li>You could check out <a href="http://blog.japaric.io/brave-new-io/">this blog post</a> which describes how Rust type system can
+prevent bugs in I/O configuration.</li>
+</ul>
+<ul>
+<li>You could check out my <a href="http://blog.japaric.io">blog</a> for miscellaneous topics about embedded development with Rust.</li>
+</ul>
+<ul>
+<li>You could check out the <a href="https://github.com/japaric/embedded-hal"><code>embedded-hal</code></a> project which aims to build abstractions (traits) for all
+the embedded I/O functionality commonly found on microcontrollers.</li>
+</ul>
+<ul>
+<li>You could join the <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/39">Weekly driver initiative</a> and help us write generic drivers on top of the
+<code>embedded-hal</code> traits and that work for all sorts of platforms (ARM Cortex-M, AVR, MSP430, RISCV,
+etc.)</li>
+</ul>
+<a class="header" href="#gdb-cheatsheet" id="gdb-cheatsheet"><h1>GDB cheatsheet</h1></a>
+<table><thead><tr><th align="left"> Short </th><th align="left"> Command             </th><th align="left"> Action                                         </th></tr></thead><tbody>
+<tr><td align="left"> b     </td><td align="left"> break [location]    </td><td align="left"> Set breakpoint at specified location.          </td></tr>
+<tr><td align="left"> c     </td><td align="left"> continue            </td><td align="left"> Continue program being debugged.               </td></tr>
+<tr><td align="left"> s     </td><td align="left"> step                </td><td align="left"> Step program until it reaches a different source line.       </td></tr>
+<tr><td align="left"> si    </td><td align="left"> stepi               </td><td align="left"> Step one instruction exactly.                  </td></tr>
+<tr><td align="left"> p     </td><td align="left"> print               </td><td align="left"> Print value of expression EXP.                 </td></tr>
+<tr><td align="left"> i lo  </td><td align="left"> info locals         </td><td align="left"> Local variables of current stack frame.        </td></tr>
+<tr><td align="left"> la s  </td><td align="left"> layout src          </td><td align="left"> Displays source and command windows.           </td></tr>
+<tr><td align="left"> la a  </td><td align="left"> layout asm          </td><td align="left"> Displays disassembly and command windows.      </td></tr>
+<tr><td align="left"> tu d  </td><td align="left"> tui disable         </td><td align="left"> Disable TUI display mode.                      </td></tr>
+<tr><td align="left">       </td><td align="left"> dissasmble /m       </td><td align="left"> Disassemble a specified section of memory.     </td></tr>
+<tr><td align="left">       </td><td align="left"> monitor reset halt  </td><td align="left"> Send a command to the remote monitor. </td></tr>
+</tbody></table>
+<a class="header" href="#general-troubleshooting" id="general-troubleshooting"><h1>General troubleshooting</h1></a>
+<a class="header" href="#openocd-problems" id="openocd-problems"><h2>OpenOCD problems</h2></a>
+<a class="header" href="#cant-connect-to-openocd---error-open-failed" id="cant-connect-to-openocd---error-open-failed"><h3>can't connect to OpenOCD - &quot;Error: open failed&quot;</h3></a>
+<a class="header" href="#symptoms" id="symptoms"><h4>Symptoms</h4></a>
+<p>Upon trying to establish a <em>new connection</em> with the device you get an error
+that looks like this:</p>
+<pre><code>$ openocd -f (..)
+(..)
+Error: open failed
+in procedure 'init'
+in procedure 'ocd_bouncer'
+</code></pre>
+<a class="header" href="#cause--fix" id="cause--fix"><h4>Cause + Fix</h4></a>
+<ul>
+<li>All: The device is not (properly) connected. Check the USB connection using
+<code>lsusb</code> or the Device Manager.</li>
+<li>Linux: You may not have enough permission to open the device. Try again with
+<code>sudo</code>. If that works, you can use <a href="../setup/LINUX.html#udev%20rules">these instructions</a> to make OpenOCD work
+without root privilege.</li>
+<li>Windows: You are probably missing the USB drivers.</li>
+</ul>
+<a class="header" href="#cant-connect-to-openocd---polling-again-in-x00ms" id="cant-connect-to-openocd---polling-again-in-x00ms"><h3>can't connect to OpenOCD - &quot;Polling again in X00ms&quot;</h3></a>
+<a class="header" href="#symptoms-1" id="symptoms-1"><h4>Symptoms</h4></a>
+<p>Upon trying to establish a <em>new connection</em> with the device you get an error
+that looks like this:</p>
+<pre><code>$ openocd -f (..)
+(..)
+Error: jtag status contains invalid mode value - communication failure
+Polling target stm32f3x.cpu failed, trying to reexamine
+Examination failed, GDB will be halted. Polling again in 100ms
+Info : Previous state query failed, trying to reconnect
+Error: jtag status contains invalid mode value - communication failure
+Polling target stm32f3x.cpu failed, trying to reexamine
+Examination failed, GDB will be halted. Polling again in 300ms
+Info : Previous state query failed, trying to reconnect
+</code></pre>
+<a class="header" href="#cause" id="cause"><h4>Cause</h4></a>
+<p>The microcontroller may have get stuck in some tight infinite loop or it may be
+continuously raising an exception, e.g. the exception handler is raising an
+exception.</p>
+<a class="header" href="#fix" id="fix"><h4>Fix</h4></a>
+<ul>
+<li>Close OpenOCD, if running</li>
+<li>Press and hold the reset (black) button</li>
+<li>Launch the OpenOCD command</li>
+<li>Now, release the reset button</li>
+</ul>
+<a class="header" href="#openocd-connection-lost---polling-again-in-x00ms" id="openocd-connection-lost---polling-again-in-x00ms"><h3>OpenOCD connection lost - &quot;Polling again in X00ms&quot;</h3></a>
+<a class="header" href="#symptoms-2" id="symptoms-2"><h4>Symptoms</h4></a>
+<p>A <em>running</em> OpenOCD session suddenly errors with:</p>
+<pre><code># openocd -f (..)
+Error: jtag status contains invalid mode value - communication failure
+Polling target stm32f3x.cpu failed, trying to reexamine
+Examination failed, GDB will be halted. Polling again in 100ms
+Info : Previous state query failed, trying to reconnect
+Error: jtag status contains invalid mode value - communication failure
+Polling target stm32f3x.cpu failed, trying to reexamine
+Examination failed, GDB will be halted. Polling again in 300ms
+Info : Previous state query failed, trying to reconnect
+</code></pre>
+<a class="header" href="#cause-1" id="cause-1"><h4>Cause</h4></a>
+<p>The USB connection was lost.</p>
+<a class="header" href="#fix-1" id="fix-1"><h4>Fix</h4></a>
+<ul>
+<li>Close OpenOCD</li>
+<li>Disconnect and re-connect the USB cable.</li>
+<li>Re-launch OpenOCD</li>
+</ul>
+<a class="header" href="#cargo-problems" id="cargo-problems"><h2>Cargo problems</h2></a>
+<a class="header" href="#cant-find-crate-for-core" id="cant-find-crate-for-core"><h3>&quot;can't find crate for <code>core</code>&quot;</h3></a>
+<a class="header" href="#symptoms-3" id="symptoms-3"><h4>Symptoms</h4></a>
+<pre><code>   Compiling volatile-register v0.1.2
+   Compiling rlibc v1.0.0
+   Compiling r0 v0.1.0
+error[E0463]: can't find crate for `core`
+
+error: aborting due to previous error
+
+error[E0463]: can't find crate for `core`
+
+error: aborting due to previous error
+
+error[E0463]: can't find crate for `core`
+
+error: aborting due to previous error
+
+Build failed, waiting for other jobs to finish...
+Build failed, waiting for other jobs to finish...
+error: Could not compile `r0`.
+
+To learn more, run the command again with --verbose.
+</code></pre>
+<a class="header" href="#cause-2" id="cause-2"><h4>Cause</h4></a>
+<p>You are using a toolchain older than <code>nightly-2018-04-08</code> and forgot to call <code>rustup target add thumbv7m-none-eabi</code>.</p>
+<a class="header" href="#fix-2" id="fix-2"><h4>Fix</h4></a>
+<p>Update your nightly and install the <code>thumbv7em-none-eabihf</code> target.</p>
+<pre><code class="language-console">$ rustup update nightly
+
+$ rustup target add thumbv7em-none-eabihf
+</code></pre>
+<a class="header" href="#build-problems" id="build-problems"><h2>Build problems</h2></a>
+<a class="header" href="#error-language-item-required-but-not-found-eh_personality" id="error-language-item-required-but-not-found-eh_personality"><h3><code>error: language item required, but not found: 'eh_personality'</code></h3></a>
+<a class="header" href="#cause-3" id="cause-3"><h4>Cause</h4></a>
+<p>The <code>eh_personality</code> language item is used to implement stack unwinding in case a panic occurs.</p>
+<a class="header" href="#fix-3" id="fix-3"><h4>Fix</h4></a>
+<p>You need to use the correct target
+by using <code>--target thumbv6m-none-eabi</code>
+or modifying <code>.cargo/config</code></p>
+<a class="header" href="#error-ld-cannot-open-linker-script-file-memoryx-no-such-file-or-directory" id="error-ld-cannot-open-linker-script-file-memoryx-no-such-file-or-directory"><h3><code>error: ld: cannot open linker script file memory.x: No such file or directory</code></h3></a>
+<a class="header" href="#cause-4" id="cause-4"><h4>Cause</h4></a>
+<p>A memory.x file is needed, this specifies memory layout.</p>
+<a class="header" href="#fix-4" id="fix-4"><h4>Fix</h4></a>
+<p>Either ask the board support crate maintainer to add memory.x to their crate,
+or add a memory.x file to your project.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>

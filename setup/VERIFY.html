@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Verify the installation - MicroRust</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li class="affix"><a href="../index.html">Introduction</a></li><li class="affix"><a href="../background/index.html">Background</a></li><li class="affix"><a href="../requirements/index.html">Requirements</a></li><li><a href="../hardware/index.html"><strong aria-hidden="true">1.</strong> Meet your hardware</a></li><li><a href="../setup/index.html"><strong aria-hidden="true">2.</strong> Development environment setup</a></li><li><ol class="section"><li><a href="../setup/LINUX.html"><strong aria-hidden="true">2.1.</strong> Linux</a></li><li><a href="../setup/WINDOWS.html"><strong aria-hidden="true">2.2.</strong> Windows</a></li><li><a href="../setup/MACOS.html"><strong aria-hidden="true">2.3.</strong> macOS</a></li><li><a href="../setup/VERIFY.html" class="active"><strong aria-hidden="true">2.4.</strong> Verify the installation</a></li></ol></li><li><a href="../getting-started/00.00.README.html"><strong aria-hidden="true">3.</strong> Getting started</a></li><li><ol class="section"><li><a href="../getting-started/01.00.BUILD.html"><strong aria-hidden="true">3.1.</strong> Building</a></li><li><a href="../getting-started/02.00.FLASH.html"><strong aria-hidden="true">3.2.</strong> Flashing</a></li><li><a href="../getting-started/03.00.DEBUG.html"><strong aria-hidden="true">3.3.</strong> Debugging</a></li><li><a href="../getting-started/04.00.SOLUTION.html"><strong aria-hidden="true">3.4.</strong> Solution</a></li></ol></li><li><a href="../hello-world/00.00.README.html"><strong aria-hidden="true">4.</strong> Hello world</a></li><li><ol class="section"><li><a href="../hello-world/01.00.SEMIHOSTING.html"><strong aria-hidden="true">4.1.</strong> Semihosting</a></li><li><a href="../hello-world/02.00.UART.html"><strong aria-hidden="true">4.2.</strong> Serial communication</a></li><li><ol class="section"><li><a href="../hello-world/02.01.NIX.html"><strong aria-hidden="true">4.2.1.</strong> *nix</a></li><li><a href="../hello-world/02.02.WINDOWS.html"><strong aria-hidden="true">4.2.2.</strong> Windows</a></li></ol></li><li><a href="../hello-world/03.00.LED.html"><strong aria-hidden="true">4.3.</strong> GPIO and LEDs</a></li><li><ol class="section"><li><a href="../hello-world/03.01.SOLUTION.html"><strong aria-hidden="true">4.3.1.</strong> Solution</a></li></ol></li></ol></li><li><a href="../choice/00.00.README.html"><strong aria-hidden="true">5.</strong> Choose Your Own Adventure</a></li><li><a href="../microbit/00.00.README.html"><strong aria-hidden="true">6.</strong> micro:bit HAL basics</a></li><li><ol class="section"><li><a href="../microbit/01.00.BUTTONS.html"><strong aria-hidden="true">6.1.</strong> Buttons</a></li><li><a href="../microbit/02.00.DELAY.html"><strong aria-hidden="true">6.2.</strong> Delays</a></li><li><a href="../microbit/03.00.DISPLAY.html"><strong aria-hidden="true">6.3.</strong> Display</a></li></ol></li><li><a href="../serial/00.00.README.html"><strong aria-hidden="true">7.</strong> Serial UART - Blocking</a></li><li><ol class="section"><li><a href="../serial/01.00.ECHO.html"><strong aria-hidden="true">7.1.</strong> Echo Server</a></li><li><ol class="section"><li><a href="../serial/01.01.THEORY.html"><strong aria-hidden="true">7.1.1.</strong> Theory</a></li><li><a href="../serial/01.02.ECHO.html"><strong aria-hidden="true">7.1.2.</strong> Solution</a></li></ol></li><li><a href="../serial/02.00.html"><strong aria-hidden="true">7.2.</strong> Exercises</a></li><li><ol class="section"><li><a href="../serial/02.01.html"><strong aria-hidden="true">7.2.1.</strong> Reverse echo</a></li><li><ol class="section"><li><a href="../serial/02.01.SOLUTION.html"><strong aria-hidden="true">7.2.1.1.</strong> Solution</a></li></ol></li><li><a href="../serial/02.02.html"><strong aria-hidden="true">7.2.2.</strong> Countdown</a></li><li><ol class="section"><li><a href="../serial/02.02.SOLUTION.html"><strong aria-hidden="true">7.2.2.1.</strong> Solution</a></li></ol></li><li><a href="../serial/02.04.html"><strong aria-hidden="true">7.2.3.</strong> Quiz</a></li><li><ol class="section"><li><a href="../serial/02.04.SOLUTION.html"><strong aria-hidden="true">7.2.3.1.</strong> Solution</a></li></ol></li></ol></li></ol></li><li><a href="../display/00.00.README.html"><strong aria-hidden="true">8.</strong> LED display</a></li><li><ol class="section"><li><a href="../display/01.00.THEORY.html"><strong aria-hidden="true">8.1.</strong> Theory</a></li><li><a href="../display/02.00.PROBLEM.html"><strong aria-hidden="true">8.2.</strong> Problem</a></li><li><ol class="section"><li><a href="../display/02.01.LAYOUT.html"><strong aria-hidden="true">8.2.1.</strong> Layout</a></li><li><a href="../display/02.02.DELAY.html"><strong aria-hidden="true">8.2.2.</strong> Delays</a></li><li><a href="../display/02.03.MULT.html"><strong aria-hidden="true">8.2.3.</strong> Multiplexing</a></li></ol></li><li><a href="../display/03.00.SOLUTION.html"><strong aria-hidden="true">8.3.</strong> Solution</a></li><li><ol class="section"><li><a href="../display/03.01.LAYOUT.html"><strong aria-hidden="true">8.3.1.</strong> Layout</a></li><li><a href="../display/03.02.MULT.html"><strong aria-hidden="true">8.3.2.</strong> Multiplexing</a></li><li><a href="../display/03.03.FULL.html"><strong aria-hidden="true">8.3.3.</strong> Full Solution</a></li></ol></li></ol></li><li><a href="../sensors/00.00.README.html"><strong aria-hidden="true">9.</strong> WIP - Sensors and I²C</a></li><li><a href="../nb/00.00.README.html"><strong aria-hidden="true">10.</strong> WIP - Non-blocking</a></li><li><a href="../nb/00.00.README.html"><strong aria-hidden="true">11.</strong> WIP - Interrupts</a></li><li><a href="../rtfm/00.00.README.html"><strong aria-hidden="true">12.</strong> WIP - Real time</a></li><li><a href="../hal/00.00.README.html"><strong aria-hidden="true">13.</strong> WIP - Creating a HAL</a></li><li class="affix"><a href="../appendix/explore.html">Explore</a></li><li class="affix"><a href="../appendix/gdb.html">GDB cheatsheet</a></li><li class="affix"><a href="../appendix/troubleshooting.html">General troubleshooting</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">MicroRust</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            <a href="https://github.com/droogmic/microrust" class="icon-button" title="Go to GitHub repo" aria-label="Link to GitHub repo">
+                                <i id="github-button" class="fa fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#verify-the-installation" id="verify-the-installation"><h1>Verify the installation</h1></a>
+<p>Let's verify that all the tools were installed correctly.</p>
+<a class="header" href="#linux-only" id="linux-only"><h2>Linux only</h2></a>
+<a class="header" href="#verify-permissions" id="verify-permissions"><h3>Verify permissions</h3></a>
+<p>Connect the micro:bit to your laptop using an USB cable.</p>
+<p>The micro:bit should now appear as a USB device (file) in <code>/dev/bus/usb</code>.
+Let's find out how it got enumerated:</p>
+<pre><code class="language-shell">$ lsusb | grep -i NXP
+Bus 002 Device 033: ID 0d28:0204 NXP ARM mbed
+    ^^^        ^^^
+</code></pre>
+<p>In my case, the micro:bit got connected to the bus #2 and got enumerated as the device #33.
+This means the file <code>/dev/bus/usb/002/033</code> <em>is</em> the Fmicro:bit3.
+Let's check its permissions:</p>
+<pre><code class="language-shell">$ ls -l /dev/bus/usb/002/033
+crw-rw---- 1 root uucp 189, 160 Jul  8 14:06 /dev/bus/usb/002/033
+                  ^^^^
+</code></pre>
+<p>The group should be <code>uucp</code>.
+If it's not ... then check your <a href="../setup/LINUX.html#udev%20rules">udev rules</a> and try re-loading them with:</p>
+<pre><code class="language-shell">$ sudo udevadm control --reload-rules
+</code></pre>
+<a class="header" href="#all" id="all"><h2>All</h2></a>
+<a class="header" href="#first-openocd-connection" id="first-openocd-connection"><h3>First OpenOCD connection</h3></a>
+<p>First, connect the micro:bit to your computer using the micro-USB cable.
+The <em>yellow</em> LED next to the USB input should turn on right after connecting the USB cable to the board.</p>
+<p>Next, run this command:</p>
+<pre><code class="language-shell">$ # *nix
+$ openocd -f interface/cmsis-dap.cfg -f target/nrf51.cfg
+
+$ # Windows
+$ # NOTE cygwin users have reported problems with the -s flag. If you run into
+$ # that you can call openocd from the `C:\OpenOCD\share\scripts` directory
+$ openocd -s C:\OpenOCD\share\scripts -f interface/cmsis-dap.cfg -f target/nrf51.cfg
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> Windows users: <code>C:\OpenOCD</code> is the directory where you installed OpenOCD to.</p>
+</blockquote>
+<p>You should see output like this:</p>
+<pre><code class="language-shell">Open On-Chip Debugger 0.10.0
+Licensed under GNU GPL v2
+For bug reports, read
+    http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport &quot;swd&quot;. To override use 'transport select &lt;transport&gt;'.
+cortex_m reset_config sysresetreq
+adapter speed: 1000 kHz
+Info : CMSIS-DAP: SWD  Supported
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : CMSIS-DAP: FW Version = 1.0
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 1000 kHz
+Info : SWD DPIDR 0x0bb11477
+Info : nrf51.cpu: hardware has 4 breakpoints, 2 watchpoints
+</code></pre>
+<p>(If you don't ... then check the <a href="../appendix/troubleshooting.html">general troubleshooting</a> instructions.)</p>
+<p><code>openocd</code> will block the terminal. That's fine.</p>
+<p>Also, the <code>yellow</code> LED should start blinking very fast.
+It may seem concerning, but it is a good sign.</p>
+<p>That's it! It works. You can now close/kill <code>openocd</code>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../setup/MACOS.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../getting-started/00.00.README.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../setup/MACOS.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../getting-started/00.00.README.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
