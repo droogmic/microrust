@@ -1,18 +1,17 @@
 # macOS
 
-> UNTESTED: please submit an issue if you can confirm this works.
-
 All the tools can be install using [Homebrew]:
 
 [Homebrew]: http://brew.sh/
 
 ``` shell
-$ brew cask install gcc-arm-embedded
+$ brew cask install https://raw.githubusercontent.com/Homebrew/homebrew-cask/b88346667547cc85f8f2cacb3dfe7b754c8afc8a/Casks/gcc-arm-embedded.rb
 $ brew install minicom openocd
 ```
 
-If the `brew cask` command doesn't work (`Error: Unknown command: cask`), then run `brew tap
-Caskroom/tap` first and try again.
+Unfortunately gcc-arm-embedded has been [removed from Homebrew casks] in an attempt to force somebody to move it to Homebrew, and so it has to be installed using the cask in an earlier commit.  
+
+[removed from Homebrew casks]: https://github.com/Homebrew/homebrew-cask/pull/56802
 
 That's all! Go to the [next section].
 
