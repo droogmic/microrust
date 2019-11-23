@@ -18,7 +18,7 @@ Bus 002 Device 033: ID 0d28:0204 NXP ARM mbed
 ```
 
 In my case, the micro:bit got connected to the bus #2 and got enumerated as the device #33.
-This means the file `/dev/bus/usb/002/033` *is* the Fmicro:bit3.
+This means the file `/dev/bus/usb/002/033` is the micro:bit.
 Let's check its permissions:
 
 ``` shell
