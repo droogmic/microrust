@@ -3,7 +3,7 @@ name = "hello"
 version = "0.2.0"
 
 [dependencies]
-microbit="~0.6"
+microbit="~0.7"
 cortex-m-rt="~0.6"
 cortex-m-semihosting="~0.3"
 panic-semihosting = "~0.5"
