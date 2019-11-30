@@ -1,6 +1,7 @@
 [package]
 name = "hello"
 version = "0.3.0"
+edition = "2018"
 
 [dependencies]
 microbit="~0.8"

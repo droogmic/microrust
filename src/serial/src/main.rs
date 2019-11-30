@@ -13,7 +13,7 @@ use sh::hio;
 use microbit::hal::prelude::*;
 use microbit::hal::serial;
 use microbit::hal::serial::BAUD115200;
-use microbit::hal::nb::block;
+use microbit::block;
 
 #[entry]
 fn main() -> ! {

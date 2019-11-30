@@ -1,6 +1,7 @@
 [package]
 name = "start"
 version = "0.3.0"
+edition = "2018"
 
 [dependencies]
 panic-halt = "~0.2"

@@ -1,6 +1,7 @@
 [package]
 name = "display"
 version = "0.2.0"
+edition = "2018"
 
 [dependencies]
 cortex-m-rt="~0.6"
