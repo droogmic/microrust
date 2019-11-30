@@ -21,7 +21,7 @@ fn main() -> ! {
     writeln!(stdout, "Start").unwrap();
     if let Some(p) = microbit::Peripherals::take() {
         // Split GPIO
-        let mut gpio = p.GPIO.split();
+        let gpio = p.GPIO.split();
         // Configure RX and TX pins accordingly
         let tx = gpio.pin24.into_push_pull_output().downgrade();
         let rx = gpio.pin25.into_floating_input().downgrade();
