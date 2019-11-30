@@ -1,8 +1,8 @@
 [package]
 name = "start"
-version = "0.2.0"
+version = "0.3.0"
 
 [dependencies]
 panic-halt = "~0.2"
-microbit="~0.7"
+microbit="~0.8"
 cortex-m-rt="~0.6"
