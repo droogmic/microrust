@@ -27,10 +27,10 @@ fn main() -> ! {
         let rx = gpio.pin25.into_floating_input().downgrade();
         // Configure serial communication
         let (mut tx, mut rx) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
-        writeln!(tx, "Start");
+        writeln!(tx, "Start").unwrap();
         loop {
             let val = block!(rx.read()).unwrap();
-            block!(tx.write(val));
+            block!(tx.write(val)).unwrap();
         }
     }
     panic!("End");
