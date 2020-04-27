@@ -9,7 +9,7 @@ Here are the installation commands for a few Linux distributions.
 ``` shell
 $ sudo apt-get install \
   gcc-arm-none-eabi \
-  gdb-arm-none-eabi \
+  gdb-multiarch \
   minicom \
   openocd
 ```
