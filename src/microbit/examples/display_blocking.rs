@@ -5,7 +5,7 @@
 extern crate microbit;
 extern crate cortex_m_rt as rt;
 extern crate cortex_m_semihosting as sh;
-extern crate panic_abort;
+extern crate panic_halt;
 
 use core::fmt::Write;
 use rt::entry;

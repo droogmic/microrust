@@ -1,10 +1,11 @@
 [package]
-name = "microbit"
-version = "0.1.0"
+name = "micro"
+version = "0.2.0"
+edition = "2018"
 
 [dependencies]
 cortex-m-rt="~0.6"
 cortex-m-semihosting="~0.3"
-panic-abort = "~0.3"
+panic-halt = "~0.2"
 panic-semihosting = "~0.5"
-microbit="~0.6"
+microbit="~0.8"

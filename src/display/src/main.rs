@@ -69,10 +69,10 @@ impl Display {
     /// Clear display
     pub fn clear(&mut self) {
         for row in &mut self.rows {
-            row.set_low();
+            row.set_low().unwrap();
         }
         for col in &mut self.cols {
-            col.set_high();
+            col.set_high().unwrap();
         }
     }
 
@@ -97,18 +97,18 @@ impl Display {
         let loops = duration_ms / (self.rows.len() as u32 * self.delay_ms);
         for _ in 0..loops {
             for (row_line, led_matrix_row) in self.rows.iter_mut().zip(led_matrix.iter()) {
-                row_line.set_high();
+                row_line.set_high().unwrap();
                 for (col_line, led_matrix_val) in self.cols.iter_mut().zip(led_matrix_row.iter()) {
                     // We are keeping it simple, and not adding brightness
                     if *led_matrix_val > 0 {
-                        col_line.set_low();
+                        col_line.set_low().unwrap();
                     }
                 }
                 delay.delay_ms(self.delay_ms);
                 for col_line in &mut self.cols {
-                    col_line.set_high();
+                    col_line.set_high().unwrap();
                 }
-                row_line.set_low();
+                row_line.set_low().unwrap();
             }
         }
     }
@@ -120,15 +120,15 @@ fn main() -> ! {
     writeln!(stdout, "Start").unwrap();
     if let Some(p) = microbit::Peripherals::take() {
         // Split GPIO
-        let mut gpio = p.GPIO.split();
+        let gpio = p.GPIO.split();
         
         // Configure RX and TX pins accordingly
         let tx = gpio.pin24.into_push_pull_output().downgrade();
         let rx = gpio.pin25.into_floating_input().downgrade();
         // Configure serial communication
         let (mut tx, _) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
-        writeln!(tx, "");
-        writeln!(tx, "Init");
+        writeln!(tx, "").unwrap();
+        writeln!(tx, "Init").unwrap();
         
         // Create delay provider
         let mut delay = Delay::new(p.TIMER0);
@@ -179,10 +179,10 @@ fn main() -> ! {
             [0, 1, 1, 1, 0],
         ];
 
-        writeln!(tx, "Starting!");
+        writeln!(tx, "Starting!").unwrap();
 
         loop {
-            writeln!(tx, "I <3 Rust on the micro:bit!");
+            writeln!(tx, "I <3 Rust on the micro:bit!").unwrap();
             leds.display(&mut delay, letter_I, 1000);
             leds.display(&mut delay, heart, 1000);
             leds.display(&mut delay, letter_U, 1000);

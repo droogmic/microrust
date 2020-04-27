@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-extern crate panic_abort;
+extern crate panic_halt;
 extern crate cortex_m_rt as rt;
 extern crate microbit;
 

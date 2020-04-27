@@ -38,18 +38,12 @@ Next, follow OS-agnostic installation instructions for a few of the tools:
 
 Install rustup by following the instructions at [https://rustup.rs](https://rustup.rs).
 
-Then, install or switch to the nightly channel.
-
-``` shell
-$ rustup default nightly
-```
-
-**NOTE** Make sure you have a nightly newer than `nightly-2018-10-12`.
+**NOTE** Make sure you have a recent version, but only `1.39.0` is validated.
 `rustc -V` should return a date newer than the one shown below:
 
 ``` shell
 $ rustc -V
-rustc 1.31.0-nightly (2c2e2c57d 2018-10-12)
+rustc 1.39.0 (4560ea788 2019-11-04)
 ```
 
 ### OS specific instructions

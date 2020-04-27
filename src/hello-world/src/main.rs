@@ -20,20 +20,20 @@ fn main() -> ! {
     writeln!(stdout, "Start").unwrap();
     if let Some(p) = microbit::Peripherals::take() {
         // Split GPIO
-        let mut gpio = p.GPIO.split();
+        let gpio = p.GPIO.split();
         // Configure RX and TX pins accordingly
         let tx = gpio.pin24.into_push_pull_output().downgrade();
         let rx = gpio.pin25.into_floating_input().downgrade();
         // Configure serial communication
         let (mut tx, _) = serial::Serial::uart0(p.UART0, tx, rx, BAUD115200).split();
-        write!(tx, "serial - start\r\n");
+        write!(tx, "serial - start\r\n").unwrap();
         // Get row and column for display
         let mut led = gpio.pin13.into_push_pull_output();
         let _ = gpio.pin4.into_push_pull_output();
         // Set row high (column starts low)
-        led.set_high();
+        led.set_high().unwrap();
         // Write string with newline and carriage return
-        write!(tx, "serial - LED on\r\n");
+        write!(tx, "serial - LED on\r\n").unwrap();
     }
     panic!("End");
 }
