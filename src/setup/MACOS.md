@@ -5,7 +5,7 @@ All the tools can be install using [Homebrew]:
 [Homebrew]: http://brew.sh/
 
 ``` shell
-$ brew cask install https://raw.githubusercontent.com/Homebrew/homebrew-cask/b88346667547cc85f8f2cacb3dfe7b754c8afc8a/Casks/gcc-arm-embedded.rb
+$ brew install --cask gcc-arm-embedded
 $ brew install minicom openocd
 ```
 
